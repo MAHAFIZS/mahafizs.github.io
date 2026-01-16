@@ -97,6 +97,61 @@
     <div class="content">
         <h2>Projects</h2>
 
+        <div class="project-section" id="thesis">
+  <p class="project-title">
+    M.Sc. Thesis – IMU-Based Gesture Control for Franka Emika Panda
+    (IMU, EMG, ROS, MuJoCo, Real Robot)
+  </p>
+
+  <button class="toggle-btn" onclick="toggleDetails('project-thesis')">
+    View Details
+  </button>
+
+  <div class="details" id="project-thesis">
+    <p>
+      <strong>Year:</strong> 2024–2025 |
+      <strong>Institution:</strong> FAU Erlangen-Nürnberg
+    </p>
+
+    <p>
+      Developed an <strong>IMU-based gesture recognition and Cartesian robot control system</strong>
+      for intuitive human–robot interaction. The system processes raw IMU signals
+      (accelerometer, gyroscope) for <strong>orientation estimation, filtering, and noise handling</strong>,
+      combines them with EMG features, and maps gestures to real-time Cartesian and rotational
+      robot commands.
+    </p>
+
+    <p>
+      The pipeline was validated in <strong>MuJoCo simulation</strong> and transferred to a
+      <strong>real Franka Emika Panda robot</strong>, addressing real-world constraints such as
+      <strong>latency, sensor noise, safety, and hardware variability</strong>.
+    </p>
+
+    <p><strong>Key contributions:</strong></p>
+    <ul>
+      <li>IMU preprocessing: filtering, normalization, orientation estimation</li>
+      <li>Gesture recognition using IMU + EMG features</li>
+      <li>Cartesian and rotational control using IK and Jacobians</li>
+      <li>Simulation-to-real transfer and robustness evaluation</li>
+      <li>Contact-rich screw insertion with coordinated axial + rotational motion</li>
+    </ul>
+
+    <p><strong>Related demos & code:</strong></p>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=Q26zdV5uKMU" target="_blank">
+          🎥 MuJoCo + Real Robot Demo Video
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/MAHAFIZS/mujoco-franka-simulation" target="_blank">
+          🔗 MuJoCo Simulation Repository
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
         <div class="project-section">
     <p class="project-title">MuJoCo Simulation Environment for Franka Emika Panda (Python, MuJoCo)</p>
