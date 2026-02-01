@@ -94,8 +94,69 @@
         </nav>
     </header>
 
+
+    
+
     <div class="content">
         <h2>Projects</h2>
+
+        <div class="project-section">
+  <p class="project-title">
+    Robot Eval Platform – Regression Gating & CI for Robot Learning
+    (FastAPI, React, PostgreSQL, CI/CD, MuJoCo)
+  </p>
+
+  <button class="toggle-btn" onclick="toggleDetails('project-rep')">
+    View Details
+  </button>
+
+  <div class="details" id="project-rep">
+    <p><strong>Year:</strong> 2025 | <strong>Type:</strong> Evaluation Infrastructure / Platform</p>
+
+    <p>
+      Designed and implemented a <strong>company-grade evaluation and regression gating platform</strong>
+      for learning-enabled robot controllers. The system turns simulation or robot rollouts into
+      <strong>episode-level metrics, videos, reports, and SHIP / BLOCK release decisions</strong>.
+    </p>
+
+    <p>
+      The platform acts as <strong>CI for robot behavior</strong>, enabling safe deployment decisions
+      by automatically comparing candidate runs against locked baselines using explicit performance
+      and safety rules.
+    </p>
+
+    <p><strong>Key features:</strong></p>
+    <ul>
+      <li>Episode-level metrics & rollout video tracking</li>
+      <li>Baseline vs candidate comparison</li>
+      <li>Automatic regression detection (latency, success, safety)</li>
+      <li>SHIP / BLOCK decisions enforced via GitHub Actions</li>
+      <li>Simulator-agnostic artifact format (not MuJoCo-specific)</li>
+    </ul>
+
+    <p><strong>Live demo & code:</strong></p>
+    <ul>
+      <li>
+        <a href="https://github.com/MAHAFIZS/robot-eval-platform/releases/tag/v1.0-demo" target="_blank">
+          🎥 Regression Gating Demo (GitHub Release)
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/MAHAFIZS/robot-eval-platform" target="_blank">
+          🔗 Robot Eval Platform – GitHub Repository
+        </a>
+      </li>
+    </ul>
+
+    <p>
+      <em>
+        Note: The failing GitHub Action in the demo is intentional and demonstrates
+        performance-based release gating.
+      </em>
+    </p>
+  </div>
+</div>
+
 
         <div class="project-section" id="thesis">
   <p class="project-title">
