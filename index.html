@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M A HAFIZ - Portfolio</title>
+  <title>M A HAFIZ - Robotics Portfolio</title>
 
   <style>
     body {
@@ -12,395 +12,349 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
+      color: #222;
     }
 
     header {
-      background: #333;
+      background: #222;
       color: white;
-      padding: 20px;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 4px 0;
+      opacity: 0.95;
     }
 
     nav ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 15px 0 0;
     }
 
     nav ul li {
       display: inline;
-      margin: 0 15px;
+      margin: 0 12px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
     }
 
     .content {
-      padding: 50px;
-    }
-
-    .profile-photo {
-      width: 300px;
-      height: auto;
-      border-radius: 50%;
-      display: block;
-      margin: 20px auto;
-      border: 3px solid #333;
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 12px 20px;
       background-color: #008CBA;
       color: white;
-      font-size: 18px;
+      font-size: 16px;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 15px;
     }
 
-    /* --- Featured Projects (Rotating) --- */
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Featured Projects */
     .featured-wrap {
-      max-width: 1000px;
-      margin: 30px auto 30px;
-      padding: 0 20px;
+      margin: 40px auto;
       text-align: left;
-    }
-
-    .featured-title {
-      text-align: center;
-      margin: 0 0 14px;
     }
 
     .featured-card {
       background: #fff;
       border-radius: 10px;
-      padding: 18px 20px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+      padding: 20px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
       transition: opacity 350ms ease, transform 350ms ease;
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .featured-card.fade-out {
       opacity: 0;
-      transform: translateY(6px);
+      transform: translateY(5px);
     }
 
     .fp-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 12px;
     }
 
     .fp-top h3 {
       margin: 0;
-      font-size: 18px;
-      color: #333;
     }
 
     .fp-year {
-      color: #666;
       font-size: 14px;
-      white-space: nowrap;
+      color: #666;
     }
 
     .fp-desc {
-      margin: 10px 0 12px;
+      margin: 10px 0;
       line-height: 1.6;
-      color: #333;
-      font-size: 16px;
     }
 
     .fp-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .fp-tag {
       font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f2f6ff;
-      border: 1px solid #dbe7ff;
-      color: #1b3a74;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #eef3ff;
+      border: 1px solid #d6e0ff;
     }
 
-    .fp-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .fp-btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 6px;
-      border: 1px solid #cfd8dc;
+    .fp-actions a {
+      margin-right: 10px;
       text-decoration: none;
-      color: #222;
       font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .fp-btn.primary {
+    .fp-actions a.primary {
       background-color: #008CBA;
+      color: white;
       border-color: #008CBA;
-      color: #fff;
     }
 
     .fp-dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 12px;
+      text-align: center;
+      margin-top: 10px;
     }
 
     .fp-dot {
+      display: inline-block;
       width: 8px;
       height: 8px;
+      margin: 0 4px;
       border-radius: 50%;
-      background: #cfd8dc;
+      background: #ccc;
       cursor: pointer;
     }
 
     .fp-dot.active {
       background: #008CBA;
     }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: flex-start;
+    }
+
+    .profile-area {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .profile-area img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .text-area {
+      flex: 2;
+      min-width: 300px;
+      text-align: left;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    @media (max-width: 700px) {
+      nav ul li {
+        display: inline-block;
+        margin: 6px 10px;
+      }
+      .about-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .text-area {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>M A HAFIZ</h1>
-    <p>Engineer | B.Sc. in EEE, M.Sc. in Medical Engineering</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="education.html">Education & Internship</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="professional.html">Professional Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="content" style="max-width: 1000px; margin: 0 auto; padding: 50px;">
-    <h2 style="text-align: center;">About Me</h2>
+<header>
+  <h1>M A HAFIZ</h1>
+  <p><strong>Robotics Simulation & Control Engineer</strong></p>
+  <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
+  <p>Erlangen, Germany • Open to Full-Time Roles</p>
 
-    <!-- Featured Projects (Auto Rotating) -->
-    <div class="featured-wrap">
-      <h2 class="featured-title">Featured Projects</h2>
+  <nav>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="education.html">Education & Internship</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="professional.html">Professional Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-      <div class="featured-card" id="featuredCard">
-        <div class="fp-top">
-          <h3 id="fpTitle">Loading...</h3>
-          <span class="fp-year" id="fpYear"></span>
-        </div>
+<div class="content">
 
-        <p class="fp-desc" id="fpDesc"></p>
-        <div class="fp-tags" id="fpTags"></div>
+  <h2>Featured Projects</h2>
 
-        <div class="fp-actions">
-          <a class="fp-btn primary" id="fpGithub" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="fp-btn" id="fpVideo" href="#" target="_blank" rel="noopener">Demo Video</a>
-          <a class="fp-btn" href="projects.html">All Projects</a>
-        </div>
-
-        <div class="fp-dots" id="fpDots"></div>
+  <div class="featured-wrap">
+    <div class="featured-card" id="featuredCard">
+      <div class="fp-top">
+        <h3 id="fpTitle"></h3>
+        <span class="fp-year" id="fpYear"></span>
       </div>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px;">
-      <!-- Profile Image + Contact Icons -->
-      <div style="flex: 1; min-width: 250px; text-align: center;">
-        <img src="profile1.jpg" alt="M A HAFIZ" style="width: 300px; border-radius: 10px; border: 1px solid #333;" />
-
-        <div style="margin-top: 20px;">
-          <a href="mailto:mahafizsourav@gmail.com" target="_blank" style="margin: 0 15px;">
-            <img src="images/email.jpg" alt="Email" width="60" />
-          </a>
-          <a href="https://linkedin.com/in/hafiz-ma" target="_blank" style="margin: 0 15px;">
-            <img src="images/linkedin.png" alt="LinkedIn" width="60" />
-          </a>
-          <a href="https://github.com/MAHAFIZS" target="_blank" style="margin: 0 15px;">
-            <img src="images/github.jpg" alt="GitHub" width="60" />
-          </a>
-        </div>
+      <p class="fp-desc" id="fpDesc"></p>
+      <div class="fp-tags" id="fpTags"></div>
+      <div class="fp-actions">
+        <a class="primary" id="fpGithub" href="#" target="_blank">GitHub</a>
+        <a id="fpVideo" href="#" target="_blank">Demo Video</a>
+        <a href="projects.html">All Projects</a>
       </div>
-
-      <!-- About Text -->
-      <div style="flex: 2; min-width: 300px; font-size: 17px; line-height: 1.6; text-align: left;">
-        <p>
-          I'm <strong>M A HAFIZ</strong>, a <strong>Robotics Engineer</strong> specializing in
-          <strong>robot manipulation</strong>, <strong>autonomous systems</strong>, and
-          <strong>human–robot interaction</strong>.
-        </p>
-
-        <p>
-          I work with <strong>ROS 2, Python, C++, MuJoCo, Gazebo</strong>, and real robotic platforms
-          such as the <strong>Franka Emika Panda</strong>, focusing on Cartesian control,
-          simulation-to-real transfer, and intuitive robot interfaces.
-        </p>
-
-        <p>
-          I recently completed my <strong>M.Sc. thesis</strong> at
-          <strong>FAU Erlangen-Nürnberg</strong>, where I developed a
-          <strong>gesture-based Cartesian control system</strong> using EMG signals,
-          validated in MuJoCo and transferred to a real robot.
-       </p>
-
-       <p>
-         My academic background is in <strong>Medical Engineering</strong>, which I leverage
-         for user-centered system design, signal processing, and safety-critical robotics
-         applications.
-       </p>
-
-
-        <div style="text-align: left; margin-top: 20px;">
-          <a href="projects.html" class="btn" style="padding: 10px 20px; background-color: #008CBA; color: white; text-decoration: none; border-radius: 5px;">
-            View My Projects
-          </a>
-        </div>
-      </div>
+      <div class="fp-dots" id="fpDots"></div>
     </div>
   </div>
 
-  <script>
-    const projects = [
-      {
-      title: "Robot Eval Platform – Regression Gating & CI for Robot Learning",
+  <h2>About Me</h2>
+
+  <div class="about-section">
+
+    <div class="profile-area">
+      <img src="profile1.jpg" alt="M A Hafiz">
+      <div style="margin-top:15px;">
+        <a href="mailto:mahafizsourav@gmail.com" target="_blank">
+          <img src="images/email.jpg" width="50">
+        </a>
+        <a href="https://linkedin.com/in/hafiz-ma" target="_blank">
+          <img src="images/linkedin.png" width="50">
+        </a>
+        <a href="https://github.com/MAHAFIZS" target="_blank">
+          <img src="images/github.jpg" width="50">
+        </a>
+      </div>
+    </div>
+
+    <div class="text-area">
+      <p>
+        I'm <strong>M A Hafiz</strong>, a Robotics Engineer specializing in
+        <strong>robot manipulation</strong>, <strong>simulation-to-real transfer</strong>,
+        and <strong>human–robot interaction</strong>.
+      </p>
+
+      <p>
+        I have completed my <strong>M.Sc. in Medical Engineering</strong> at
+        <strong>FAU Erlangen-Nürnberg</strong>. My thesis focused on a
+        <strong>gesture-based Cartesian control system</strong> using EMG signals,
+        validated in <strong>MuJoCo</strong> and successfully transferred to a
+        <strong>real Franka Emika Panda robot</strong>.
+      </p>
+
+      <p>
+        I work extensively with <strong>ROS 2, Python, C++, MuJoCo, Gazebo</strong>,
+        implementing Cartesian control, inverse kinematics, and contact-rich
+        manipulation strategies.
+      </p>
+
+      <p>
+        My goal is to design robust, measurable, and industry-ready robotic
+        systems that bridge simulation and real-world deployment.
+      </p>
+
+      <a href="projects.html" class="btn">View My Projects</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const projects = [
+    {
+      title: "Robot Eval Platform – Regression Gating for Robot Learning",
       year: "2025–2026",
-      desc: "Built a company-grade evaluation + regression dashboard that turns rollouts into episode metrics, videos, reports, and SHIP/BLOCK decisions. Includes baseline vs candidate gating and GitHub Actions enforcement.",
-      tags: ["FastAPI", "React", "PostgreSQL", "MinIO/S3", "CI/CD"],
+      desc: "Built a robotics evaluation dashboard that converts rollouts into measurable metrics, videos, and SHIP/BLOCK deployment decisions.",
+      tags: ["FastAPI", "React", "CI/CD", "PostgreSQL"],
       github: "https://github.com/MAHAFIZS/robot-eval-platform",
-      video: "https://github.com/MAHAFIZS/robot-eval-platform/releases/tag/v1.0-demo"
-      },
-      {
-        title: "MuJoCo Simulation Environment for Franka Emika Panda",
-        year: "2024–2025",
-        desc: "Built a MuJoCo simulation mirroring the real lab setup (table, screw box, tool) for gesture-based teleoperation and screwing/pick-and-place.",
-        tags: ["Python", "MuJoCo", "Franka Panda", "HRI"],
-        github: "https://github.com/MAHAFIZS/mujoco-franka-simulation",
-        video: "https://www.youtube.com/watch?v=Q26zdV5uKMU"
-      },
-      {
-        title: "Pick & Place in MuJoCo using Franka Emika Panda",
-        year: "2025",
-        desc: "Implemented a complete pick & place pipeline with Cartesian control + Tkinter GUI: detect → hover → pre-grasp → grasp → lift → place.",
-        tags: ["Python", "MuJoCo", "Cartesian Control", "Tkinter"],
-        github: "https://github.com/MAHAFIZS/mujoco-panda-pick-place",
-        video: "https://www.youtube.com/watch?v=Mtgy2_O2Gi0"
-      },
-      {
-        title: "ROS2 Nav2 Autonomous Navigation (Custom Behavior Tree)",
-        year: "2025",
-        desc: "Built a stable Nav2 demo with custom Behavior Tree and validated recovery by blocking the robot and observing replanning + goal completion.",
-        tags: ["ROS 2", "Nav2", "Behavior Tree", "Gazebo", "RViz"],
-        github: "https://github.com/MAHAFIZS/ros2-nav2-autonomous-navigation",
-        video: "https://www.youtube.com/watch?v=bf57h5XZcK4"
-      },
-      {
-        title: "ROS2 SLAM Mapping with TurtleBot3",
-        year: "2025",
-        desc: "Implemented SLAM Toolbox (online async) with Gazebo + teleop + RViz2 and map saving for navigation experiments.",
-        tags: ["ROS 2", "SLAM Toolbox", "TurtleBot3", "Gazebo", "RViz"],
-        github: "https://github.com/MAHAFIZS/turtlebot3_slam_maps",
-        video: ""
-      }
-    ];
-
-    const card = document.getElementById("featuredCard");
-    const titleEl = document.getElementById("fpTitle");
-    const yearEl = document.getElementById("fpYear");
-    const descEl = document.getElementById("fpDesc");
-    const tagsEl = document.getElementById("fpTags");
-    const githubEl = document.getElementById("fpGithub");
-    const videoEl = document.getElementById("fpVideo");
-    const dotsEl = document.getElementById("fpDots");
-
-    let idx = 0;
-    let timer = null;
-
-    function renderDots() {
-      dotsEl.innerHTML = "";
-      projects.forEach((_, i) => {
-        const dot = document.createElement("div");
-        dot.className = "fp-dot" + (i === idx ? " active" : "");
-        dot.addEventListener("click", () => {
-          idx = i;
-          updateProject(true);
-          restartAuto();
-        });
-        dotsEl.appendChild(dot);
-      });
+      video: ""
+    },
+    {
+      title: "MuJoCo Simulation for Franka Panda",
+      year: "2024–2025",
+      desc: "Developed a MuJoCo environment mirroring real lab setups for gesture-based teleoperation and manipulation experiments.",
+      tags: ["MuJoCo", "Python", "Franka Panda"],
+      github: "https://github.com/MAHAFIZS/mujoco-franka-simulation",
+      video: ""
     }
+  ];
 
-    function setProject(p) {
-      titleEl.textContent = p.title;
-      yearEl.textContent = p.year || "";
-      descEl.textContent = p.desc || "";
+  const titleEl = document.getElementById("fpTitle");
+  const yearEl = document.getElementById("fpYear");
+  const descEl = document.getElementById("fpDesc");
+  const tagsEl = document.getElementById("fpTags");
+  const githubEl = document.getElementById("fpGithub");
+  const videoEl = document.getElementById("fpVideo");
+  const dotsEl = document.getElementById("fpDots");
 
-      tagsEl.innerHTML = "";
-      (p.tags || []).forEach(t => {
-        const span = document.createElement("span");
-        span.className = "fp-tag";
-        span.textContent = t;
-        tagsEl.appendChild(span);
-      });
+  let idx = 0;
 
-      if (p.github) {
-        githubEl.href = p.github;
-        githubEl.style.display = "inline-block";
-      } else {
-        githubEl.style.display = "none";
-      }
+  function render() {
+    const p = projects[idx];
+    titleEl.textContent = p.title;
+    yearEl.textContent = p.year;
+    descEl.textContent = p.desc;
+    tagsEl.innerHTML = p.tags.map(t => `<span class="fp-tag">${t}</span>`).join("");
+    githubEl.href = p.github;
+    videoEl.style.display = p.video ? "inline-block" : "none";
 
-      if (p.video) {
-        videoEl.href = p.video;
-        videoEl.style.display = "inline-block";
-      } else {
-        videoEl.style.display = "none";
-      }
+    dotsEl.innerHTML = projects.map((_, i) =>
+      `<span class="fp-dot ${i === idx ? "active" : ""}" onclick="setProject(${i})"></span>`
+    ).join("");
+  }
 
-      renderDots();
-    }
+  function setProject(i) {
+    idx = i;
+    render();
+  }
 
-    function updateProject(withFade = false) {
-      const p = projects[idx];
-      if (!withFade) {
-        setProject(p);
-        return;
-      }
+  setInterval(() => {
+    idx = (idx + 1) % projects.length;
+    render();
+  }, 5000);
 
-      card.classList.add("fade-out");
-      setTimeout(() => {
-        setProject(p);
-        card.classList.remove("fade-out");
-      }, 350);
-    }
+  render();
+</script>
 
-    function nextProject() {
-      idx = (idx + 1) % projects.length;
-      updateProject(true);
-    }
-
-    function restartAuto() {
-      if (timer) clearInterval(timer);
-      timer = setInterval(nextProject, 5000);
-    }
-
-    // init
-    setProject(projects[idx]);
-    restartAuto();
-  </script>
 </body>
 </html>
