@@ -1,279 +1,361 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - M A HAFIZ</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education - M A HAFIZ</title>
 
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-        }
+  <style>
+    body{
+      text-align:center;
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f4f4f9;
+      color:#222;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    header{
+      background:#1f1f1f;
+      color:#fff;
+      padding:22px 15px;
+    }
+    header h1{ margin:0 0 8px; letter-spacing:1px; }
+    header p{ margin:4px 0; opacity:.95; }
 
-            nav ul li {
-                display: inline;
-                margin: 0 15px;
-            }
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin:14px 0 0;
+    }
+    nav ul li{
+      display:inline;
+      margin:0 12px;
+    }
+    nav ul li a{
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+    }
+    nav ul li a:hover{ text-decoration:underline; }
 
-                nav ul li a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 18px;
-                }
+    .content{
+      padding:40px 20px;
+      max-width:1000px;
+      margin:0 auto;
+      text-align:left;
+    }
 
-        .content {
-            padding: 50px;
-        }
+    .page-title{
+      text-align:center;
+      margin:0 0 10px;
+    }
+    .page-sub{
+      text-align:center;
+      margin:0 0 26px;
+      color:#444;
+      line-height:1.6;
+    }
 
-        .education-section {
-            text-align: left;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    .section-title{
+      margin:28px 0 10px;
+      font-size:18px;
+      color:#111;
+    }
 
-        .institution {
-            font-weight: bold;
-            font-size: 18px;
-        }
+    .education-section{
+      text-align:left;
+      max-width:1000px;
+      margin:14px auto;
+      padding:18px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.07);
+    }
 
-        .details {
-            font-size: 16px;
-            margin-bottom: 10px;
-            display: none; /* Hidden initially */
-        }
+    .institution{
+      font-weight:700;
+      font-size:16px;
+      margin:0 0 6px;
+      line-height:1.35;
+      color:#222;
+    }
 
-        .toggle-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    .degree-meta{
+      color:#666;
+      font-size:13px;
+      margin:0 0 10px;
+      line-height:1.6;
+    }
 
-        .details img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-    </style>
+    .details{
+      font-size:15px;
+      margin-top:12px;
+      display:none;
+      line-height:1.7;
+      color:#222;
+    }
+
+    .toggle-btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 14px;
+      background:#008CBA;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:13px;
+      transition:0.2s ease;
+    }
+    .toggle-btn:hover{ opacity:.92; transform: translateY(-1px); }
+
+    .pillwrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 0;
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eef3ff;
+      border:1px solid #d6e0ff;
+      color:#1b3a74;
+    }
+
+    .details img{
+      max-width:100%;
+      height:auto;
+      margin-top:12px;
+      border-radius:10px;
+      border:1px solid #e6e6ee;
+    }
+
+    .divider{
+      height:1px;
+      background:#e8e8ef;
+      margin:22px 0;
+    }
+
+    @media (max-width: 900px){
+      nav ul li{ display:inline-block; margin:6px 10px; }
+      .content{ padding:30px 16px; }
+    }
+  </style>
 </head>
+
 <body>
 
-     <header>
-        <h1>M A HAFIZ</h1>
-        <p>Engineer | B.Sc. in EEE, M.Sc. in Medical Engineering</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="education.html">Education & Internship</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Results.html">Results</a></li>
-                <li><a href="Architecture.html">Architecture</a></li>
-                <li><a href="professional.html">Professional Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="content">
-        <h2>Education</h2>
-        <div class="education-section">
-            <p class="institution">Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany</p>
-            <p>M.Sc. in Medizintechnik (Medical Image and Data Processing) </p>
-            <button class="toggle-btn" onclick="toggleDetails('msc')">View Details</button>
-            <div class="details" id="msc">
-                <p><strong>Thesis Topic:</strong> Intuitive Control of Franka Robotic Arm Using Hand Gesture</p>
+  <header>
+    <h1>M A HAFIZ</h1>
+    <p><strong>Robotics Simulation & Control Engineer</strong></p>
+    <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
 
-                <p>
-                    Designed and implemented a gesture-based control system for the Franka Emika Panda robotic arm, enabling intuitive human-robot interaction for complex manipulation tasks. The system interprets hand gestures to control robot motion and gripper functionality in real-time.
-                </p>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="education.html">Education & Internship</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <!-- Use lowercase filenames to avoid GitHub Pages 404 -->
+        <li><a href="results.html">Results</a></li>
+        <li><a href="Architecture.html">Architecture</a></li>
+        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-                <p><strong>Implementation Highlights:</strong></p>
-                <ul>
-                    <li>Developed a gesture recognition system using simulated EMG input for gesture classification.</li>
-                    <li>Created a custom MuJoCo-based simulation pipeline integrated within iM Blocks using C# and Python.</li>
-                    <li>Implemented a gesture-based UX menu to select control modes: Cartesian movement or gripper control.</li>
-                    <li>Mapped gestures to robot joint velocities and Cartesian-space commands using inverse kinematics and Jacobian-based control.</li>
-                    <li>Executed tasks like peg-in-hole, screwing, and object insertion using a multi-stage gesture flow.</li>
-                </ul>
+  <div class="content">
+    <h2 class="page-title">Education & Internships</h2>
+    <p class="page-sub">
+      Academic background with a focus on robotics, signal processing, medical AI, and hands-on multidisciplinary training.
+    </p>
 
-                <p><strong>Core & Specialized Coursework:</strong></p>
-                <ul>
-                    <li><strong>Medical AI & Image Processing:</strong> Biomedical Signal Analysis, Magnetic Resonance Imaging (MRI), Pattern Recognition, Pattern Analysis, Machine Learning for Time Series, Data Science Survival Skills</li>
-                    <li><strong>Neuroscience & Interfaces:</strong> Interfacing the Neuromuscular System, Cognitive Neuroscience for AI Developers, Movement Neuroscience</li>
-                    <li><strong>Engineering & Programming:</strong> Advanced C++ Programming, Human-Computer Interaction, Seminar on Learning in Medical Robotics</li>
-                    <li><strong>Medical Foundation:</strong> Anatomy and Physiology for Engineers, Machine Learning in MRI</li>
-                </ul>
+    <h3 class="section-title">Education</h3>
 
-                
-            </div>
-        </div>
+    <!-- MSc -->
+    <div class="education-section">
+      <p class="institution">Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Germany</p>
+      <p class="degree-meta">
+        <strong>M.Sc. in Medical Engineering (Medizintechnik)</strong> — Medical Image & Data Processing • <strong>Status:</strong> Completed
+        <!-- Optional: add your completion month/year -->
+        <!-- • <strong>Completed:</strong> MM/YYYY -->
+      </p>
 
+      <div class="pillwrap">
+        <span class="pill">Robotics</span>
+        <span class="pill">EMG + IMU</span>
+        <span class="pill">MuJoCo</span>
+        <span class="pill">Control</span>
+        <span class="pill">Medical AI</span>
+      </div>
 
-        <div class="education-section">
-            <p class="institution">Chittagong University of Engineering & Technology, Bangladesh</p>
-            <p>B.Sc. in Electrical & Electronic Engineering | Year of Passing: 12/2018</p>
-            <button class="toggle-btn" onclick="toggleDetails('bsc')">View Details</button>
-            <div class="details" id="bsc">
-                <p><strong>Thesis Title:</strong> Design and Implementation of Non-Contact Ballistocardiogram Signal Measurement in Bed and Disease Detection from BCG Signal</p>
+      <button class="toggle-btn" onclick="toggleDetails('msc')">View Details</button>
 
-                <p><strong>Thesis Grade:</strong> 1.0</p>
+      <div class="details" id="msc">
+        <p><strong>Thesis Topic:</strong> Intuitive Control of Franka Robotic Arm Using Hand Gesture</p>
 
-                <p>
-                    <strong>Abstract:</strong> Heart’s valvular disease is one of the major concerns in modern healthcare. While ECG is the standard method for cardiac monitoring, its invasive nature can be uncomfortable for long-term use. This research proposed a non-invasive approach for detecting cardiac performance using Ballistocardiogram (BCG) signals captured through a piezoelectric sensor array embedded in a bed. The device captures the ballistic forces of the heart and compares them with conventional ECG results.
-                </p>
-                <p>
-                    BCG data were collected from two local hospitals, maintaining all ethical guidelines. Artificial Neural Network (ANN) and Support Vector Machine (SVM) classifiers were used to analyze and detect valvular diseases — particularly Mitral Valve Stenosis and Pulmonary Valve Stenosis. The model's performance was evaluated based on overall accuracy, misclassification rate, and fitness. Results show promising potential for comfortable and continuous heart monitoring using non-contact methods.
-                </p>
+        <p>
+          Designed and implemented a gesture-based control system for the Franka Emika Panda robotic arm,
+          enabling intuitive human–robot interaction for complex manipulation tasks. The system interprets
+          hand gestures to control robot motion and gripper functionality in real-time.
+        </p>
 
+        <p><strong>Implementation Highlights:</strong></p>
+        <ul>
+          <li>Gesture recognition pipeline using EMG/IMU features for gesture classification.</li>
+          <li>Custom MuJoCo simulation pipeline integrated within iM Blocks using C# and Python.</li>
+          <li>Gesture-based UX menu to select control modes (Cartesian movement / gripper control).</li>
+          <li>Mapped gestures to joint velocities and Cartesian-space commands using IK + Jacobian control.</li>
+          <li>Executed tasks like screw insertion / object manipulation using a multi-stage gesture flow.</li>
+        </ul>
 
-                <img src="images\Bsc_thesis.png" alt="Classification Result" style="max-width: 100%; margin-top: 10px; border-radius: 8px;">
-                <p><strong>Course Highlights:</strong></p>
-                <ul>
-                    <li>Control Systems, Signals & Systems, Digital Signal Processing, VLSI Design</li>
-                    <li>Power System Analysis, Electrical Machines, Power Electronics</li>
-                    <li>Microprocessor & Interfacing, Measurement & Instrumentation</li>
-                    <li>Renewable Energy, High Voltage Engineering, Telecommunication</li>
-                </ul>
-            </div>
-        </div>
+        <p><strong>Core & Specialized Coursework:</strong></p>
+        <ul>
+          <li><strong>Medical AI & Image Processing:</strong> Biomedical Signal Analysis, MRI, Pattern Recognition, Time-Series ML, Data Science</li>
+          <li><strong>Neuroscience & Interfaces:</strong> Neuromuscular Interfaces, Movement Neuroscience, Cognitive Neuroscience</li>
+          <li><strong>Engineering & Programming:</strong> Advanced C++, Human–Computer Interaction, Seminar: Learning in Medical Robotics</li>
+          <li><strong>Medical Foundation:</strong> Anatomy & Physiology for Engineers, Machine Learning in MRI</li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- BSc -->
+    <div class="education-section">
+      <p class="institution">Chittagong University of Engineering & Technology (CUET), Bangladesh</p>
+      <p class="degree-meta">
+        <strong>B.Sc. in Electrical & Electronic Engineering</strong> • <strong>Passed:</strong> 12/2018
+      </p>
 
-        <h2>Internships</h2>
+      <div class="pillwrap">
+        <span class="pill">Signal Processing</span>
+        <span class="pill">Control</span>
+        <span class="pill">Instrumentation</span>
+        <span class="pill">Power Electronics</span>
+        <span class="pill">VLSI</span>
+      </div>
 
-        <div class="education-section">
-            <p class="institution">EXCITE Zurich Summer School on Biomedical Imaging</p>
-            <p>ETH Zurich, Switzerland | September 4, 2023 – September 15, 2023</p>
-            <button class="toggle-btn" onclick="toggleDetails('excite')">View Details</button>
-            <div class="details" id="excite">
-                <p><strong>Overview:</strong></p>
-                <p>
-                    Participated in the prestigious two-week summer school jointly hosted by <strong>ETH Zurich</strong> and the <strong>University of Zurich</strong>, focused on cutting-edge biomedical imaging technologies. The program included <strong>24 lectures, multiple lab sessions, an industry day, a poster symposium</strong>, and covered modalities such as <strong>Machine Learning, MRI, CT, ultrasound, microscopy, and X-ray imaging</strong>.
-                </p>
+      <button class="toggle-btn" onclick="toggleDetails('bsc')">View Details</button>
 
-                <p>
-                    Engaged in a highly interdisciplinary learning environment, gaining both theoretical knowledge and practical hands-on experience. Interacted with leading researchers and clinicians, deepening understanding of medical image acquisition, analysis, and clinical interpretation.
-                </p>
+      <div class="details" id="bsc">
+        <p><strong>Thesis Title:</strong> Non-Contact Ballistocardiogram (BCG) Measurement in Bed & Disease Detection</p>
+        <p><strong>Thesis Grade:</strong> 1.0</p>
 
-                <h4>Workshop Highlight – Full Day (Sep 5)</h4>
-                <p><strong>Ultrasound: nothing to hear, much to see</strong></p>
-                <p><em>Location:</em> University Children’s Hospital Zurich</p>
-                <ul>
-                    <li>Introduced to the physics and principles of cardiac ultrasound and echocardiography.</li>
-                    <li>Explored the anatomy and clinical relevance of right ventricular function.</li>
-                    <li>Group-based case studies and hands-on echocardiographic scanning sessions.</li>
-                </ul>
+        <p>
+          Proposed a non-invasive cardiac monitoring approach using BCG signals captured via a piezoelectric sensor array embedded in a bed,
+          benchmarked against ECG. Applied ANN and SVM classifiers to detect valvular diseases (e.g., Mitral Valve Stenosis, Pulmonary Valve Stenosis)
+          and evaluated accuracy and misclassification rate on hospital-collected data.
+        </p>
 
-                <h4>Half-Day Workshops</h4>
+        <img src="images/Bsc_thesis.png" alt="BCG classification result">
 
-                <p><strong>Sep 6:</strong> Three-dimensional laser scanning confocal microscopy of optically cleared hematopoietic tissues</p>
-                <ul>
-                    <li>Gained hands-on experience with 3D confocal microscopy techniques and optical clearing protocols.</li>
-                    <li>Analyzed hematopoietic organs: bone marrow, liver, and spleen.</li>
-                    <li><em>Location:</em> Häldiweg 4, UZH Central Campus</li>
-                </ul>
+        <p><strong>Course Highlights:</strong></p>
+        <ul>
+          <li>Control Systems, Signals & Systems, Digital Signal Processing, VLSI Design</li>
+          <li>Power System Analysis, Electrical Machines, Power Electronics</li>
+          <li>Microprocessor & Interfacing, Measurement & Instrumentation</li>
+          <li>Renewable Energy, High Voltage Engineering, Telecommunication</li>
+        </ul>
+      </div>
+    </div>
 
-                <p><strong>Sep 7:</strong> Advanced processing and visualization of MRI data for research and clinical needs</p>
-                <ul>
-                    <li>Worked with DICOM datasets; applied filtering, registration, segmentation techniques.</li>
-                    <li>Used 4D-flow cardiac MRI and brain diffusion data for visualization and analysis.</li>
-                    <li><em>Location:</em> ETZ D61-1</li>
-                </ul>
+    <div class="divider"></div>
 
-                <p><strong>Sep 14:</strong> Functional renal MRI</p>
-                <ul>
-                    <li>Explored renal function assessment using DWI, IVIM, DTI, and BOLD imaging techniques.</li>
-                    <li>Collected live data from volunteers and conducted post-processing using specialized imaging software.</li>
-                    <li><em>Location:</em> MR Centre, University Hospital Zurich</li>
-                </ul>
+    <h3 class="section-title">Internships & Training</h3>
 
-                <p><strong>Sep 15:</strong> X-ray imaging techniques and 3D image analysis</p>
-                <ul>
-                    <li>Worked with XCT instruments at Empa’s Center for X-ray Analytics.</li>
-                    <li>Performed real-time 3D reconstruction of materials and biological samples (e.g., cartilage, biofilms, tumors).</li>
-                    <li><em>Location:</em> Empa Dübendorf</li>
-                </ul>
+    <!-- EXCITE -->
+    <div class="education-section">
+      <p class="institution">EXCITE Zurich Summer School on Biomedical Imaging</p>
+      <p class="degree-meta">ETH Zurich, Switzerland • Sep 4, 2023 – Sep 15, 2023</p>
 
-                <p><strong>Skills Gained:</strong> Machine Learning, MRI & ultrasound principles, biomedical image segmentation, 3D reconstruction, multimodal image analysis, scientific communication, and clinical interpretation.</p>
+      <div class="pillwrap">
+        <span class="pill">MRI</span>
+        <span class="pill">Ultrasound</span>
+        <span class="pill">Microscopy</span>
+        <span class="pill">X-ray / XCT</span>
+        <span class="pill">Clinical Imaging</span>
+      </div>
 
+      <button class="toggle-btn" onclick="toggleDetails('excite')">View Details</button>
 
+      <div class="details" id="excite">
+        <p>
+          Participated in a two-week summer school jointly hosted by <strong>ETH Zurich</strong> and the <strong>University of Zurich</strong>,
+          covering biomedical imaging modalities (MRI, CT, ultrasound, microscopy, X-ray) with lectures, lab sessions, industry day, and poster symposium.
+        </p>
 
+        <p><strong>Workshops (selected highlights):</strong></p>
+        <ul>
+          <li><strong>Cardiac ultrasound</strong> + right ventricular function (hands-on scanning sessions)</li>
+          <li><strong>3D confocal microscopy</strong> of optically cleared hematopoietic tissues</li>
+          <li><strong>MRI processing & visualization</strong> (registration, segmentation, 4D-flow, diffusion)</li>
+          <li><strong>Functional renal MRI</strong> (DWI, IVIM, DTI, BOLD) with volunteer data + post-processing</li>
+          <li><strong>X-ray imaging & 3D analysis</strong> with XCT instruments and real-time reconstruction</li>
+        </ul>
 
-                <img src="images\ETH.jpg" alt="ETH Zurich" style="max-width: 100%; margin-top: 20px; border-radius: 8px;">
-            </div>
-        </div>
+        <p><strong>Skills Gained:</strong> multimodal imaging, data processing, segmentation, visualization, scientific communication.</p>
 
+        <img src="images/ETH.jpg" alt="ETH Zurich Summer School">
+      </div>
+    </div>
 
-        <div class="education-section">
-            <p class="institution">Training Institute for Chemical Industries (TICI), Bangladesh</p>
-            <p>Industrial Training Program | Referred by CUET</p>
-            <button class="toggle-btn" onclick="toggleDetails('tici')">View Details</button>
-            <div class="details" id="tici">
-                <p><strong>Overview:</strong> Successfully completed an interdisciplinary industrial training program at the <strong>Training Institute for Chemical Industries (TICI)</strong>. The training was referred and approved by CUET as part of the undergraduate academic requirement.</p>
+    <!-- TICI -->
+    <div class="education-section">
+      <p class="institution">Training Institute for Chemical Industries (TICI), Bangladesh</p>
+      <p class="degree-meta">Industrial Training Program • Referred by CUET</p>
 
-                <h4>Electrical & Electronic Engineering Department</h4>
-                <ul>
-                    <li>Learned electrical safety, switchgear, MCBs, MCCBs, transformer basics, and generator synchronization.</li>
-                    <li>Visited substation setup, solar panel system, motor control systems, and robotics lab for demo and practice.</li>
-                </ul>
+      <div class="pillwrap">
+        <span class="pill">PLC / SCADA</span>
+        <span class="pill">PID Control</span>
+        <span class="pill">Instrumentation</span>
+        <span class="pill">Electrical Safety</span>
+      </div>
 
-                <h4>Instrumentation & Control Engineering Department</h4>
-                <ul>
-                    <li>Worked with sensors, transmitters, instrumentation symbols, and process control setups.</li>
-                    <li>Gained practical knowledge on PLC programming, Ladder Logic, SCADA, PID control, and actuator systems.</li>
-                </ul>
+      <button class="toggle-btn" onclick="toggleDetails('tici')">View Details</button>
 
-                <h4>Mechanical Engineering Department</h4>
-                <ul>
-                    <li>Studied various bearings, mechanical alignment, turbines, and their real-world industrial applications.</li>
-                </ul>
+      <div class="details" id="tici">
+        <p>
+          Completed an interdisciplinary industrial training program approved by CUET, covering electrical systems, instrumentation, control, and safety.
+        </p>
 
-                <h4>Industrial Safety & Health Department</h4>
-                <ul>
-                    <li>Learned about fire protection protocols, and proper use of personal protective equipment (PPE).</li>
-                </ul>
+        <h4>Electrical & Electronic Engineering</h4>
+        <ul>
+          <li>Electrical safety, switchgear, MCB/MCCB, transformer basics, generator synchronization</li>
+          <li>Visited substations, solar systems, motor control systems, and robotics lab demonstrations</li>
+        </ul>
 
-                
-            </div>
-        </div>
+        <h4>Instrumentation & Control Engineering</h4>
+        <ul>
+          <li>Sensors, transmitters, instrumentation symbols, process control setups</li>
+          <li>PLC programming, Ladder Logic, SCADA, PID control, actuators</li>
+        </ul>
 
+        <h4>Mechanical Engineering</h4>
+        <ul>
+          <li>Bearings, alignment, turbines, industrial applications</li>
+        </ul>
 
-        <script>
-            function toggleDetails(id) {
-                var details = document.getElementById(id);
-                if (details.style.display === "none" || details.style.display === "") {
-                    details.style.display = "block";
-                } else {
-                    details.style.display = "none";
-                }
-            }
-        </script>
+        <h4>Industrial Safety & Health</h4>
+        <ul>
+          <li>Fire protection protocols and proper use of PPE</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      const isOpen = details.style.display === "block";
+      details.style.display = isOpen ? "none" : "block";
+    }
+  </script>
 
 </body>
 </html>
