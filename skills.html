@@ -1,154 +1,240 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - M A HAFIZ</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #000000; /* Pure black text */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - M A HAFIZ</title>
 
-        }
+  <style>
+    body{
+      text-align:center;
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f4f4f9;
+      color:#222;
+    }
 
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-        }
+    header{
+      background:#1f1f1f;
+      color:#fff;
+      padding:22px 15px;
+    }
+    header h1{ margin:0 0 8px; letter-spacing:1px; }
+    header p{ margin:4px 0; opacity:.95; }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin:14px 0 0;
+    }
+    nav ul li{
+      display:inline;
+      margin:0 12px;
+    }
+    nav ul li a{
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+    }
+    nav ul li a:hover{ text-decoration:underline; }
 
-            nav ul li {
-                display: inline;
-                margin: 0 15px;
-            }
+    .content{
+      padding:40px 20px;
+      max-width:1000px;
+      margin:0 auto;
+      text-align:left;
+    }
 
-                nav ul li a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 18px;
-                }
+    .page-title{
+      text-align:center;
+      margin:0 0 10px;
+    }
+    .page-sub{
+      text-align:center;
+      margin:0 0 26px;
+      color:#444;
+      line-height:1.6;
+    }
 
-        .skills-section {
-            text-align: left;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    .skills-card{
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.07);
+      padding:18px;
+      margin:14px auto;
+    }
 
-            .skills-section h2 {
-                text-align: center;
-                color: #2c3e50;
-            }
+    .skills-card h3{
+      margin:0 0 10px;
+      color:#111;
+      font-size:16px;
+    }
 
-            .skills-section h3 {
-                margin-top: 25px;
-                color: #000000;
-            }
+    .pillwrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:8px;
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eef3ff;
+      border:1px solid #d6e0ff;
+      color:#1b3a74;
+    }
 
-            .skills-section ul {
-                list-style-type: disc;
-                margin-left: 30px;
-                font-size: 16px;
-                color: #333;
-            }
+    ul{
+      margin:8px 0 0;
+      padding-left:18px;
+      color:#222;
+      line-height:1.7;
+      font-size:15px;
+    }
 
-        footer {
-            margin-top: 50px;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+    footer{
+      margin-top:30px;
+      background:#1f1f1f;
+      color:#fff;
+      padding:14px;
+      font-size:14px;
+    }
+
+    @media (max-width: 900px){
+      nav ul li{ display:inline-block; margin:6px 10px; }
+      .content{ padding:30px 16px; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>M A HAFIZ</h1>
-        <p>Engineer | B.Sc. in EEE, M.Sc. in Medical Engineering</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="education.html">Education & Internship</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Results.html">Results</a></li>
-                <li><a href="Architecture.html">Architecture</a></li>
-                <li><a href="professional.html">Professional Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>M A HAFIZ</h1>
+    <p><strong>Robotics Simulation & Control Engineer</strong></p>
+    <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
 
-    <main class="skills-section">
-        <h2>🛠️ Skills</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="education.html">Education & Internship</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <!-- Use lowercase filenames to avoid GitHub Pages 404 -->
+        <li><a href="Results.html">Results</a></li>
+        <li><a href="Architecture.html">Architecture</a></li>
+        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <h3>Programming Languages</h3>
-        <ul>
-            <li>Python, C++, C, C#, MATLAB, VHDL</li>
-        </ul>
+  <div class="content">
+    <h2 class="page-title">Skills</h2>
+    <p class="page-sub">
+      Core technical skills for robotics simulation, control, HRI, and evaluation infrastructure.
+    </p>
 
-        <h3>Machine Learning & AI</h3>
-        <ul>
-            <li>Linear Regression, Logistic Regression, SVM, KNN, CNN, GMM</li>
-            <li>Stochastic Gradient Descent, Backpropagation</li>
-            <li>Feature Engineering, Signal Processing</li>
-        </ul>
+    <div class="skills-card">
+      <h3>Programming</h3>
+      <div class="pillwrap">
+        <span class="pill">Python</span>
+        <span class="pill">C++</span>
+        <span class="pill">C</span>
+        <span class="pill">C#</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">VHDL</span>
+      </div>
+    </div>
 
-        <h3>Simulation & Robotics</h3>
-        <ul>
-            <li>Gesture-based robot control using MuJoCo + IM Blocks</li>
-            <li>Robot simulation, kinematic modeling, Cartesian control</li>
-            <li>Sensor integration, embedded robotic control</li>
-        </ul>
+    <div class="skills-card">
+      <h3>Robotics & Simulation</h3>
+      <ul>
+        <li>MuJoCo simulation, modeling, and controller integration</li>
+        <li>Cartesian control, inverse kinematics, Jacobian-based control</li>
+        <li>Gesture-based robot control (EMG/IMU → commands) with iM Blocks integration</li>
+        <li>Sim2Real validation mindset: safety limits, latency, robustness checks</li>
+      </ul>
+      <div class="pillwrap">
+        <span class="pill">MuJoCo</span>
+        <span class="pill">ROS / ROS 2</span>
+        <span class="pill">Gazebo</span>
+        <span class="pill">Franka Panda</span>
+        <span class="pill">HRI</span>
+      </div>
+    </div>
 
-        <h3>Simulation & Circuit Design Tools</h3>
-        <ul>
-            <li>AutoCAD, Cadence Virtuoso, PSpice, Proteus</li>
-            <li>MuJoCo, ROS, Arduino IDE</li>
-        </ul>
+    <div class="skills-card">
+      <h3>Machine Learning & Signal Processing</h3>
+      <ul>
+        <li>Classical ML: SVM, KNN, Logistic Regression, GMM</li>
+        <li>Deep Learning basics: CNN, backpropagation</li>
+        <li>Feature engineering for biosignals (EMG/IMU), filtering, preprocessing</li>
+      </ul>
+      <div class="pillwrap">
+        <span class="pill">scikit-learn</span>
+        <span class="pill">NumPy</span>
+        <span class="pill">PyTorch</span>
+      </div>
+    </div>
 
-        <h3>Development & Programming Tools</h3>
-        <ul>
-            <li>Microsoft Visual Studio, Git, GitHub, IM Blocks</li>
-            <li>Docker, PyTorch, scikit-learn, NumPy</li>
-        </ul>
+    <div class="skills-card">
+      <h3>Tools & Dev Workflow</h3>
+      <ul>
+        <li>Git/GitHub, Docker, CI-style workflows</li>
+        <li>Visual Studio / VS Code, Linux/Windows development</li>
+        <li>Data handling: Pandas, CSV/JSON artifacts, reproducible runs</li>
+      </ul>
+      <div class="pillwrap">
+        <span class="pill">Git</span>
+        <span class="pill">GitHub</span>
+        <span class="pill">Docker</span>
+        <span class="pill">iM Blocks</span>
+      </div>
+    </div>
 
-        <h3>Soft Skills</h3>
-        <ul>
-            <li>Teamwork & Collaboration</li>
-            <li>Effective Communication</li>
-            <li>Problem Solving</li>
-            <li>Adaptability & Quick Learning</li>
-            <li>Project Management</li>
-            <li>Time Management & Task Prioritization</li>
-        </ul>
+    <div class="skills-card">
+      <h3>Hardware / Embedded & Design Tools</h3>
+      <ul>
+        <li>Arduino, microcontrollers, sensor integration</li>
+        <li>Cadence Virtuoso, PSpice, Proteus, AutoCAD</li>
+      </ul>
+      <div class="pillwrap">
+        <span class="pill">Arduino</span>
+        <span class="pill">Cadence Virtuoso</span>
+        <span class="pill">PSpice</span>
+        <span class="pill">Proteus</span>
+        <span class="pill">AutoCAD</span>
+      </div>
+    </div>
 
-        <h3>Languages</h3>
-        <ul>
-            <li>English – Fluent</li>
-            <li>German – Intermediate</li>
-            <li>Bengali – Native</li>
-        </ul>
-    </main>
+    <div class="skills-card">
+      <h3>Languages</h3>
+      <ul>
+        <li>English — Fluent</li>
+        <li>German — Intermediate</li>
+        <li>Bengali — Native</li>
+      </ul>
+    </div>
 
-    <footer>
-        <p>© 2025 M A HAFIZ</p>
-    </footer>
+    <div class="skills-card">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Clear communication and cross-functional collaboration</li>
+        <li>Structured problem solving and debugging mindset</li>
+        <li>Ownership, fast learning, and project execution</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 M A HAFIZ</p>
+  </footer>
 
 </body>
 </html>
