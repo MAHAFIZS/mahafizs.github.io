@@ -1,482 +1,553 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - M A HAFIZ</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - M A HAFIZ</title>
 
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-        }
+  <style>
+    body{
+      text-align:center;
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f4f4f9;
+      color:#222;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    header{
+      background:#1f1f1f;
+      color:#fff;
+      padding:22px 15px;
+    }
+    header h1{ margin:0 0 8px; letter-spacing:1px; }
+    header p{ margin:4px 0; opacity:.95; }
 
-            nav ul li {
-                display: inline;
-                margin: 0 15px;
-            }
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin:14px 0 0;
+    }
+    nav ul li{
+      display:inline;
+      margin:0 12px;
+    }
+    nav ul li a{
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+    }
+    nav ul li a:hover{ text-decoration:underline; }
 
-                nav ul li a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 18px;
-                }
+    .content{
+      padding:40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align:left;
+    }
 
-        .content {
-            padding: 50px;
-        }
+    .page-title{
+      text-align:center;
+      margin:0 0 10px;
+    }
+    .page-sub{
+      text-align:center;
+      margin:0 0 26px;
+      color:#444;
+      line-height:1.6;
+    }
 
-        .project-section {
-            text-align: left;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    .section-title{
+      margin:28px 0 10px;
+      font-size:18px;
+      color:#111;
+    }
+    .section-sub{
+      margin:0 0 14px;
+      color:#555;
+      line-height:1.6;
+    }
 
-        .project-title {
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-        }
+    .project-section{
+      text-align:left;
+      max-width: 1000px;
+      margin:14px auto;
+      padding:18px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.07);
+    }
 
-        .details {
-            font-size: 16px;
-            margin-bottom: 10px;
-            display: none;
-        }
+    .project-title{
+      font-weight:700;
+      font-size:16px;
+      color:#222;
+      margin:0 0 6px;
+      line-height:1.35;
+    }
 
-        .toggle-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-    </style>
+    .project-meta{
+      color:#666;
+      font-size:13px;
+      margin:0 0 10px;
+      line-height:1.5;
+    }
+
+    .details{
+      font-size:15px;
+      margin-top:12px;
+      display:none;
+      line-height:1.7;
+      color:#222;
+    }
+
+    .toggle-btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 14px;
+      background:#008CBA;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:13px;
+      transition: 0.2s ease;
+    }
+    .toggle-btn:hover{ opacity:.92; transform: translateY(-1px); }
+
+    .pillwrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 0;
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eef3ff;
+      border:1px solid #d6e0ff;
+      color:#1b3a74;
+    }
+
+    .links ul{ margin:8px 0 0; padding-left:18px; }
+    .links a{ text-decoration:none; }
+    .links a:hover{ text-decoration:underline; }
+
+    .divider{
+      height:1px;
+      background:#e8e8ef;
+      margin:18px 0;
+    }
+
+    @media (max-width: 900px){
+      nav ul li{ display:inline-block; margin:6px 10px; }
+      .content{ padding:30px 16px; }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>M A HAFIZ</h1>
+    <p><strong>Robotics Simulation & Control Engineer</strong></p>
+    <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
 
-     <header>
-        <h1>M A HAFIZ</h1>
-        <p>Engineer | B.Sc. in EEE, M.Sc. in Medical Engineering</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="education.html">Education & Internship</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Results.html">Results</a></li>
-                <li><a href="Architecture.html">Architecture</a></li>
-                <li><a href="professional.html">Professional Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="education.html">Education & Internship</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <!-- IMPORTANT: use lowercase filenames to avoid GitHub Pages 404 -->
+        <li><a href="Results.html">Results</a></li>
+        <li><a href="Architecture.html">Architecture</a></li>
+        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-    
-
-    <div class="content">
-        <h2>Projects</h2>
-
-        <div class="project-section">
-  <p class="project-title">
-    Robot Eval Platform – Regression Gating & CI for Robot Learning
-    (FastAPI, React, PostgreSQL, CI/CD, MuJoCo)
-  </p>
-
-  <button class="toggle-btn" onclick="toggleDetails('project-rep')">
-    View Details
-  </button>
-
-  <div class="details" id="project-rep">
-    <p><strong>Year:</strong> 2025 | <strong>Type:</strong> Evaluation Infrastructure / Platform</p>
-
-    <p>
-      Designed and implemented a <strong>company-grade evaluation and regression gating platform</strong>
-      for learning-enabled robot controllers. The system turns simulation or robot rollouts into
-      <strong>episode-level metrics, videos, reports, and SHIP / BLOCK release decisions</strong>.
+  <div class="content">
+    <h2 class="page-title">Projects</h2>
+    <p class="page-sub">
+      A curated selection of my work in robotics simulation, control, sim2real validation, and evaluation infrastructure.
+      Click “View Details” for full breakdowns, demos, and code links.
     </p>
 
-    <p>
-      The platform acts as <strong>CI for robot behavior</strong>, enabling safe deployment decisions
-      by automatically comparing candidate runs against locked baselines using explicit performance
-      and safety rules.
+    <!-- ===================== CORE ROBOTICS / INFRA (TOP) ===================== -->
+    <h3 class="section-title">Robotics & Evaluation Infrastructure</h3>
+    <p class="section-sub">
+      These are the projects most relevant to Robotics Simulation / Control / Sim2Real roles.
     </p>
 
-    <p><strong>Key features:</strong></p>
-    <ul>
-      <li>Episode-level metrics & rollout video tracking</li>
-      <li>Baseline vs candidate comparison</li>
-      <li>Automatic regression detection (latency, success, safety)</li>
-      <li>SHIP / BLOCK decisions enforced via GitHub Actions</li>
-      <li>Simulator-agnostic artifact format (not MuJoCo-specific)</li>
-    </ul>
+    <!-- Robot Eval Platform -->
+    <div class="project-section">
+      <p class="project-title">
+        Robot Eval Platform – Regression Gating & CI for Robot Behavior
+      </p>
+      <p class="project-meta">
+        <strong>Year:</strong> 2025–2026 • <strong>Type:</strong> Evaluation Infrastructure / Platform
+      </p>
 
-    <p><strong>Live demo & code:</strong></p>
-    <ul>
-      <li>
-        <a href="https://github.com/MAHAFIZS/robot-eval-platform/releases/tag/v1.0-demo" target="_blank">
-          🎥 Regression Gating Demo (GitHub Release)
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/MAHAFIZS/robot-eval-platform" target="_blank">
-          🔗 Robot Eval Platform – GitHub Repository
-        </a>
-      </li>
-    </ul>
+      <div class="pillwrap">
+        <span class="pill">FastAPI</span>
+        <span class="pill">React + TypeScript</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">MinIO / S3</span>
+        <span class="pill">CI/CD</span>
+      </div>
 
-    <p>
-      <em>
-        Note: The failing GitHub Action in the demo is intentional and demonstrates
-        performance-based release gating.
-      </em>
-    </p>
-  </div>
-</div>
+      <button class="toggle-btn" onclick="toggleDetails('project-rep')">View Details</button>
 
+      <div class="details" id="project-rep">
+        <p>
+          Designed and implemented a <strong>company-grade evaluation and regression gating platform</strong>
+          for learning-enabled controllers and classical robotics stacks. The platform converts rollouts into
+          <strong>episode-level metrics, videos, reports</strong> and enforces an explicit
+          <strong>SHIP / BLOCK</strong> decision before deployment.
+        </p>
 
-        <div class="project-section" id="thesis">
-  <p class="project-title">
-    M.Sc. Thesis – IMU-Based Gesture Control for Franka Emika Panda
-    (IMU, EMG, ROS, MuJoCo, Real Robot)
-  </p>
+        <p><strong>Key features:</strong></p>
+        <ul>
+          <li>Episode-level metrics & rollout video tracking</li>
+          <li>Baseline vs candidate comparison (locked baselines)</li>
+          <li>Automatic regression detection (success, latency, safety)</li>
+          <li>Gate decisions enforceable via CI (GitHub Actions)</li>
+          <li>Simulator-agnostic artifact format (not MuJoCo-specific)</li>
+        </ul>
 
-  <button class="toggle-btn" onclick="toggleDetails('project-thesis')">
-    View Details
-  </button>
+        <div class="links">
+          <p><strong>Demo & code:</strong></p>
+          <ul>
+            <li>
+              <a href="https://github.com/MAHAFIZS/robot-eval-platform/releases/tag/v1.0-demo" target="_blank" rel="noopener">
+                🎥 Regression Gating Demo (GitHub Release)
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/MAHAFIZS/robot-eval-platform" target="_blank" rel="noopener">
+                🔗 Robot Eval Platform – GitHub Repository
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  <div class="details" id="project-thesis">
-    <p>
-      <strong>Year:</strong> 2024–2025 |
-      <strong>Institution:</strong> FAU Erlangen-Nürnberg
-    </p>
+        <p><em>Note: The failing GitHub Action in the demo is intentional and demonstrates performance-based release gating.</em></p>
+        <p>
+          Related pages:
+          <a href="results.html">Results</a> • <a href="architecture.html">Architecture</a>
+        </p>
+      </div>
+    </div>
 
-    <p>
-      Developed an <strong>IMU-based gesture recognition and Cartesian robot control system</strong>
-      for intuitive human–robot interaction. The system processes raw IMU signals
-      (accelerometer, gyroscope) for <strong>orientation estimation, filtering, and noise handling</strong>,
-      combines them with EMG features, and maps gestures to real-time Cartesian and rotational
-      robot commands.
-    </p>
+    <!-- MSc Thesis -->
+    <div class="project-section" id="thesis">
+      <p class="project-title">
+        M.Sc. Thesis – Gesture-Based Cartesian Control for Franka Emika Panda
+      </p>
+      <p class="project-meta">
+        <strong>Year:</strong> 2024–2025 • <strong>Institution:</strong> FAU Erlangen-Nürnberg
+      </p>
 
-    <p>
-      The pipeline was validated in <strong>MuJoCo simulation</strong> and transferred to a
-      <strong>real Franka Emika Panda robot</strong>, addressing real-world constraints such as
-      <strong>latency, sensor noise, safety, and hardware variability</strong>.
-    </p>
+      <div class="pillwrap">
+        <span class="pill">IMU</span>
+        <span class="pill">EMG</span>
+        <span class="pill">MuJoCo</span>
+        <span class="pill">Real Franka Panda</span>
+        <span class="pill">IK / Jacobian</span>
+      </div>
 
-    <p><strong>Key contributions:</strong></p>
-    <ul>
-      <li>IMU preprocessing: filtering, normalization, orientation estimation</li>
-      <li>Gesture recognition using IMU + EMG features</li>
-      <li>Cartesian and rotational control using IK and Jacobians</li>
-      <li>Simulation-to-real transfer and robustness evaluation</li>
-      <li>Contact-rich screw insertion with coordinated axial + rotational motion</li>
-    </ul>
+      <button class="toggle-btn" onclick="toggleDetails('project-thesis')">View Details</button>
 
-    <p><strong>Related demos & code:</strong></p>
-    <ul>
-      <li>
-        <a href="https://www.youtube.com/watch?v=Q26zdV5uKMU" target="_blank">
-          🎥 MuJoCo + Real Robot Demo Video
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/MAHAFIZS/mujoco-franka-simulation" target="_blank">
-          🔗 MuJoCo Simulation Repository
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-        <div class="project-section">
-    <p class="project-title">MuJoCo Simulation Environment for Franka Emika Panda (Python, MuJoCo)</p>
-    <button class="toggle-btn" onclick="toggleDetails('project-mujoco')">View Details</button>
-    <div class="details" id="project-mujoco">
-        <p><strong>Year:</strong> 2024–2025 | <strong>Type:</strong> M.Sc. thesis project</p>
+      <div class="details" id="project-thesis">
+        <p>
+          Developed a <strong>gesture-based Cartesian and rotational control system</strong> for intuitive human–robot interaction.
+          The pipeline processes IMU signals (acc/gyro) for <strong>orientation estimation, filtering, and noise handling</strong>,
+          combines them with EMG features, and maps gestures to stable real-time robot commands.
+        </p>
 
         <p>
-            Designed and implemented a MuJoCo simulation environment that mirrors the real Franka Emika Panda
-            lab setup, including the table, screw box, and screwdriver tool. Used for gesture-based teleoperation
-            and screwing/pick-and-place tasks.
+          Validated in <strong>MuJoCo simulation</strong> and transferred to a <strong>real Franka Emika Panda robot</strong>,
+          addressing practical constraints including <strong>latency, sensor noise, safety limits, and hardware variability</strong>.
+        </p>
+
+        <p><strong>Key contributions:</strong></p>
+        <ul>
+          <li>IMU preprocessing: filtering, normalization, orientation estimation</li>
+          <li>Gesture recognition using IMU + EMG features</li>
+          <li>Cartesian & rotational control using IK and Jacobians</li>
+          <li>Simulation-to-real transfer and robustness evaluation</li>
+          <li>Contact-rich screw insertion with coordinated axial + rotational motion</li>
+        </ul>
+
+        <div class="links">
+          <p><strong>Demos & code:</strong></p>
+          <ul>
+            <li>
+              <a href="https://www.youtube.com/watch?v=Q26zdV5uKMU" target="_blank" rel="noopener">
+                🎥 MuJoCo + Real Robot Demo Video
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/MAHAFIZS/mujoco-franka-simulation" target="_blank" rel="noopener">
+                🔗 MuJoCo Simulation Repository
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MuJoCo Simulation -->
+    <div class="project-section">
+      <p class="project-title">MuJoCo Simulation Environment for Franka Emika Panda</p>
+      <p class="project-meta"><strong>Year:</strong> 2024–2025 • <strong>Type:</strong> Simulation / Digital Twin</p>
+
+      <div class="pillwrap">
+        <span class="pill">Python</span>
+        <span class="pill">MuJoCo</span>
+        <span class="pill">Franka Panda</span>
+        <span class="pill">HRI</span>
+      </div>
+
+      <button class="toggle-btn" onclick="toggleDetails('project-mujoco')">View Details</button>
+
+      <div class="details" id="project-mujoco">
+        <p>
+          Designed a MuJoCo environment that mirrors the lab setup (table, screw box, tool) used for
+          gesture-based teleoperation and screwing / pick-and-place experiments.
         </p>
 
         <p><strong>Demo video:</strong></p>
-
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-            <iframe 
-                src="https://www.youtube.com/embed/Q26zdV5uKMU"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="position:absolute; top:0; left:0; width:100%; height:100%;">
-            </iframe>
+          <iframe
+            src="https://www.youtube.com/embed/Q26zdV5uKMU"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
         </div>
 
         <p style="margin-top:10px;">
-            <a href="https://github.com/MAHAFIZS/mujoco-franka-simulation" target="_blank">
-                🔗 View MuJoCo Franka Simulation on GitHub
-            </a>
+          <a href="https://github.com/MAHAFIZS/mujoco-franka-simulation" target="_blank" rel="noopener">
+            🔗 View MuJoCo Franka Simulation on GitHub
+          </a>
         </p>
+      </div>
     </div>
-</div>
 
-        <div class="project-section">
-    <p class="project-title">Pick & Place in MuJoCo using Franka Emika Panda (Python, GUI)</p>
-    <button class="toggle-btn" onclick="toggleDetails('pickplace-project')">View Details</button>
+    <!-- Pick & Place -->
+    <div class="project-section">
+      <p class="project-title">Pick & Place in MuJoCo using Franka Emika Panda</p>
+      <p class="project-meta"><strong>Year:</strong> 2025 • <strong>Type:</strong> Manipulation Pipeline</p>
 
-    <div class="details" id="pickplace-project">
-        <p><strong>Year:</strong> 2025 | <strong>Type:</strong> Robotics Project</p>
+      <div class="pillwrap">
+        <span class="pill">Python</span>
+        <span class="pill">MuJoCo</span>
+        <span class="pill">Cartesian Control</span>
+        <span class="pill">Tkinter GUI</span>
+      </div>
 
+      <button class="toggle-btn" onclick="toggleDetails('pickplace-project')">View Details</button>
+
+      <div class="details" id="pickplace-project">
         <p>
-            Developed a complete <strong>Pick & Place system</strong> for the Franka Emika Panda robot in 
-            <strong>MuJoCo</strong> using Python. The system uses 
-            <strong>Cartesian impedance control</strong>, automatic object detection,
-            and a <strong>custom Tkinter GUI</strong> for interaction.
-        </p>
-
-        <p>
-            The robot automatically detects the target object (e.g., <em>box</em>), 
-            generates smooth Cartesian trajectories (hover → pre-grasp → grasp → lift → place), 
-            and executes the full sequence through GUI controls.
+          Implemented a full pick & place pipeline in MuJoCo with a custom Tkinter GUI:
+          detect → hover → pre-grasp → grasp → lift → place. Emphasized smooth Cartesian behavior and
+          repeatable execution.
         </p>
 
         <p><strong>Demo Video:</strong></p>
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-bottom:15px;">
-            <iframe 
-                src="https://www.youtube.com/embed/Mtgy2_O2Gi0"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="position:absolute; top:0; left:0; width:100%; height:100%;">
-            </iframe>
+          <iframe
+            src="https://www.youtube.com/embed/Mtgy2_O2Gi0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
         </div>
 
         <p>
-            <a href="https://github.com/MAHAFIZS/mujoco-panda-pick-place" 
-               target="_blank">
-               🔗 View Project on GitHub
-            </a>
+          <a href="https://github.com/MAHAFIZS/mujoco-panda-pick-place" target="_blank" rel="noopener">
+            🔗 View Project on GitHub
+          </a>
         </p>
+      </div>
     </div>
-</div>
-<div class="project-section">
-  <p class="project-title">ROS2 Nav2 Autonomous Navigation (Custom Behavior Tree, Gazebo, RViz)</p>
-  <button class="toggle-btn" onclick="toggleDetails('project-nav2')">View Details</button>
 
-  <div class="details" id="project-nav2">
-    <p><strong>Year:</strong> 2025 | <strong>Type:</strong> ROS2 portfolio project</p>
+    <!-- Nav2 -->
+    <div class="project-section">
+      <p class="project-title">ROS2 Nav2 Autonomous Navigation (Custom Behavior Tree)</p>
+      <p class="project-meta"><strong>Year:</strong> 2025 • <strong>Type:</strong> ROS2 Navigation Demo</p>
 
-    <p>
-      Built a stable autonomous navigation demo using ROS2 Nav2 in simulation. Integrated a custom Behavior Tree
-      and validated recovery behavior by blocking the robot path and observing replanning and goal completion
-      using “Navigate Through Poses” in RViz.
-    </p>
+      <div class="pillwrap">
+        <span class="pill">ROS 2</span>
+        <span class="pill">Nav2</span>
+        <span class="pill">Behavior Tree</span>
+        <span class="pill">Gazebo</span>
+        <span class="pill">RViz</span>
+      </div>
 
-    <p><strong>Demo video:</strong></p>
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-  <iframe
-    src="https://www.youtube.com/embed/bf57h5XZcK4"
-    title="ROS2 Nav2 Autonomous Navigation Demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-    style="position:absolute; top:0; left:0; width:100%; height:100%;">
-  </iframe>
-</div>
+      <button class="toggle-btn" onclick="toggleDetails('project-nav2')">View Details</button>
 
-
-    <p style="margin-top:10px;">
-      <a href="https://github.com/MAHAFIZS/ros2-nav2-autonomous-navigation" target="_blank">
-        🔗 View ROS2 Nav2 Project on GitHub
-      </a>
-    </p>
-  </div>
-</div>
-
-<div class="project-section">
-    <p class="project-title">ROS2 SLAM Mapping with TurtleBot3 (ROS2 Jazzy, Gazebo)</p>
-    <button class="toggle-btn" onclick="toggleDetails('project-ros2-slam')">View Details</button>
-
-    <div class="details" id="project-ros2-slam">
-        <p><strong>Year:</strong> 2025 | <strong>Type:</strong> Robotics Project</p>
-
+      <div class="details" id="project-nav2">
         <p>
-            Implemented a complete <strong>SLAM pipeline</strong> in ROS2 Jazzy using
-            <strong>TurtleBot3</strong> in Gazebo. The project includes SLAM Toolbox
-            (online async), keyboard teleoperation, RViz2 visualization, and map saving
-            for later Navigation2 experiments.
+          Built a stable Nav2 demo in simulation. Integrated a custom Behavior Tree and validated
+          recovery behavior by blocking the robot path and observing replanning + goal completion.
         </p>
 
-        <!-- Image of your LinkedIn banner or SLAM setup -->
-        <p><strong>Project image:</strong></p>
-        <img src="images/turtle.png"
-             alt="ROS2 SLAM Mapping with TurtleBot3 in Gazebo"
-             style="max-width:100%; border-radius:6px; margin-bottom:15px;">
-
-        <!-- Optional: demo video (e.g. YouTube) -->
-        <!--
         <p><strong>Demo video:</strong></p>
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin-bottom:15px;">
-            <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="position:absolute; top:0; left:0; width:100%; height:100%;">
-            </iframe>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+          <iframe
+            src="https://www.youtube.com/embed/bf57h5XZcK4"
+            title="ROS2 Nav2 Autonomous Navigation Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
         </div>
-        -->
 
-        <p>
-            <a href="https://github.com/MAHAFIZS/turtlebot3_slam_maps" target="_blank">
-                🔗 View ROS2 SLAM Mapping Project on GitHub
-            </a>
+        <p style="margin-top:10px;">
+          <a href="https://github.com/MAHAFIZS/ros2-nav2-autonomous-navigation" target="_blank" rel="noopener">
+            🔗 View ROS2 Nav2 Project on GitHub
+          </a>
         </p>
-    </div>
-</div>
-
-
-  
-
-       <div class="project-section">
-    <p class="project-title">Mine Sweeping Robot (Raspberry Pi)</p>
-    <button class="toggle-btn" onclick="toggleDetails('project3')">View Details</button>
-    <div class="details" id="project3">
-        <p>
-            Developed a landmine-detecting robot using a Raspberry Pi and sensors as part of a national Robo-Fight competition at Malaysia.
-            The system uses obstacle avoidance and metal detection to simulate real-world mine detection and removal.
-        </p>
-
-        <p>
-            You can see the robot demo and look at my role 
-            <a href="https://www.youtube.com/watch?v=6KEIdI9ZEfY&t=123s" target="_blank"><strong>2:03</strong></a>.
-        </p>
-
-        <p>
-            GitHub repository (with teammate Md. Kaiser Raihan):  
-            <a href="https://github.com/MAHAFIZS/Land-Mining-Competition" target="_blank">
-                🔗 View on GitHub
-            </a>
-        </p>
-
-        <p><strong>Collaborated with:</strong> <a href="https://github.com/rahi008" target="_blank">Rahi008</a></p>
-    </div>
-</div>
-
-
-
-
-        
-
-       <div class="project-section">
-    <p class="project-title">Car Speed Measurement Device (Microcontroller)</p>
-    <button class="toggle-btn" onclick="toggleDetails('project5')">View Details</button>
-    <div class="details" id="project5">
-        <p><strong>Year:</strong> 2017 | <strong>Institution:</strong> Chittagong University of Engineering & Technology (CUET)</p>
-        <p>This was my 3rd-year academic project where I designed and implemented a car speed measurement system using a microcontroller-based embedded setup.</p>
-        
-        <p>The device uses two infrared (IR) sensors placed at a fixed distance (e.g., 20 cm apart) to detect the movement of a toy or model car. As the car passes each sensor, the microcontroller captures timestamps using its internal timer functions. The speed is then calculated with the formula <code>Speed = Distance / Time</code>, and the result is shown in real-time on a 16x2 LCD display.</p>
-        
-        <p>Beyond detecting speed, the system introduced me to real-time processing, sensor interfacing, digital electronics, and embedded programming. It required precise timing mechanisms using interrupts and the integration of both hardware and software components.</p>
-
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Real-time speed calculation using two IR sensors</li>
-            <li>Microcontroller-based timing and interrupt handling</li>
-            <li>Display of speed in km/h on LCD</li>
-            <li>Compact and low-cost hardware design</li>
-            <li>Built using Arduino Uno, Embedded C, and standard IR modules</li>
-        </ul>
-
-        <p><a href="https://github.com/MAHAFIZS/Car-Speed-Measurement" target="_blank">🔗 View Project on GitHub</a></p>
-    </div>
-</div>
-
-
-        <div class="project-section">
-    <p class="project-title">Arduino-based Automatic Plant Irrigation System</p>
-    <button class="toggle-btn" onclick="toggleDetails('project6')">View Details</button>
-    <div class="details" id="project6">
-        <p><strong>Year:</strong> 2015 | <strong>Institution:</strong> Chittagong University of Engineering & Technology (CUET)</p>
-        
-        <p>Designed and developed an automatic plant irrigation system using an Arduino Uno and a resistive soil moisture sensor. The project utilizes a voltage divider circuit to convert varying soil resistance into analog voltage, which the Arduino reads to determine moisture levels.</p>
-
-        <p>When the soil is too dry (i.e., the analog voltage falls below a set threshold), the Arduino activates a water pump via a relay module. Once the soil reaches adequate moisture, the pump is automatically turned off — ensuring optimal water usage and preventing overwatering.</p>
-
-        <p>This was one of my first hardware automation projects and helped me understand analog sensor behavior, voltage divider principles, and relay-based actuation. It was a significant milestone in developing practical embedded systems knowledge.</p>
-
-        <p><strong>Key Features:</strong></p>
-        <ul>
-            <li>Soil moisture monitoring using voltage divider principle</li>
-            <li>Analog input processing on Arduino Uno</li>
-            <li>Relay-controlled submersible water pump</li>
-            <li>Power-efficient, self-regulating system</li>
-        </ul>
-
-        <p><a href="https://github.com/MAHAFIZS/Plant-Irrigation" target="_blank">🔗 View Project on GitHub</a></p>
-    </div>
-</div>
-
-
-        
-       <div class="project-section">
-    <p class="project-title">Design and Analysis of n-bit Comparator in Cadence Virtuoso (VHDL)</p>
-    <button class="toggle-btn" onclick="toggleDetails('project12')">View Details</button>
-    <div class="details" id="project12">
-        <p>
-            Designed and simulated an n-bit comparator circuit using Cadence Virtuoso, covering schematic, layout, DRC/LVS checks, and Verilog simulation.
-            Focused on propagation delay, power, and area optimization.
-        </p>
-        <p><strong>Year:</strong> 2018</p>
-        <p><strong>Tools used:</strong> Cadence Virtuoso, Verilog, SimVision</p>
-        <p>
-            <a href="documents/N_bit_Report.pdf" target="_blank"><strong>📄 View Full Project Report (PDF)</strong></a>
-        </p>
-    </div>
-</div>
-
-
+      </div>
     </div>
 
-    <script>
-        function toggleDetails(id) {
-            var details = document.getElementById(id);
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>
+    <!-- SLAM -->
+    <div class="project-section">
+      <p class="project-title">ROS2 SLAM Mapping with TurtleBot3 (ROS2 Jazzy, Gazebo)</p>
+      <p class="project-meta"><strong>Year:</strong> 2025 • <strong>Type:</strong> SLAM / Mapping</p>
+
+      <div class="pillwrap">
+        <span class="pill">ROS 2 Jazzy</span>
+        <span class="pill">SLAM Toolbox</span>
+        <span class="pill">Gazebo</span>
+        <span class="pill">RViz</span>
+      </div>
+
+      <button class="toggle-btn" onclick="toggleDetails('project-ros2-slam')">View Details</button>
+
+      <div class="details" id="project-ros2-slam">
+        <p>
+          Implemented an online async SLAM pipeline using SLAM Toolbox with Gazebo + teleop + RViz2.
+          Includes map saving for later Navigation2 experiments.
+        </p>
+
+        <p><strong>Project image:</strong></p>
+        <img src="images/turtle.png" alt="ROS2 SLAM Mapping with TurtleBot3 in Gazebo"
+             style="max-width:100%; border-radius:10px; border:1px solid #ddd; margin-bottom:15px;">
+
+        <p>
+          <a href="https://github.com/MAHAFIZS/turtlebot3_slam_maps" target="_blank" rel="noopener">
+            🔗 View ROS2 SLAM Mapping Project on GitHub
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===================== EARLIER PROJECTS (COMPRESSED) ===================== -->
+    <h3 class="section-title">Earlier Embedded & Academic Projects</h3>
+    <p class="section-sub">
+      Earlier work that built my foundation in embedded systems, sensing, and hardware/software integration.
+    </p>
+
+    <!-- Mine Sweeping -->
+    <div class="project-section">
+      <p class="project-title">Mine Sweeping Robot (Raspberry Pi)</p>
+      <p class="project-meta"><strong>Type:</strong> Competition Project • Obstacle avoidance + metal detection</p>
+
+      <button class="toggle-btn" onclick="toggleDetails('project3')">View Details</button>
+      <div class="details" id="project3">
+        <p>
+          Developed a landmine-detecting robot using Raspberry Pi and sensors for a national Robo-Fight competition.
+          Implemented obstacle avoidance and metal detection logic for simulated mine detection/removal.
+        </p>
+
+        <p>
+          Demo timestamp:
+          <a href="https://www.youtube.com/watch?v=6KEIdI9ZEfY&t=123s" target="_blank" rel="noopener"><strong>2:03</strong></a>
+        </p>
+
+        <p>
+          GitHub repo (with teammate Md. Kaiser Raihan):
+          <a href="https://github.com/MAHAFIZS/Land-Mining-Competition" target="_blank" rel="noopener">
+            🔗 View on GitHub
+          </a>
+        </p>
+
+        <p><strong>Collaborated with:</strong> <a href="https://github.com/rahi008" target="_blank" rel="noopener">rahi008</a></p>
+      </div>
+    </div>
+
+    <!-- Car Speed -->
+    <div class="project-section">
+      <p class="project-title">Car Speed Measurement Device (Microcontroller)</p>
+      <p class="project-meta"><strong>Year:</strong> 2017 • <strong>Type:</strong> Embedded Sensing / Timing</p>
+
+      <button class="toggle-btn" onclick="toggleDetails('project5')">View Details</button>
+      <div class="details" id="project5">
+        <p>
+          Built a speed measurement setup using two IR sensors and microcontroller timer interrupts.
+          Computed speed as Distance/Time and displayed real-time results on a 16×2 LCD.
+        </p>
+
+        <p><a href="https://github.com/MAHAFIZS/Car-Speed-Measurement" target="_blank" rel="noopener">🔗 View Project on GitHub</a></p>
+      </div>
+    </div>
+
+    <!-- Plant Irrigation -->
+    <div class="project-section">
+      <p class="project-title">Automatic Plant Irrigation System (Arduino)</p>
+      <p class="project-meta"><strong>Year:</strong> 2015 • <strong>Type:</strong> Sensor-to-Actuation Automation</p>
+
+      <button class="toggle-btn" onclick="toggleDetails('project6')">View Details</button>
+      <div class="details" id="project6">
+        <p>
+          Designed an automatic irrigation system using a soil moisture sensor (voltage divider) and relay-driven pump.
+          Turned the pump on/off based on moisture thresholds for efficient water usage.
+        </p>
+
+        <p><a href="https://github.com/MAHAFIZS/Plant-Irrigation" target="_blank" rel="noopener">🔗 View Project on GitHub</a></p>
+      </div>
+    </div>
+
+    <!-- n-bit Comparator -->
+    <div class="project-section">
+      <p class="project-title">n-bit Comparator in Cadence Virtuoso (VHDL / Verilog)</p>
+      <p class="project-meta"><strong>Year:</strong> 2018 • <strong>Type:</strong> VLSI / Digital Design</p>
+
+      <button class="toggle-btn" onclick="toggleDetails('project12')">View Details</button>
+      <div class="details" id="project12">
+        <p>
+          Designed and simulated an n-bit comparator in Cadence Virtuoso (schematic + layout),
+          verified with DRC/LVS and evaluated delay/power/area trade-offs.
+        </p>
+        <p>
+          <a href="documents/N_bit_Report.pdf" target="_blank" rel="noopener"><strong>📄 View Full Project Report (PDF)</strong></a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      const isOpen = details.style.display === "block";
+      details.style.display = isOpen ? "none" : "block";
+    }
+  </script>
 
 </body>
 </html>
