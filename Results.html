@@ -303,36 +303,178 @@
     </div>
 
     <!-- Franka Panda section (kept as-is, but you can later add real numbers too) -->
+    <!-- ========================================================= -->
+    <!-- 3) FRANKA PANDA — SIM2REAL + GESTURE UX                    -->
+    <!-- ========================================================= -->
     <div class="section">
-      <h3>Franka Panda — Sim2Real Control & Validation</h3>
-      <div class="row">
+      <h3>Franka FR3 — Gesture-Driven UX + Sim2Real Validation (Free-space + Contact-rich)</h3>
+
+      <!-- Franka KPIs (from your thesis excerpt) -->
+      <div class="grid">
         <div class="card">
-          <ul class="bullets">
-            <li>Gesture-based Cartesian control validated in <strong>MuJoCo</strong> and transferred to <strong>real FR3</strong>.</li>
-            <li>Focus on stable behavior: smooth motion, safe limits, and predictable response.</li>
-            <li>Designed for user-centered HRI: minimal gestures with a menu-based control flow.</li>
-          </ul>
-          <div class="tagwrap">
-            <span class="tag">MuJoCo</span><span class="tag">Cartesian Control</span><span class="tag">IK/Jacobian</span>
-            <span class="tag">EMG/IMU</span><span class="tag">HRI</span>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            Next upgrade: add <strong>quantitative plots</strong> (desired vs actual end-effector trajectory) and report translation/rotation error.
-          </div>
+          <p class="kpi">3.06 mm</p>
+          <p class="kpi-label"><strong>Best Final Reach Error</strong> (Task 1)</p>
+          <p class="kpi-note">Participant P02, Trial 5 (Reach task) achieved <strong>3.06 mm</strong> final positioning error.</p>
         </div>
 
         <div class="card">
-          <h4 style="margin:0 0 10px;">Suggested quantitative checks (add later)</h4>
+          <p class="kpi">≈99%</p>
+          <p class="kpi-label"><strong>Learning Improvement</strong> (Reach task)</p>
+          <p class="kpi-note">Large initial error reduced to single-digit mm (e.g., P02: <strong>248 mm → 3 mm</strong> in 5 trials).</p>
+        </div>
+
+        <div class="card">
+          <p class="kpi">Up to 38.9 N</p>
+          <p class="kpi-label"><strong>Contact Force Peak</strong> (Task 2)</p>
+          <p class="kpi-note">Threaded insertion/screwing produced controlled forces (P01 peak <strong>38.9 N</strong>, then stabilizing).</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card">
           <ul class="bullets">
-            <li>Pose tracking error (translation/rotation) while moving along X/Y/Z</li>
-            <li>Orientation drift during translation</li>
-            <li>Overshoot / settling time after step commands</li>
-            <li>Repeatability across runs and users</li>
+            <li><strong>Hand-gesture-driven UX</strong> (EMG/IMU) for axis selection + action execution via lock/unlock state machine.</li>
+            <li><strong>Cartesian motion + orientation control</strong> executed through Jacobian/IK-based control.</li>
+            <li>Validated on <strong>real FR3</strong> across both:
+              <strong>Task 1</strong> (free-space reach) and <strong>Task 2</strong> (contact-rich screw depth).
+            </li>
+            <li>Objective metrics recorded from the FR3: end-effector pose error, force/torque behavior, and rotation alignment.</li>
           </ul>
+
+          <div class="tagwrap">
+            <span class="tag">FR3</span><span class="tag">Gesture UX</span><span class="tag">EMG/IMU</span>
+            <span class="tag">Cartesian Control</span><span class="tag">Impedance</span><span class="tag">Contact-rich</span>
+          </div>
+
+          <div class="callout" style="margin-top:14px;">
+            <strong>Key point:</strong> This is not “gesture → direct joint motion”.
+            It is a complete HRI control stack with a UX state machine and measurable performance outcomes.
+          </div>
+
+          <pre class="pipeline">EMG / IMU
+  ↓
+Feature Extraction + Classification
+  ↓
+UX State Machine (scroll / lock / unlock)
+  ↓
+Cartesian Command (axis + direction)
+  ↓
+Jacobian/IK Controller (+ safety limits)
+  ↓
+MuJoCo Simulation  →  Real FR3 Deployment</pre>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 10px;">Objective results snapshot (from user study)</h4>
+
+          <!-- You can adjust wording, but the numbers are from your excerpt -->
+          <table>
+            <thead>
+              <tr>
+                <th>Participant</th>
+                <th>Task 1 Reach Error (Trial 1 → Trial 5)</th>
+                <th>Improvement</th>
+                <th>Task 2 Force Range (N)</th>
+                <th>Task 2 Rotation Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>P01</strong></td>
+                <td>322.27 mm → 7.05 mm</td>
+                <td>~97.8%</td>
+                <td>4.46 – 38.94 N</td>
+                <td>≤ 0.32° (then near 0°)</td>
+              </tr>
+              <tr>
+                <td><strong>P02</strong></td>
+                <td>248.40 mm → 3.06 mm</td>
+                <td>~98.8%</td>
+                <td>1.61 – 26.64 N</td>
+                <td>0 – 0.15°</td>
+              </tr>
+              <tr>
+                <td><strong>P03</strong></td>
+                <td>34.16 mm → 4.91 mm</td>
+                <td>~85.6%</td>
+                <td>15.11 – 20.86 N</td>
+                <td>0 – 0.07°</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="kpi-note" style="margin-top:10px;">
+            For Task 2 (screwing), <strong>force/torque + alignment</strong> are the more informative indicators than positional error alone.
+          </p>
+        </div>
+      </div>
+
+      <!-- Franka evidence: UX + sim + real videos + plots/screenshots -->
+      <div class="section">
+        <h3>Evidence (Gesture UX + MuJoCo Simulation + Real FR3)</h3>
+
+        <div class="row">
+          <div class="card video-wrap">
+            <h4 style="margin:0 0 10px;">MuJoCo simulation demo</h4>
+            <!-- Replace with your actual video path -->
+            <video controls preload="metadata">
+              <source src="images/franka_mujoco_demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+              Demonstrates gesture-driven UX → Cartesian command execution in simulation.
+            </p>
+          </div>
+
+          <div class="card video-wrap">
+            <h4 style="margin:0 0 10px;">Real FR3 deployment demo</h4>
+            <!-- Replace with your actual video path -->
+            <video controls preload="metadata">
+              <source src="images/franka_real_demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+              Demonstrates the same UX/control workflow deployed on real hardware (FR3).
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h4 style="margin:0 0 10px;">Screenshots (UX + plots)</h4>
+
+          <!-- Replace with your actual images: menu, plots, robot photo, etc. -->
+          <div class="media-grid">
+            <div class="media-item">
+              <img src="images/franka_gesture_menu.png" alt="Gesture-driven UX menu" />
+              <div class="caption"><strong>Gesture UX:</strong> Menu / axis selection with lock–unlock control.</div>
+            </div>
+
+            <div class="media-item">
+              <img src="images/franka_real_setup.png" alt="Real FR3 setup photo" />
+              <div class="caption"><strong>Real setup:</strong> FR3 experiment setup used for the user study.</div>
+            </div>
+
+            <div class="media-item">
+              <img src="images/task1_error_plot.png" alt="Task 1 error plot" />
+              <div class="caption"><strong>Task 1:</strong> Reach error decreases across rounds (learning effect).</div>
+            </div>
+
+            <div class="media-item">
+              <img src="images/task2_force_torque_plot.png" alt="Task 2 force and torque plot" />
+              <div class="caption"><strong>Task 2:</strong> Force/torque behavior during threaded contact (screw depth).</div>
+            </div>
+          </div>
+
+          <p class="kpi-note" style="margin-top:10px;">
+            If you don’t have plots exported yet, you can temporarily add screenshots from your thesis figures.
+          </p>
         </div>
       </div>
     </div>
 
+    <!-- ========================================================= -->
+    <!-- 4) WHAT YOU OPTIMIZE FOR                                   -->
+    <!-- ========================================================= -->
     <div class="section">
       <h3>What I optimize for</h3>
       <div class="card">
@@ -356,6 +498,7 @@
   </script>
 </body>
 </html>
+
 
 
 
