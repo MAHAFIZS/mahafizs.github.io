@@ -65,6 +65,7 @@
       border: 1px solid #008CBA;
       color: #008CBA;
       background: #fff;
+      transition: transform .15s ease, opacity .15s ease;
     }
     .btn.primary { background: #008CBA; color: #fff; }
     .btn:hover { opacity: .95; transform: translateY(-1px); }
@@ -79,21 +80,39 @@
       line-height: 1.6;
     }
 
-    /* Media */
-    .media-stack { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 12px; }
+    /* Media (FIXED sizing) */
+    .media-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
     .media-item {
       background: #fff;
       border-radius: 12px;
       padding: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      max-width: 950px;     /* prevents huge posters */
+      margin: 0 auto;       /* centers the card */
     }
+
     .media-item img {
       width: 100%;
-      height: auto;
+      max-width: 900px;     /* limits expansion on wide screens */
+      max-height: 520px;    /* prevents vertical domination */
+      object-fit: contain;  /* keeps aspect ratio clean */
       border-radius: 10px;
       display: block;
+      margin: 0 auto;
       border: 1px solid #e5e7eb;
+      background: #fff;
     }
+
+    /* Optional per-image size tuning */
+    .img-lg { max-height: 600px; } /* block diagram */
+    .img-md { max-height: 460px; } /* mujoco + real photo */
+
     .caption {
       margin-top: 8px;
       font-size: 13px;
@@ -109,6 +128,8 @@
     @media (max-width: 900px) {
       .grid { grid-template-columns: 1fr; }
       nav ul li { display: inline-block; margin: 6px 10px; }
+      .media-item { max-width: 100%; }
+      .media-item img { max-width: 100%; max-height: 520px; }
     }
   </style>
 </head>
@@ -166,35 +187,29 @@
       <div class="media-stack">
         <!-- 1) Block Diagram -->
         <div class="media-item">
-          <!-- CHANGE THIS PATH to your chosen clean diagram file -->
-          <img src="images/architecture_block_diagram.png" alt="Gesture-driven Sim2Real pipeline diagram" />
+          <img class="img-lg" src="images/architecture_block_diagram.png" alt="Gesture-driven Sim2Real pipeline diagram" />
           <div class="caption">
             <strong>1) System pipeline:</strong> EMG+IMU → feature extraction → SVM gesture classifier → UX menu → command generator →
             MuJoCo ↔ Real Franka FR3 (same command structure).
-          </div>
-          <div class="small-note">
-           
           </div>
         </div>
 
         <!-- 2) MuJoCo Screenshot -->
         <div class="media-item">
-          <!-- CHANGE THIS PATH to your chosen MuJoCo scene screenshot -->
-          <img src="images/mujoco_scene.png" alt="MuJoCo simulation scene (Franka Panda task)" />
+          <img class="img-md" src="images/mujoco_scene.png" alt="MuJoCo simulation scene (Franka Panda task)" />
           <div class="caption">
-            <strong>2) Simulation (MuJoCo):</strong> same task setup used for controller testing and repeatable rollouts before hardware trials.
-          </div>
-          <div class="small-note">
-            
+            <strong>2) Simulation (MuJoCo):</strong> The controller is validated in repeatable scenarios (fast rollouts, safe iteration) before hardware trials.
           </div>
         </div>
 
         <!-- 3) Real FR3 Photo -->
         <div class="media-item">
-          <!-- CHANGE THIS PATH to your FR3 lab photo -->
-          <img src="images/franka_fr3_real_setup.jpg" alt="Real Franka FR3 experimental setup" />
+          <img class="img-md" src="images/franka_fr3_real_setup.jpg" alt="Real Franka FR3 experimental setup" />
           <div class="caption">
-            <strong>3) Real robot (Franka FR3):</strong> hardware validation of the same gesture-driven workflow in a lab setup (contact-rich task).
+            <strong>3) Real robot (Franka FR3):</strong> Hardware validation of the same gesture-driven workflow in a lab setup (contact-rich task).
+          </div>
+          <div class="small-note">
+            Detailed quantitative outcomes (pose error, forces/torques, learning effects, and user questionnaires) are shown on the <a href="Results.html">Results</a> page.
           </div>
         </div>
       </div>
@@ -285,4 +300,3 @@
   </script>
 </body>
 </html>
-
