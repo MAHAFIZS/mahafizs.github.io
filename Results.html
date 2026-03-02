@@ -1,372 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M A HAFIZ - Results & Impact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M A HAFIZ - Results & Impact</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f9;
-            color: #222;
-        }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #222;
+    }
 
-        header {
-            background: #1f1f1f;
-            color: #fff;
-            padding: 22px 15px;
-            text-align: center;
-        }
+    header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 22px 15px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; letter-spacing: 1px; }
+    header p { margin: 4px 0; opacity: .95; }
 
-            header h1 {
-                margin: 0 0 6px;
-                letter-spacing: 1px;
-            }
+    nav ul { list-style: none; padding: 0; margin: 14px 0 0; }
+    nav ul li { display: inline; margin: 0 12px; }
+    nav ul li a { color: #fff; text-decoration: none; font-size: 15px; }
+    nav ul li a:hover { text-decoration: underline; }
 
-            header p {
-                margin: 4px 0;
-                opacity: .95;
-            }
+    .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 14px 0 0;
-        }
+    .hero {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+    .hero h2 { margin: 0 0 8px; }
 
-            nav ul li {
-                display: inline;
-                margin: 0 12px;
-            }
+    .sub { color: #444; line-height: 1.6; margin: 0; }
 
-                nav ul li a {
-                    color: #fff;
-                    text-decoration: none;
-                    font-size: 15px;
-                }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
 
-                    nav ul li a:hover {
-                        text-decoration: underline;
-                    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    .kpi {
+      font-size: 28px;
+      font-weight: 700;
+      color: #008CBA;
+      margin: 0 0 6px;
+    }
 
-        .hero {
-            background: #fff;
-            border-radius: 12px;
-            padding: 22px;
-            box-shadow: 0 6px 18px rgba(0,0,0,.08);
-        }
+    .kpi-label { margin: 0; color: #333; }
+    .kpi-note { margin: 8px 0 0; color: #666; font-size: 13px; line-height: 1.5; }
 
-            .hero h2 {
-                margin: 0 0 8px;
-            }
+    .section { margin-top: 22px; }
+    .section h3 { margin: 0 0 10px; }
 
-        .sub {
-            color: #444;
-            line-height: 1.6;
-            margin: 0;
-        }
+    .bullets { margin: 0; padding-left: 18px; line-height: 1.7; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 18px;
-        }
+    .row { display: flex; flex-wrap: wrap; gap: 16px; }
+    .row > .card { flex: 1; min-width: 280px; }
 
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 6px 18px rgba(0,0,0,.06);
-        }
+    .tagwrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: #eef3ff; border: 1px solid #d6e0ff; }
 
-        .kpi {
-            font-size: 28px;
-            font-weight: 700;
-            color: #008CBA;
-            margin: 0 0 6px;
-        }
+    .callout {
+      margin-top: 18px;
+      background: #eef6ff;
+      border: 1px solid #cfe9ff;
+      color: #103a57;
+      padding: 14px 16px;
+      border-radius: 12px;
+      line-height: 1.6;
+    }
 
-        .kpi-label {
-            margin: 0;
-            color: #333;
-        }
+    .btnbar { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid #008CBA;
+      color: #008CBA;
+      background: #fff;
+    }
+    .btn.primary { background: #008CBA; color: #fff; }
+    .btn:hover { opacity: .95; transform: translateY(-1px); }
 
-        .kpi-note {
-            margin: 8px 0 0;
-            color: #666;
-            font-size: 13px;
-            line-height: 1.5;
-        }
+    /* Evidence gallery */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .media-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    .media-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      border: 1px solid #e5e7eb;
+    }
+    .caption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.45;
+    }
 
-        .section {
-            margin-top: 22px;
-        }
+    .video-wrap video {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #000;
+    }
 
-            .section h3 {
-                margin: 0 0 10px;
-            }
+    footer { text-align: center; color: #666; padding: 24px 10px; }
 
-        .bullets {
-            margin: 0;
-            padding-left: 18px;
-            line-height: 1.7;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-            .row > .card {
-                flex: 1;
-                min-width: 280px;
-            }
-
-        .tagwrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .tag {
-            font-size: 12px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: #eef3ff;
-            border: 1px solid #d6e0ff;
-        }
-
-        .callout {
-            margin-top: 18px;
-            background: #eef6ff;
-            border: 1px solid #cfe9ff;
-            color: #103a57;
-            padding: 14px 16px;
-            border-radius: 12px;
-            line-height: 1.6;
-        }
-
-        .btnbar {
-            margin-top: 14px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-            border: 1px solid #008CBA;
-            color: #008CBA;
-            background: #fff;
-        }
-
-            .btn.primary {
-                background: #008CBA;
-                color: #fff;
-            }
-
-            .btn:hover {
-                opacity: .95;
-                transform: translateY(-1px);
-            }
-
-        .placeholder {
-            margin-top: 10px;
-            border: 1px dashed #cbd5e1;
-            border-radius: 12px;
-            padding: 14px;
-            color: #64748b;
-            background: #fff;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            color: #666;
-            padding: 24px 10px;
-        }
-
-        @media (max-width: 900px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul li {
-                display: inline-block;
-                margin: 6px 10px;
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: 1fr; }
+      nav ul li { display: inline-block; margin: 6px 10px; }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>M A HAFIZ</h1>
-        <p><strong>Results & Impact</strong></p>
-        <p>Erlangen, Germany • Robotics Simulation & Control • Sim2Real</p>
+  <header>
+    <h1>M A HAFIZ</h1>
+    <p><strong>Results & Impact</strong></p>
+    <p>Erlangen, Germany • Robotics Simulation & Control • Sim2Real</p>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="education.html">Education & Internship</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Results.html">Results</a></li>
-                <li><a href="Architecture.html">Architecture</a></li>
-                <li><a href="professional.html">Professional Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="education.html">Education & Internship</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="Results.html">Results</a></li>
+        <li><a href="Architecture.html">Architecture</a></li>
+        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="container">
+  <div class="container">
 
-        <div class="hero">
-            <h2>Proof that my systems work (not just “cool demos”)</h2>
-            <p class="sub">
-                This page highlights measurable outcomes across my robotics work: simulation fidelity,
-                stable control, task success, and repeatable evaluation. Replace the placeholder numbers with your
-                exact metrics when ready.
+    <div class="hero">
+      <h2>Proof that my systems work (not just “cool demos”)</h2>
+      <p class="sub">
+        This page highlights measurable outcomes across my robotics work: simulation fidelity,
+        stable control, task success, and repeatable evaluation — backed by artifacts (metrics, reports, and videos).
+      </p>
+
+      <div class="callout">
+        <strong>Recruiter-friendly summary:</strong> A candidate controller can look “fine” (even 100% success),
+        yet still be unsafe to ship. My platform detects such regressions automatically and outputs a clear <strong>SHIP / BLOCK</strong> decision.
+      </div>
+
+      <div class="btnbar">
+        <a class="btn primary" href="projects.html">See Projects</a>
+        <a class="btn" href="architecture.html">See Architecture</a>
+        <a class="btn" href="Certificates and CV.html">Download CV</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <!-- KPI Grid (REAL numbers from your screenshots) -->
+    <div class="grid">
+      <div class="card">
+        <p class="kpi">100%</p>
+        <p class="kpi-label"><strong>Task Success Rate</strong> (Demo run)</p>
+        <p class="kpi-note">Measured over <strong>5 episodes</strong> in the Robot Eval Platform demo.</p>
+      </div>
+
+      <div class="card">
+        <p class="kpi">20.8 ms</p>
+        <p class="kpi-label"><strong>Mean Control Latency</strong> (Candidate)</p>
+        <p class="kpi-note">Regression detected: <strong>+3.6 ms (+21%)</strong> vs baseline <strong>17.2 ms</strong>.</p>
+      </div>
+
+      <div class="card">
+        <p class="kpi">BLOCK</p>
+        <p class="kpi-label"><strong>Release Gate Decision</strong> (Do not ship)</p>
+        <p class="kpi-note">Candidate automatically blocked due to violating the latency regression rule.</p>
+      </div>
+    </div>
+
+    <!-- Robot Eval Platform -->
+    <div class="section">
+      <h3>Robot Eval Platform — Regression Gating Outcomes</h3>
+
+      <div class="row">
+        <div class="card">
+          <ul class="bullets">
+            <li>Automated rollouts into <strong>metrics + videos + reports</strong> for every run.</li>
+            <li>Baseline vs candidate comparison with a clear <strong>SHIP / BLOCK</strong> decision.</li>
+            <li>Rules show exactly <strong>why</strong> a candidate is blocked (traceable + auditable).</li>
+          </ul>
+          <div class="tagwrap">
+            <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span>
+            <span class="tag">MinIO/S3</span><span class="tag">CI-style gating</span>
+          </div>
+
+          <div class="callout" style="margin-top:14px;">
+            <strong>Example:</strong> Candidate achieved <strong>100% success</strong> but was <strong>BLOCKED</strong>
+            because control latency regressed by <strong>+21%</strong> vs baseline.
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 10px;">Gate rules used in the demo</h4>
+          <ul class="bullets">
+            <li>Success rate ≥ baseline</li>
+            <li>Mean control latency ≤ baseline</li>
+            <li>Safety violations = 0</li>
+          </ul>
+          <p class="kpi-note" style="margin-top:10px;">
+            This is the “decision layer” that prevents silent regressions from reaching real robots.
+          </p>
+        </div>
+      </div>
+
+      <!-- Evidence: video + screenshots -->
+      <div class="section">
+        <h3>Evidence (Screenshots + Demo Video)</h3>
+
+        <div class="row">
+          <div class="card video-wrap">
+            <h4 style="margin:0 0 10px;">Demo video (rollout + artifacts)</h4>
+            <video controls preload="metadata">
+              <source src="assets/results/robot-eval-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+              This demo shows: run execution → rollout video → metrics artifacts → gating decision (SHIP/BLOCK).
             </p>
+          </div>
 
-            <div class="callout">
-                <strong>Tip:</strong> Recruiters scan this page first. Keep metrics concrete:
-                success-rate, failures, drift, time-to-complete, stability, and reproducibility.
+          <div class="card">
+            <h4 style="margin:0 0 10px;">Key screenshots (what recruiters need)</h4>
+
+            <div class="media-grid">
+              <div class="media-item">
+                <img src="assets/results/01_overview_block.png" alt="Overview: BLOCK decision" />
+                <div class="caption"><strong>Overview:</strong> Candidate blocked despite 100% success due to latency regression.</div>
+              </div>
+
+              <div class="media-item">
+                <img src="assets/results/02_compare_runs.png" alt="Compare runs: baseline vs candidate" />
+                <div class="caption"><strong>Compare:</strong> Baseline 17.2 ms vs candidate 20.8 ms (+3.6 ms).</div>
+              </div>
+
+              <div class="media-item">
+                <img src="assets/results/03_runs_list.png" alt="Runs list with SHIP/BLOCK history" />
+                <div class="caption"><strong>Runs:</strong> History view showing SHIP/BLOCK decisions across runs.</div>
+              </div>
+
+              <div class="media-item">
+                <img src="assets/results/04_gate_details.png" alt="Gate details with rule violation" />
+                <div class="caption"><strong>Gate details:</strong> Rule-level traceability (exact failure reason shown).</div>
+              </div>
+
+              <div class="media-item">
+                <img src="assets/results/05_run_video.png" alt="Run details with embedded rollout video" />
+                <div class="caption"><strong>Run details:</strong> Rollout preview stored as an artifact for auditability.</div>
+              </div>
+
+              <div class="media-item">
+                <img src="assets/results/06_settings.png" alt="Settings showing evaluation defaults" />
+                <div class="caption"><strong>Settings:</strong> Visible evaluation policy (metrics enforced + strategy).</div>
+              </div>
             </div>
 
-            <div class="btnbar">
-                <a class="btn primary" href="projects.html">See Projects</a>
-                <a class="btn" href="architecture.html">See Architecture</a>
-                <a class="btn" href="Certificates and CV.html">Download CV</a>
-                <a class="btn" href="contact.html">Contact</a>
-            </div>
+            <p class="kpi-note" style="margin-top:10px;">
+              Tip: Keep only 5–6 screenshots max. These are the highest-signal ones.
+            </p>
+          </div>
         </div>
-
-        <!-- KPI Grid -->
-        <div class="grid">
-            <div class="card">
-                <p class="kpi">X%</p>
-                <p class="kpi-label"><strong>Task Success Rate</strong> (Pick/Place / Manipulation)</p>
-                <p class="kpi-note">Replace with your measured success rate (e.g., over N episodes).</p>
-            </div>
-            <div class="card">
-                <p class="kpi">±X mm</p>
-                <p class="kpi-label"><strong>Positioning Accuracy</strong> (end-effector / grasp)</p>
-                <p class="kpi-note">Use mean ± std or max error during approach / grasp.</p>
-            </div>
-            <div class="card">
-                <p class="kpi">X hrs</p>
-                <p class="kpi-label"><strong>Evaluation Automation</strong> (CI regression gating)</p>
-                <p class="kpi-note">Time saved per week via automated rollouts + SHIP/BLOCK decisions.</p>
-            </div>
-        </div>
-
-        <!-- Results by Area -->
-        <div class="section">
-            <h3>Robot Eval Platform — Regression Gating Outcomes</h3>
-            <div class="row">
-                <div class="card">
-                    <ul class="bullets">
-                        <li>Automated rollouts into <strong>metrics + videos + reports</strong> for every candidate run.</li>
-                        <li>Baseline vs candidate comparison with a clear <strong>SHIP / BLOCK</strong> decision.</li>
-                        <li>CI-friendly outputs for repeatability and quick reviews.</li>
-                    </ul>
-                    <div class="tagwrap">
-                        <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span>
-                        <span class="tag">MinIO/S3</span><span class="tag">CI/CD</span>
-                    </div>
-                    <div class="placeholder">
-                        <strong>Add here:</strong> a screenshot of your dashboard summary page + an example metrics.json snippet.
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="margin:0 0 10px;">Metrics you should report (recommended)</h4>
-                    <ul class="bullets">
-                        <li>Success rate, time-to-complete, safety violations</li>
-                        <li>Stale command ratio, command rate, NaN/invalid states</li>
-                        <li>Robustness: p10 / p50 / worst-case metrics</li>
-                        <li>Video + plots stored as artifacts</li>
-                    </ul>
-                    <div class="placeholder">
-                        <strong>Add here:</strong> a “Before vs After” table once you have baseline + candidate results.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Franka Panda — Sim2Real Control & Validation</h3>
-            <div class="row">
-                <div class="card">
-                    <ul class="bullets">
-                        <li>Gesture-based Cartesian control validated in <strong>MuJoCo</strong> and transferred to <strong>real FR3</strong>.</li>
-                        <li>Focus on stable behavior: smooth motion, safe limits, and predictable response.</li>
-                        <li>Designed for user-centered HRI: minimal gestures with a menu-based control flow.</li>
-                    </ul>
-                    <div class="tagwrap">
-                        <span class="tag">MuJoCo</span><span class="tag">Cartesian Control</span><span class="tag">IK/Jacobian</span>
-                        <span class="tag">EMG/IMU</span><span class="tag">HRI</span>
-                    </div>
-                    <div class="placeholder">
-                        <strong>Add here:</strong> a photo of the real robot test or a short GIF/video link.
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h4 style="margin:0 0 10px;">Suggested quantitative checks</h4>
-                    <ul class="bullets">
-                        <li>Pose tracking error (translation/rotation) while moving along X/Y/Z</li>
-                        <li>Orientation drift during translation</li>
-                        <li>Overshoot / settling time after step commands</li>
-                        <li>Repeatability across runs and users</li>
-                    </ul>
-                    <div class="placeholder">
-                        <strong>Add here:</strong> a simple plot: desired vs actual end-effector trajectory.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>What I optimize for</h3>
-            <div class="card">
-                <ul class="bullets">
-                    <li><strong>Measurable progress</strong> (metrics-first, reproducible experiments)</li>
-                    <li><strong>Stability & safety</strong> (limits, smooth control, robust behavior)</li>
-                    <li><strong>Deployment readiness</strong> (CI-style checks and clear failure modes)</li>
-                    <li><strong>Fast iteration</strong> (tight loop: simulate → evaluate → improve)</li>
-                </ul>
-            </div>
-        </div>
+      </div>
 
     </div>
 
-    <footer>
-        © <span id="y"></span> M A Hafiz • Results & Impact
-    </footer>
+    <!-- Franka Panda section (kept as-is, but you can later add real numbers too) -->
+    <div class="section">
+      <h3>Franka Panda — Sim2Real Control & Validation</h3>
+      <div class="row">
+        <div class="card">
+          <ul class="bullets">
+            <li>Gesture-based Cartesian control validated in <strong>MuJoCo</strong> and transferred to <strong>real FR3</strong>.</li>
+            <li>Focus on stable behavior: smooth motion, safe limits, and predictable response.</li>
+            <li>Designed for user-centered HRI: minimal gestures with a menu-based control flow.</li>
+          </ul>
+          <div class="tagwrap">
+            <span class="tag">MuJoCo</span><span class="tag">Cartesian Control</span><span class="tag">IK/Jacobian</span>
+            <span class="tag">EMG/IMU</span><span class="tag">HRI</span>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            Next upgrade: add <strong>quantitative plots</strong> (desired vs actual end-effector trajectory) and report translation/rotation error.
+          </div>
+        </div>
 
-    <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+        <div class="card">
+          <h4 style="margin:0 0 10px;">Suggested quantitative checks (add later)</h4>
+          <ul class="bullets">
+            <li>Pose tracking error (translation/rotation) while moving along X/Y/Z</li>
+            <li>Orientation drift during translation</li>
+            <li>Overshoot / settling time after step commands</li>
+            <li>Repeatability across runs and users</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>What I optimize for</h3>
+      <div class="card">
+        <ul class="bullets">
+          <li><strong>Measurable progress</strong> (metrics-first, reproducible experiments)</li>
+          <li><strong>Stability & safety</strong> (limits, smooth control, robust behavior)</li>
+          <li><strong>Deployment readiness</strong> (CI-style checks and clear failure modes)</li>
+          <li><strong>Fast iteration</strong> (tight loop: simulate → evaluate → improve)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © <span id="y"></span> M A Hafiz • Results & Impact
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
