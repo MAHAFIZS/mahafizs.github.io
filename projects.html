@@ -242,7 +242,110 @@
         </p>
       </div>
     </div>
+    <!-- Vision-Language Panda Pick-and-Place -->
+<div class="project-section">
+  <p class="project-title">
+    Vision-Language Panda Pick-and-Place – VLA, Action Encoding & Learning Prototypes
+  </p>
+  <p class="project-meta">
+    <strong>Year:</strong> 2026 • <strong>Type:</strong> Vision-Language-Action / Robot Learning / MuJoCo Manipulation
+  </p>
 
+  <div class="pillwrap">
+    <span class="pill">MuJoCo</span>
+    <span class="pill">Franka Panda</span>
+    <span class="pill">VLA</span>
+    <span class="pill">Action Encoder</span>
+    <span class="pill">Behavior Cloning</span>
+    <span class="pill">Diffusion Policy Prototype</span>
+    <span class="pill">World Model</span>
+    <span class="pill">Preference Learning</span>
+    <span class="pill">RL Reward</span>
+    <span class="pill">Video Action Dataset</span>
+  </div>
+
+  <button class="toggle-btn" onclick="toggleDetails('project-vla-panda')">View Details</button>
+
+  <div class="details" id="project-vla-panda">
+    <p>
+      Built a <strong>Vision-Language-Action pick-and-place pipeline</strong> for a Franka Emika Panda robot
+      in MuJoCo. The system converts natural-language commands into grounded objects, symbolic actions,
+      numerical action vectors, robot-executable action sequences, and learning-ready demonstrations.
+    </p>
+
+    <p><strong>Example command:</strong></p>
+    <pre style="background:#f6f8fa; padding:12px; border-radius:8px; overflow:auto;"><code>pick the red cube and place it at x 0.55 y -0.45</code></pre>
+
+    <p><strong>Pipeline:</strong></p>
+    <pre style="background:#f6f8fa; padding:12px; border-radius:8px; overflow:auto;"><code>Natural language
+→ parsed task
+→ object grounding
+→ symbolic action
+→ numerical action vector
+→ robot action sequence
+→ MuJoCo execution
+→ demonstration dataset
+→ behavior cloning / diffusion / world model / preference / RL / video-action prototypes</code></pre>
+
+    <p><strong>Key components:</strong></p>
+    <ul>
+      <li>Rule-based natural-language parser for pick-and-place commands</li>
+      <li>Object grounding for colored cubes and named target zones</li>
+      <li>VLA-style symbolic action encoder and numerical action vector representation</li>
+      <li>Robot action sequence generator: approach, grasp, lift, move, place, retreat</li>
+      <li>Demonstration dataset logger saving language, grounding, actions, and sequences as JSON</li>
+      <li>Dataset loader for behavior cloning arrays</li>
+      <li>RandomForest behavior cloning baseline and nearest-neighbor imitation baseline</li>
+      <li>Tiny diffusion-style denoising action policy prototype</li>
+      <li>Tiny world model for next-object-state prediction</li>
+      <li>Preference learning prototype for ranking candidate actions</li>
+      <li>RL-style reward function and random policy evaluation</li>
+      <li>Video Action Dataset prototype with frame-level action phase labels</li>
+    </ul>
+
+    <p><strong>Action vector format:</strong></p>
+    <pre style="background:#f6f8fa; padding:12px; border-radius:8px; overflow:auto;"><code>[
+  action_type_id,
+  object_id,
+  pick_x,
+  pick_y,
+  place_x,
+  place_y,
+  target_id,
+  has_explicit_xy
+]</code></pre>
+
+    <p><strong>Example action sequence:</strong></p>
+    <ol>
+      <li>APPROACH_OBJECT</li>
+      <li>OPEN_GRIPPER</li>
+      <li>DESCEND_TO_OBJECT</li>
+      <li>CLOSE_GRIPPER</li>
+      <li>LIFT_OBJECT</li>
+      <li>MOVE_TO_TARGET</li>
+      <li>DESCEND_TO_PLACE</li>
+      <li>OPEN_GRIPPER</li>
+      <li>RETREAT</li>
+    </ol>
+
+    <p>
+      This project was designed as a compact prototype for embodied AI and robot learning workflows,
+      connecting language-conditioned manipulation with action encoding, imitation learning, diffusion-style
+      prediction, world models, preference learning, reward evaluation, and video-action dataset preparation.
+    </p>
+
+    <div class="links">
+      <p><strong>Code:</strong></p>
+      <ul>
+        <li>
+          <a href="https://github.com/MAHAFIZS/vision-language-panda-pick-place" target="_blank" rel="noopener">
+            🔗 Vision-Language Panda Pick-and-Place – GitHub Repository
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
     <!-- MSc Thesis -->
     <div class="project-section" id="thesis">
       <p class="project-title">
