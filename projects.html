@@ -291,6 +291,134 @@
 
     <p><em>Status: Ongoing MVP / startup exploration.</em></p>
   </div>
+  <!-- Natural-Language Robot Agent -->
+<div class="project-section">
+  <p class="project-title">
+    Natural-Language Robot Agent – Persistent Franka Manipulation in Isaac Sim
+  </p>
+
+  <p class="project-meta">
+    <strong>Year:</strong> 2026 •
+    <strong>Type:</strong> Language-Guided Manipulation / Scene Reasoning / Isaac Sim
+  </p>
+
+  <div class="pillwrap">
+    <span class="pill">NVIDIA Isaac Sim</span>
+    <span class="pill">Franka</span>
+    <span class="pill">Python</span>
+    <span class="pill">Ollama</span>
+    <span class="pill">Qwen3</span>
+    <span class="pill">Streamlit</span>
+    <span class="pill">Scene Graph</span>
+    <span class="pill">Failure-Aware Planning</span>
+  </div>
+
+  <button
+    class="toggle-btn"
+    onclick="toggleDetails('project-language-agent')"
+  >
+    View Details
+  </button>
+
+  <div class="details" id="project-language-agent">
+
+    <p>
+      Developed a persistent natural-language robot manipulation system
+      using a Franka robot in <strong>NVIDIA Isaac Sim</strong>.
+      Users send commands through a Streamlit interface, while a local
+      Qwen3 model and deterministic planning modules convert instructions
+      into validated robot actions.
+    </p>
+
+    <p><strong>Key capabilities:</strong></p>
+
+    <ul>
+      <li>Pick, hold, release, stack, and place colored cubes</li>
+      <li>Maintain scene state across consecutive commands</li>
+      <li>Detect cubes stacked above a requested object</li>
+      <li>Remove blockers before executing the main manipulation task</li>
+      <li>Clear occupied target locations using temporary buffer positions</li>
+      <li>Verify final placement error after every movement</li>
+      <li>Generate unseen capital letters procedurally from font geometry</li>
+      <li>Generate digits 0–9 without hard-coded coordinate templates</li>
+    </ul>
+
+    <p><strong>Planning pipeline:</strong></p>
+
+    <pre style="background:#f6f8fa; padding:12px; border-radius:8px; overflow:auto;"><code>Natural-language instruction
+→ intent extraction
+→ procedural or state-aware planning
+→ current-scene analysis
+→ blocker and occupancy handling
+→ Isaac Sim execution
+→ placement verification</code></pre>
+
+    <p>
+      For clear letter and number commands, the requested character is
+      rendered from a system font, converted into eight representative
+      target points, scaled into the robot workspace, and validated for
+      spacing and reachability. No fixed A–Z or 0–9 robot-coordinate
+      templates are used.
+    </p>
+
+    <p><strong>Demo video:</strong></p>
+
+    <video
+      controls
+      preload="metadata"
+      playsinline
+      style="
+        width:100%;
+        max-width:900px;
+        border-radius:10px;
+        border:1px solid #ddd;
+        margin:12px 0;
+        background:#000;
+      "
+    >
+      <source
+        src="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+        type="video/webm"
+      >
+      Your browser does not support the video element.
+    </video>
+
+    <div class="links">
+      <p><strong>Code and demo:</strong></p>
+
+      <ul>
+        <li>
+          <a
+            href="https://github.com/MAHAFIZS/failure-aware-language-robot-agent"
+            target="_blank"
+            rel="noopener"
+          >
+            🔗 GitHub Repository
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+            target="_blank"
+            rel="noopener"
+          >
+            🎥 Open Full Demo Video
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <p>
+      <em>
+        Status: Active research prototype. Current work focuses on
+        execution reliability, visual shape validation, failure diagnosis,
+        and automatic recovery.
+      </em>
+    </p>
+
+  </div>
+</div>
 </div>
 <!-- Surgical Humanoid / OR Assistant Prototype -->
 
