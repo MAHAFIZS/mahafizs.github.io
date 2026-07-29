@@ -1,240 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Technical skills of M A Hafiz in robotics simulation, robot manipulation, ROS 2, NVIDIA Isaac Sim, MuJoCo, robot learning, failure-aware evaluation, and sim-to-real transfer."
+  >
+
   <title>Skills - M A HAFIZ</title>
 
   <style>
-    body{
-      text-align:center;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      text-align: center;
       font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      background:#f4f4f9;
-      color:#222;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #222;
     }
 
-    header{
-      background:#1f1f1f;
-      color:#fff;
-      padding:22px 15px;
-    }
-    header h1{ margin:0 0 8px; letter-spacing:1px; }
-    header p{ margin:4px 0; opacity:.95; }
+    /* ================= HEADER ================= */
 
-    nav ul{
-      list-style:none;
-      padding:0;
-      margin:14px 0 0;
-    }
-    nav ul li{
-      display:inline;
-      margin:0 12px;
-    }
-    nav ul li a{
-      color:#fff;
-      text-decoration:none;
-      font-size:15px;
-    }
-    nav ul li a:hover{ text-decoration:underline; }
-
-    .content{
-      padding:40px 20px;
-      max-width:1000px;
-      margin:0 auto;
-      text-align:left;
+    header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 24px 15px;
     }
 
-    .page-title{
-      text-align:center;
-      margin:0 0 10px;
-    }
-    .page-sub{
-      text-align:center;
-      margin:0 0 26px;
-      color:#444;
-      line-height:1.6;
+    header h1 {
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+      font-size: 34px;
     }
 
-    .skills-card{
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(0,0,0,.07);
-      padding:18px;
-      margin:14px auto;
+    header p {
+      margin: 4px 0;
+      opacity: 0.95;
+      line-height: 1.5;
     }
 
-    .skills-card h3{
-      margin:0 0 10px;
-      color:#111;
-      font-size:16px;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
     }
 
-    .pillwrap{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:8px;
-    }
-    .pill{
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#eef3ff;
-      border:1px solid #d6e0ff;
-      color:#1b3a74;
+    nav ul li {
+      display: inline-block;
+      margin: 6px 10px;
     }
 
-    ul{
-      margin:8px 0 0;
-      padding-left:18px;
-      color:#222;
-      line-height:1.7;
-      font-size:15px;
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
     }
 
-    footer{
-      margin-top:30px;
-      background:#1f1f1f;
-      color:#fff;
-      padding:14px;
-      font-size:14px;
+    nav ul li a:hover {
+      color: #58c7ed;
+      text-decoration: underline;
     }
 
-    @media (max-width: 900px){
-      nav ul li{ display:inline-block; margin:6px 10px; }
-      .content{ padding:30px 16px; }
+    /* ================= PAGE CONTENT ================= */
+
+    .content {
+      padding: 42px 20px;
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    .page-sub {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* ================= SUMMARY ================= */
+
+    .summary-card {
+      background: #eef6ff;
+      border: 1px solid #cfe9ff;
+      color: #103a57;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .summary-card strong {
+      color: #082d45;
+    }
+
+    /* ================= SKILLS GRID ================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .skills-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+      padding: 20px;
+    }
+
+    .skills-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .skills-card h3 {
+      margin: 0 0 11px;
+      color: #111;
+      font-size: 18px;
+    }
+
+    .skills-card p {
+      margin: 0;
+      color: #444;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .skills-card ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: #222;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ================= SKILL PILLS ================= */
+
+    .pillwrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef3ff;
+      border: 1px solid #d6e0ff;
+      color: #1b3a74;
+    }
+
+    /* ================= PROFICIENCY NOTE ================= */
+
+    .level-note {
+      margin-top: 12px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* ================= BUTTONS ================= */
+
+    .button-area {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 17px;
+      margin: 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid #008cba;
+      color: #008cba;
+      background: #fff;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #008cba;
+      color: #fff;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      margin-top: 30px;
+      background: #1f1f1f;
+      color: #fff;
+      padding: 17px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 850px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-card.full-width {
+        grid-column: auto;
+      }
+
+      nav ul li {
+        margin: 6px 8px;
+      }
+
+      .content {
+        padding: 32px 16px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      header h1 {
+        font-size: 29px;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
+      .button-area {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ================= HEADER ================= -->
+
   <header>
     <h1>M A HAFIZ</h1>
-    <p><strong>Robotics Simulation & Control Engineer</strong></p>
-    <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
 
-    <nav>
+    <p>
+      <strong>
+        Robotics Simulation, Manipulation &amp; Sim-to-Real Engineer
+      </strong>
+    </p>
+
+    <p>
+      M.Sc. Medical Engineering •
+      B.Sc. Electrical &amp; Electronic Engineering
+    </p>
+
+    <p>
+      Erlangen, Germany • Open to Robotics and Simulation Roles
+    </p>
+
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">About</a></li>
-        <li><a href="education.html">Education & Internship</a></li>
+
+        <li>
+          <a href="education.html">
+            Education &amp; Internship
+          </a>
+        </li>
+
         <li><a href="projects.html">Projects</a></li>
-        <!-- Use lowercase filenames to avoid GitHub Pages 404 -->
-        <li><a href="Results.html">Results</a></li>
-        <li><a href="Architecture.html">Architecture</a></li>
-        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+
+        <li>
+          <a href="professional.html">
+            Professional Experience
+          </a>
+        </li>
+
         <li><a href="skills.html">Skills</a></li>
-        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+
+        <li>
+          <a href="Certificates and CV.html">
+            Certificates and CV
+          </a>
+        </li>
+
         <li><a href="publications.html">Publications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="content">
-    <h2 class="page-title">Skills</h2>
+  <!-- ================= MAIN CONTENT ================= -->
+
+  <main class="content">
+
+    <h2 class="page-title">
+      Technical Skills
+    </h2>
+
     <p class="page-sub">
-      Core technical skills for robotics simulation, control, HRI, and evaluation infrastructure.
+      Practical experience in robot manipulation, simulation,
+      control, state-aware planning, robot evaluation, and
+      simulation-to-real deployment.
     </p>
 
-    <div class="skills-card">
-      <h3>Programming</h3>
-      <div class="pillwrap">
-        <span class="pill">Python</span>
-        <span class="pill">C++</span>
-        <span class="pill">C</span>
-        <span class="pill">C#</span>
-        <span class="pill">MATLAB</span>
-        <span class="pill">VHDL</span>
-      </div>
+    <div class="summary-card">
+      <strong>Core profile:</strong>
+      Robotics engineer with hands-on experience building simulation
+      environments, Cartesian controllers, manipulation pipelines,
+      natural-language robot agents, evaluation infrastructure, and
+      real Franka robot applications.
     </div>
 
-    <div class="skills-card">
-      <h3>Robotics & Simulation</h3>
-      <ul>
-        <li>MuJoCo simulation, modeling, and controller integration</li>
-        <li>Cartesian control, inverse kinematics, Jacobian-based control</li>
-        <li>Gesture-based robot control (EMG/IMU → commands) with iM Blocks integration</li>
-        <li>Sim2Real validation mindset: safety limits, latency, robustness checks</li>
-      </ul>
-      <div class="pillwrap">
-        <span class="pill">MuJoCo</span>
-        <span class="pill">ROS / ROS 2</span>
-        <span class="pill">Gazebo</span>
-        <span class="pill">Franka Panda</span>
-        <span class="pill">HRI</span>
-      </div>
+    <div class="skills-grid">
+
+      <!-- ================= PROGRAMMING ================= -->
+
+      <section class="skills-card">
+        <h3>Programming &amp; Software Development</h3>
+
+        <ul>
+          <li>
+            Python development for robotics, simulation, data
+            processing, APIs, planning, and automation
+          </li>
+
+          <li>
+            C++ and C for robotics, embedded systems, and
+            performance-oriented software
+          </li>
+
+          <li>
+            C# experience from application and engineering projects
+          </li>
+
+          <li>
+            Object-oriented programming, modular software design,
+            debugging, and testable workflows
+          </li>
+
+          <li>
+            JSON, CSV, YAML, command-line tools, and structured
+            experiment artifacts
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Python</span>
+          <span class="pill">C++</span>
+          <span class="pill">C</span>
+          <span class="pill">C#</span>
+          <span class="pill">Bash</span>
+          <span class="pill">VHDL</span>
+          <span class="pill">HTML / CSS</span>
+        </div>
+      </section>
+
+      <!-- ================= ROBOTICS SIMULATION ================= -->
+
+      <section class="skills-card">
+        <h3>Robotics Simulation</h3>
+
+        <ul>
+          <li>
+            Building manipulation environments and robot tasks in
+            NVIDIA Isaac Sim and MuJoCo
+          </li>
+
+          <li>
+            ROS 2 integration with simulation, command interfaces,
+            navigation, and robot-control workflows
+          </li>
+
+          <li>
+            Gazebo and Webots simulation for mobile robotics,
+            mapping, navigation, and obstacle handling
+          </li>
+
+          <li>
+            Robot-scene modeling, object placement, cameras,
+            collision properties, contact behavior, and physics
+            debugging
+          </li>
+
+          <li>
+            Simulation experiment design and persistent scene-state
+            management
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">NVIDIA Isaac Sim</span>
+          <span class="pill">MuJoCo</span>
+          <span class="pill">Gazebo</span>
+          <span class="pill">Webots</span>
+          <span class="pill">ROS 2</span>
+          <span class="pill">RViz</span>
+          <span class="pill">URDF / USD</span>
+        </div>
+      </section>
+
+      <!-- ================= ROBOT CONTROL ================= -->
+
+      <section class="skills-card">
+        <h3>Robot Manipulation &amp; Control</h3>
+
+        <ul>
+          <li>
+            Cartesian translation and rotational control for
+            Franka Panda and FR3 robots
+          </li>
+
+          <li>
+            Inverse kinematics, Jacobian-based control, end-effector
+            pose control, and trajectory execution
+          </li>
+
+          <li>
+            Pick, grasp, lift, transport, place, stack, and release
+            manipulation primitives
+          </li>
+
+          <li>
+            Contact-rich manipulation, screw insertion, force
+            observation, and safety-limit handling
+          </li>
+
+          <li>
+            Teleoperation and real-time robot-feedback interfaces
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Franka Panda</span>
+          <span class="pill">Franka FR3</span>
+          <span class="pill">Cartesian Control</span>
+          <span class="pill">Inverse Kinematics</span>
+          <span class="pill">Jacobians</span>
+          <span class="pill">Grasping</span>
+          <span class="pill">Contact-Rich Tasks</span>
+        </div>
+      </section>
+
+      <!-- ================= PLANNING ================= -->
+
+      <section class="skills-card">
+        <h3>Planning, Scene Reasoning &amp; Robot Agents</h3>
+
+        <ul>
+          <li>
+            Natural-language command interfaces for robot
+            manipulation
+          </li>
+
+          <li>
+            Scene-graph reasoning for support relationships and
+            object-blocker detection
+          </li>
+
+          <li>
+            State-aware planning for stacked objects, occupied
+            destinations, and temporary buffer movements
+          </li>
+
+          <li>
+            Procedural geometric task generation for previously
+            unseen letters and digits
+          </li>
+
+          <li>
+            Safety validation for robot workspace boundaries,
+            target spacing, and approved manipulation primitives
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Scene Graphs</span>
+          <span class="pill">Task Planning</span>
+          <span class="pill">State-Aware Planning</span>
+          <span class="pill">Qwen3</span>
+          <span class="pill">Ollama</span>
+          <span class="pill">Streamlit</span>
+          <span class="pill">Geometric Planning</span>
+        </div>
+      </section>
+
+      <!-- ================= ROBOT LEARNING ================= -->
+
+      <section class="skills-card">
+        <h3>Robot Learning &amp; Embodied AI</h3>
+
+        <ul>
+          <li>
+            Language-conditioned manipulation and symbolic action
+            representations
+          </li>
+
+          <li>
+            Behavior-cloning data preparation and demonstration
+            replay
+          </li>
+
+          <li>
+            Failure-driven scenario generation for imitation
+            learning, reinforcement learning, and VLA evaluation
+          </li>
+
+          <li>
+            Action encoding, teacher-student correction, residual
+            policy experiments, and policy comparisons
+          </li>
+
+          <li>
+            Introductory implementations of diffusion-style action
+            prediction, world models, and preference learning
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">VLA</span>
+          <span class="pill">Behavior Cloning</span>
+          <span class="pill">Imitation Learning</span>
+          <span class="pill">Reinforcement Learning</span>
+          <span class="pill">Action Encoding</span>
+          <span class="pill">World Models</span>
+          <span class="pill">Policy Evaluation</span>
+        </div>
+      </section>
+
+      <!-- ================= FAILURE EVALUATION ================= -->
+
+      <section class="skills-card">
+        <h3>Failure Analysis &amp; Robot Evaluation</h3>
+
+        <ul>
+          <li>
+            Episode-level evaluation using success, latency,
+            placement error, and safety metrics
+          </li>
+
+          <li>
+            Baseline-versus-candidate comparisons and regression
+            detection
+          </li>
+
+          <li>
+            Automated SHIP / BLOCK release-gate decisions
+          </li>
+
+          <li>
+            Failure-report generation and targeted retry-scenario
+            creation
+          </li>
+
+          <li>
+            Reproducible rollout artifacts including metrics,
+            reports, JSON logs, and videos
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">ContactTrace AI</span>
+          <span class="pill">Regression Gating</span>
+          <span class="pill">Failure Diagnosis</span>
+          <span class="pill">Metrics</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">SHIP / BLOCK</span>
+        </div>
+      </section>
+
+      <!-- ================= VISION ================= -->
+
+      <section class="skills-card">
+        <h3>Computer Vision &amp; Sensor Processing</h3>
+
+        <ul>
+          <li>
+            RGB and RGB-D camera processing for object localization
+            and manipulation targets
+          </li>
+
+          <li>
+            Color segmentation, image masks, pixel-to-world
+            back-projection, and depth processing
+          </li>
+
+          <li>
+            OpenCV and MediaPipe for visual and gesture-based
+            interfaces
+          </li>
+
+          <li>
+            EMG and IMU preprocessing, filtering, feature
+            extraction, and gesture classification
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">OpenCV</span>
+          <span class="pill">MediaPipe</span>
+          <span class="pill">RGB-D</span>
+          <span class="pill">Depth Processing</span>
+          <span class="pill">EMG</span>
+          <span class="pill">IMU</span>
+          <span class="pill">Signal Filtering</span>
+        </div>
+      </section>
+
+      <!-- ================= ML ================= -->
+
+      <section class="skills-card">
+        <h3>Machine Learning &amp; Data Analysis</h3>
+
+        <ul>
+          <li>
+            Classical machine-learning models including SVM, KNN,
+            logistic regression, random forests, and GMM
+          </li>
+
+          <li>
+            Model training, validation, confusion analysis, and
+            feature engineering
+          </li>
+
+          <li>
+            NumPy and Pandas for experiment processing and dataset
+            preparation
+          </li>
+
+          <li>
+            PyTorch fundamentals and neural-network prototyping
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">scikit-learn</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">Pandas</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">SVM</span>
+          <span class="pill">Random Forest</span>
+          <span class="pill">Feature Engineering</span>
+        </div>
+      </section>
+
+      <!-- ================= BACKEND ================= -->
+
+      <section class="skills-card">
+        <h3>Backend, Infrastructure &amp; DevOps</h3>
+
+        <ul>
+          <li>
+            FastAPI services for robotics evaluation and experiment
+            management
+          </li>
+
+          <li>
+            Asynchronous task processing with Celery and Redis
+          </li>
+
+          <li>
+            PostgreSQL databases and MinIO-compatible artifact
+            storage
+          </li>
+
+          <li>
+            Docker-based development and reproducible service
+            deployment
+          </li>
+
+          <li>
+            GitHub Actions and CI-style robot regression checks
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">FastAPI</span>
+          <span class="pill">Celery</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">Redis</span>
+          <span class="pill">MinIO</span>
+          <span class="pill">Docker</span>
+          <span class="pill">GitHub Actions</span>
+        </div>
+      </section>
+
+      <!-- ================= DEVELOPMENT TOOLS ================= -->
+
+      <section class="skills-card">
+        <h3>Development Tools &amp; Workflow</h3>
+
+        <ul>
+          <li>
+            Linux development, Bash workflows, Python environments,
+            and dependency management
+          </li>
+
+          <li>
+            Git version control, GitHub repositories, releases, and
+            collaborative workflows
+          </li>
+
+          <li>
+            VS Code, Visual Studio, terminal-based debugging, and
+            log analysis
+          </li>
+
+          <li>
+            Structured experiment logging and reproducible project
+            organization
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Ubuntu Linux</span>
+          <span class="pill">Git</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">VS Code</span>
+          <span class="pill">Conda</span>
+          <span class="pill">venv</span>
+          <span class="pill">Bash</span>
+        </div>
+      </section>
+
+      <!-- ================= EMBEDDED ================= -->
+
+      <section class="skills-card">
+        <h3>Embedded Systems &amp; Engineering Tools</h3>
+
+        <ul>
+          <li>
+            Arduino and microcontroller-based sensing and actuation
+          </li>
+
+          <li>
+            Sensor integration, timers, relays, displays, and
+            hardware–software interfacing
+          </li>
+
+          <li>
+            Foundational experience with circuit simulation,
+            digital design, and electronics tools
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Arduino</span>
+          <span class="pill">Microcontrollers</span>
+          <span class="pill">Raspberry Pi</span>
+          <span class="pill">Cadence Virtuoso</span>
+          <span class="pill">PSpice</span>
+          <span class="pill">Proteus</span>
+          <span class="pill">AutoCAD</span>
+        </div>
+      </section>
+
+      <!-- ================= LANGUAGES ================= -->
+
+      <section class="skills-card">
+        <h3>Languages</h3>
+
+        <ul>
+          <li>
+            <strong>English:</strong>
+            Fluent professional proficiency
+          </li>
+
+          <li>
+            <strong>German:</strong>
+            A2 level, currently preparing for B1
+          </li>
+
+          <li>
+            <strong>Bengali:</strong>
+            Native
+          </li>
+        </ul>
+      </section>
+
+      <!-- ================= PROFESSIONAL SKILLS ================= -->
+
+      <section class="skills-card full-width">
+        <h3>Engineering &amp; Professional Strengths</h3>
+
+        <ul>
+          <li>
+            Structured debugging of robotics, simulation, control,
+            and integration problems
+          </li>
+
+          <li>
+            Translating research concepts into working technical
+            prototypes
+          </li>
+
+          <li>
+            Metrics-driven experimentation and evidence-based
+            engineering decisions
+          </li>
+
+          <li>
+            Clear technical documentation, presentations, and
+            cross-functional communication
+          </li>
+
+          <li>
+            Independent project ownership, rapid learning, and
+            iterative development
+          </li>
+        </ul>
+
+        <div class="pillwrap">
+          <span class="pill">Problem Solving</span>
+          <span class="pill">Technical Communication</span>
+          <span class="pill">Research Prototyping</span>
+          <span class="pill">Experiment Design</span>
+          <span class="pill">Documentation</span>
+          <span class="pill">Project Ownership</span>
+        </div>
+      </section>
+
     </div>
 
-    <div class="skills-card">
-      <h3>Machine Learning & Signal Processing</h3>
-      <ul>
-        <li>Classical ML: SVM, KNN, Logistic Regression, GMM</li>
-        <li>Deep Learning basics: CNN, backpropagation</li>
-        <li>Feature engineering for biosignals (EMG/IMU), filtering, preprocessing</li>
-      </ul>
-      <div class="pillwrap">
-        <span class="pill">scikit-learn</span>
-        <span class="pill">NumPy</span>
-        <span class="pill">PyTorch</span>
-      </div>
+    <!-- ================= PAGE LINKS ================= -->
+
+    <div class="button-area">
+      <a class="btn primary" href="projects.html">
+        View Projects
+      </a>
+
+      <a class="btn" href="results.html">
+        View Measured Results
+      </a>
+
+      <a class="btn" href="Certificates and CV.html">
+        View CV &amp; Certificates
+      </a>
     </div>
 
-    <div class="skills-card">
-      <h3>Tools & Dev Workflow</h3>
-      <ul>
-        <li>Git/GitHub, Docker, CI-style workflows</li>
-        <li>Visual Studio / VS Code, Linux/Windows development</li>
-        <li>Data handling: Pandas, CSV/JSON artifacts, reproducible runs</li>
-      </ul>
-      <div class="pillwrap">
-        <span class="pill">Git</span>
-        <span class="pill">GitHub</span>
-        <span class="pill">Docker</span>
-        <span class="pill">iM Blocks</span>
-      </div>
-    </div>
+  </main>
 
-    <div class="skills-card">
-      <h3>Hardware / Embedded & Design Tools</h3>
-      <ul>
-        <li>Arduino, microcontrollers, sensor integration</li>
-        <li>Cadence Virtuoso, PSpice, Proteus, AutoCAD</li>
-      </ul>
-      <div class="pillwrap">
-        <span class="pill">Arduino</span>
-        <span class="pill">Cadence Virtuoso</span>
-        <span class="pill">PSpice</span>
-        <span class="pill">Proteus</span>
-        <span class="pill">AutoCAD</span>
-      </div>
-    </div>
-
-    <div class="skills-card">
-      <h3>Languages</h3>
-      <ul>
-        <li>English — Fluent</li>
-        <li>German — Intermediate</li>
-        <li>Bengali — Native</li>
-      </ul>
-    </div>
-
-    <div class="skills-card">
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Clear communication and cross-functional collaboration</li>
-        <li>Structured problem solving and debugging mindset</li>
-        <li>Ownership, fast learning, and project execution</li>
-      </ul>
-    </div>
-
-  </div>
+  <!-- ================= FOOTER ================= -->
 
   <footer>
-    <p>© 2026 M A HAFIZ</p>
+    <p>
+      © <span id="year"></span> M A HAFIZ
+    </p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
