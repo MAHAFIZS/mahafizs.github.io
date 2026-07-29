@@ -1,386 +1,949 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M A HAFIZ - Robotics Portfolio</title>
+  <meta charset="UTF-8">
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #222;
-  text-align: center;
-}
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-/* ================= HEADER ================= */
-header {
-  background: #1f1f1f;
-  color: white;
-  padding: 25px 15px;
-}
+  <meta
+    name="description"
+    content="M A Hafiz — Robotics Simulation, Manipulation, Failure-Aware Evaluation, and Sim-to-Real Engineer based in Erlangen, Germany."
+  >
 
-header h1 {
-  margin: 0 0 8px;
-  letter-spacing: 1px;
-}
+  <title>M A HAFIZ - Robotics Portfolio</title>
 
-header p {
-  margin: 4px 0;
-  opacity: 0.95;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 0;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-nav ul li {
-  display: inline;
-  margin: 0 12px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #222;
+      text-align: center;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-}
+    /* ================= HEADER ================= */
 
-nav ul li a:hover {
-  text-decoration: underline;
-}
+    header {
+      background: #1f1f1f;
+      color: white;
+      padding: 28px 15px;
+    }
 
-/* ================= CONTENT ================= */
-.content {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
+    header h1 {
+      margin: 0 0 10px;
+      letter-spacing: 1px;
+      font-size: 36px;
+    }
 
-/* ================= BUTTON ================= */
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #008CBA;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 15px;
-  transition: 0.2s ease;
-}
+    header p {
+      margin: 5px 0;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
 
-.btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
 
-/* ================= FEATURED ================= */
-.featured-wrap {
-  margin: 40px auto;
-  text-align: left;
-}
+    nav ul li {
+      display: inline-block;
+      margin: 6px 10px;
+    }
 
-.featured-card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
 
-.featured-card.fade-out {
-  opacity: 0;
-  transform: translateY(5px);
-}
+    nav ul li a:hover {
+      color: #58c7ed;
+      text-decoration: underline;
+    }
 
-.fp-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
+    /* ================= CONTENT ================= */
 
-.fp-top h3 {
-  margin: 0;
-}
+    .content {
+      padding: 50px 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
 
-.fp-year {
-  font-size: 14px;
-  color: #666;
-}
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 29px;
+    }
 
-.fp-desc {
-  margin: 10px 0;
-  line-height: 1.6;
-}
+    /* ================= BUTTON ================= */
 
-.fp-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #008cba;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
 
-.fp-tag {
-  font-size: 12px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: #eef3ff;
-  border: 1px solid #d6e0ff;
-}
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
 
-.fp-actions a {
-  margin-right: 10px;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+    /* ================= FEATURED PROJECTS ================= */
 
-.fp-actions a.primary {
-  background-color: #008CBA;
-  color: white;
-  border-color: #008CBA;
-}
+    .featured-wrap {
+      margin: 25px auto 55px;
+      text-align: left;
+    }
 
-.fp-dots {
-  text-align: center;
-  margin-top: 10px;
-}
+    .featured-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
 
-.fp-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin: 0 4px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-}
+    .featured-card.fade-out {
+      opacity: 0;
+      transform: translateY(5px);
+    }
 
-.fp-dot.active {
-  background: #008CBA;
-}
+    .fp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 15px;
+    }
 
-/* ================= ABOUT ================= */
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 40px;
-  align-items: flex-start;
-}
+    .fp-top h3 {
+      margin: 0;
+      font-size: 23px;
+    }
 
-.profile-area {
-  flex: 1;
-  min-width: 250px;
-}
+    .fp-year {
+      font-size: 14px;
+      color: #666;
+      white-space: nowrap;
+    }
 
-.profile-area img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
+    .fp-desc {
+      margin: 14px 0;
+      line-height: 1.65;
+      color: #333;
+    }
 
-/* Social Icons */
-.social-icons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
+    .fp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
 
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
+    .fp-tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #eef3ff;
+      border: 1px solid #d6e0ff;
+      color: #1b3a74;
+    }
 
-.social-icons img:hover {
-  transform: scale(1.1);
-}
+    .fp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.text-area {
-  flex: 2;
-  min-width: 300px;
-  text-align: left;
-  line-height: 1.7;
-  font-size: 16px;
-}
+    .fp-actions a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 9px 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      color: #222;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 700px) {
-  nav ul li {
-    display: inline-block;
-    margin: 6px 8px;
-  }
-  .about-section {
-    flex-direction: column;
-    align-items: center;
-  }
-  .text-area {
-    text-align: center;
-  }
-}
-</style>
+    .fp-actions a:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .fp-actions a.primary {
+      background-color: #008cba;
+      color: white;
+      border-color: #008cba;
+    }
+
+    .fp-dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .fp-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .fp-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .fp-dot.active {
+      background: #008cba;
+    }
+
+    /* ================= DEMO ================= */
+
+    .demo-section {
+      margin: 20px auto 60px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .demo-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .demo-card p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.65;
+      color: #444;
+    }
+
+    .demo-video {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    .demo-links {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .demo-links a {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid #008cba;
+      color: #008cba;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .demo-links a:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .demo-links a.primary {
+      background: #008cba;
+      color: white;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 35px;
+      align-items: flex-start;
+    }
+
+    .profile-area {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .profile-area > img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .text-area {
+      flex: 2;
+      min-width: 300px;
+      text-align: left;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .text-area p:first-child {
+      margin-top: 0;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav ul li {
+        margin: 6px 7px;
+      }
+
+      .content {
+        padding: 38px 16px;
+      }
+
+      .fp-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .fp-actions {
+        flex-direction: column;
+      }
+
+      .fp-actions a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .demo-links {
+        flex-direction: column;
+      }
+
+      .demo-links a {
+        width: 100%;
+      }
+
+      .about-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .text-area {
+        min-width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>M A HAFIZ</h1>
-  <p><strong>Robotics Simulation & Control Engineer</strong></p>
-  <p>B.Sc. (EEE) • M.Sc. (Medical Engineering) — Completed</p>
-  <p>Erlangen, Germany • Open to Full-Time Roles</p>
+  <header>
+    <h1>M A HAFIZ</h1>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">About</a></li>
-                <li><a href="education.html">Education & Internship</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="Results.html">Results</a></li>
-                <li><a href="Architecture.html">Architecture</a></li>
-                <li><a href="professional.html">Professional Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="Certificates and CV.html">Certificates and CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <p>
+      <strong>
+        Robotics Simulation, Manipulation &amp; Sim-to-Real Engineer
+      </strong>
+    </p>
 
-<div class="content">
+    <p>
+      M.Sc. Medical Engineering •
+      B.Sc. Electrical &amp; Electronic Engineering
+    </p>
 
-<h2>Featured Projects</h2>
+    <p>
+      Erlangen, Germany • Open to Robotics and Simulation Roles
+    </p>
 
-<div class="featured-wrap">
-  <div class="featured-card" id="featuredCard">
-    <div class="fp-top">
-      <h3 id="fpTitle"></h3>
-      <span class="fp-year" id="fpYear"></span>
-    </div>
-    <p class="fp-desc" id="fpDesc"></p>
-    <div class="fp-tags" id="fpTags"></div>
-    <div class="fp-actions">
-      <a class="primary" id="fpGithub" href="#" target="_blank">GitHub</a>
-      <a id="fpVideo" href="#" target="_blank">Demo Video</a>
-      <a href="projects.html">All Projects</a>
-    </div>
-    <div class="fp-dots" id="fpDots"></div>
-  </div>
-</div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">About</a></li>
 
-<h2>About Me</h2>
+        <li>
+          <a href="education.html">
+            Education &amp; Internship
+          </a>
+        </li>
 
-<div class="about-section">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
 
-<div class="profile-area">
-  <img src="profile1.jpg" alt="M A Hafiz">
+        <li>
+          <a href="professional.html">
+            Professional Experience
+          </a>
+        </li>
 
-  <div class="social-icons">
-    <a href="mailto:mahafizsourav@gmail.com" target="_blank">
-      <img src="images/email.jpg" alt="Email">
-    </a>
-    <a href="https://linkedin.com/in/hafiz-ma" target="_blank">
-      <img src="images/linkedin.png" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/MAHAFIZS" target="_blank">
-      <img src="images/github.jpg" alt="GitHub">
-    </a>
-  </div>
-</div>
+        <li><a href="skills.html">Skills</a></li>
 
-<div class="text-area">
-  <p>
-    I'm <strong>M A Hafiz</strong>, a Robotics Engineer specializing in
-    <strong>robot manipulation</strong>, <strong>simulation-to-real transfer</strong>,
-    and <strong>human–robot interaction</strong>.
-  </p>
+        <li>
+          <a href="Certificates and CV.html">
+            Certificates and CV
+          </a>
+        </li>
 
-  <p>
-    I have completed my <strong>M.Sc. in Medical Engineering</strong> at
-    <strong>FAU Erlangen-Nürnberg</strong>. My thesis focused on a
-    <strong>gesture-based Cartesian control system</strong> using EMG signals,
-    validated in <strong>MuJoCo</strong> and transferred to a
-    <strong>real Franka Emika Panda robot</strong>.
-  </p>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <p>
-    I work extensively with <strong>ROS 2, Python, C++, MuJoCo, Gazebo</strong>,
-    implementing Cartesian control, inverse kinematics, and
-    contact-rich manipulation strategies.
-  </p>
+  <main class="content">
 
-  <p>
-    My goal is to design robust, measurable, and industry-ready robotic
-    systems that bridge simulation and real-world deployment.
-  </p>
+    <!-- ================= FEATURED PROJECTS ================= -->
 
-  <a href="projects.html" class="btn">View My Projects</a>
-</div>
+    <section aria-labelledby="featured-projects-heading">
 
-</div>
-</div>
+      <h2 id="featured-projects-heading">
+        Featured Projects
+      </h2>
 
-<script>
-const projects = [
-{
-  title: "Robot Eval Platform – Regression Gating",
-  year: "2025–2026",
-  desc: "Robotics evaluation dashboard converting rollouts into measurable metrics and deployment decisions.",
-  tags: ["FastAPI", "React", "CI/CD"],
-  github: "https://github.com/MAHAFIZS/robot-eval-platform",
-  video: ""
-},
-{
-  title: "MuJoCo Simulation for Franka Panda",
-  year: "2024–2025",
-  desc: "Simulation environment mirroring real lab setups for gesture-based manipulation.",
-  tags: ["MuJoCo", "Python"],
-  github: "https://github.com/MAHAFIZS/mujoco-franka-simulation",
-  video: ""
-}
-];
+      <div class="featured-wrap">
 
-const titleEl = document.getElementById("fpTitle");
-const yearEl = document.getElementById("fpYear");
-const descEl = document.getElementById("fpDesc");
-const tagsEl = document.getElementById("fpTags");
-const githubEl = document.getElementById("fpGithub");
-const dotsEl = document.getElementById("fpDots");
+        <div
+          class="featured-card"
+          id="featuredCard"
+        >
 
-let idx = 0;
+          <div class="fp-top">
+            <h3 id="fpTitle"></h3>
 
-function render() {
-  const p = projects[idx];
-  titleEl.textContent = p.title;
-  yearEl.textContent = p.year;
-  descEl.textContent = p.desc;
-  tagsEl.innerHTML = p.tags.map(t => `<span class="fp-tag">${t}</span>`).join("");
-  githubEl.href = p.github;
+            <span
+              class="fp-year"
+              id="fpYear"
+            ></span>
+          </div>
 
-  dotsEl.innerHTML = projects.map((_, i) =>
-    `<span class="fp-dot ${i === idx ? "active" : ""}" onclick="setProject(${i})"></span>`
-  ).join("");
-}
+          <p
+            class="fp-desc"
+            id="fpDesc"
+          ></p>
 
-function setProject(i) {
-  idx = i;
-  render();
-}
+          <div
+            class="fp-tags"
+            id="fpTags"
+          ></div>
 
-setInterval(() => {
-  idx = (idx + 1) % projects.length;
-  render();
-}, 5000);
+          <div class="fp-actions">
 
-render();
-</script>
+            <a
+              class="primary"
+              id="fpGithub"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a
+              id="fpVideo"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Demo Video
+            </a>
+
+            <a href="projects.html">
+              View Details
+            </a>
+
+          </div>
+
+          <div
+            class="fp-dots"
+            id="fpDots"
+            aria-label="Featured project selection"
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= MAIN DEMO ================= -->
+
+    <section
+      class="demo-section"
+      aria-labelledby="demo-heading"
+    >
+
+      <h2 id="demo-heading">
+        Latest Robot Demo
+      </h2>
+
+      <div class="demo-card">
+
+        <h3>
+          Natural-Language Robot Manipulation in Isaac Sim
+        </h3>
+
+        <p>
+          A persistent Franka robot agent that understands
+          natural-language commands, maintains scene state, removes
+          blocking objects, executes multi-step manipulation tasks,
+          and verifies final object placement.
+        </p>
+
+        <video
+          class="demo-video"
+          controls
+          preload="metadata"
+          playsinline
+        >
+          <source
+            src="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+            type="video/webm"
+          >
+
+          Your browser does not support the video element.
+        </video>
+
+        <div class="demo-links">
+
+          <a
+            class="primary"
+            href="https://github.com/MAHAFIZS/failure-aware-language-robot-agent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Source Code
+          </a>
+
+          <a href="projects.html">
+            Read Project Details
+          </a>
+
+          <a
+            href="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open Full Video
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section aria-labelledby="about-heading">
+
+      <h2 id="about-heading">
+        About Me
+      </h2>
+
+      <div class="about-section">
+
+        <div class="profile-area">
+
+          <img
+            src="profile1.jpg"
+            alt="Portrait of M A Hafiz"
+          >
+
+          <div class="social-icons">
+
+            <a
+              href="mailto:mahafizsourav@gmail.com"
+              aria-label="Send email to M A Hafiz"
+            >
+              <img
+                src="images/email.jpg"
+                alt="Email"
+              >
+            </a>
+
+            <a
+              href="https://linkedin.com/in/hafiz-ma"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="M A Hafiz on LinkedIn"
+            >
+              <img
+                src="images/linkedin.png"
+                alt="LinkedIn"
+              >
+            </a>
+
+            <a
+              href="https://github.com/MAHAFIZS"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="M A Hafiz on GitHub"
+            >
+              <img
+                src="images/github.jpg"
+                alt="GitHub"
+              >
+            </a>
+
+          </div>
+        </div>
+
+        <div class="text-area">
+
+          <p>
+            I'm <strong>M A Hafiz</strong>, a Robotics Engineer based
+            in Erlangen, Germany, focusing on
+            <strong>robot manipulation</strong>,
+            <strong>robotics simulation</strong>,
+            <strong>failure-aware evaluation</strong>, and
+            <strong>simulation-to-real transfer</strong>.
+          </p>
+
+          <p>
+            I completed my
+            <strong>M.Sc. in Medical Engineering</strong> at
+            <strong>FAU Erlangen-Nürnberg</strong>.
+            My master's thesis focused on gesture-based Cartesian
+            and rotational control using EMG and IMU signals. The
+            system was validated in <strong>MuJoCo</strong> and
+            transferred to a <strong>real Franka robot</strong>
+            for manipulation and insertion tasks.
+          </p>
+
+          <p>
+            I am currently developing
+            <strong>ContactTrace AI</strong>, a failure-aware
+            robotics platform for evaluating robot policies,
+            identifying failure causes, generating targeted test
+            scenarios, and supporting safer deployment decisions.
+          </p>
+
+          <p>
+            My recent work includes a persistent natural-language
+            robot agent in <strong>NVIDIA Isaac Sim</strong>.
+            The system maintains scene state across commands,
+            detects blocked objects, removes obstacles, performs
+            multi-step manipulation, and procedurally generates
+            letters and digits without fixed robot-coordinate
+            templates.
+          </p>
+
+          <p>
+            I work with
+            <strong>
+              Python, C++, ROS 2, Isaac Sim, MuJoCo, Gazebo,
+              Franka, OpenCV, FastAPI, Docker, Ollama, and Qwen3
+            </strong>.
+            My goal is to build reliable and measurable robotic
+            systems that connect simulation, evaluation, and
+            real-world deployment.
+          </p>
+
+          <a
+            href="projects.html"
+            class="btn"
+          >
+            Explore My Robotics Projects
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const projects = [
+      {
+        title:
+          "Natural-Language Robot Agent in Isaac Sim",
+
+        year:
+          "2026",
+
+        desc:
+          "A persistent Franka manipulation system with natural-language commands, scene-state reasoning, blocker removal, procedural letter and digit generation, and execution verification.",
+
+        tags: [
+          "Isaac Sim",
+          "Franka",
+          "Python",
+          "Ollama",
+          "Qwen3",
+          "Streamlit"
+        ],
+
+        github:
+          "https://github.com/MAHAFIZS/failure-aware-language-robot-agent",
+
+        video:
+          "https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+      },
+
+      {
+        title:
+          "ContactTrace AI",
+
+        year:
+          "2026",
+
+        desc:
+          "A failure-aware robotics platform for robot-policy evaluation, failure diagnosis, targeted scenario generation, and safer simulation-to-real deployment decisions.",
+
+        tags: [
+          "Robot Evaluation",
+          "Failure Analysis",
+          "MuJoCo",
+          "Isaac Sim",
+          "Python"
+        ],
+
+        github:
+          "https://github.com/MAHAFIZS",
+
+        video:
+          ""
+      },
+
+      {
+        title:
+          "Robot Eval Platform – Regression Gating",
+
+        year:
+          "2025–2026",
+
+        desc:
+          "A robotics evaluation platform that converts simulation rollouts into metrics, comparison reports, and automated SHIP or BLOCK deployment decisions.",
+
+        tags: [
+          "FastAPI",
+          "Celery",
+          "PostgreSQL",
+          "Docker",
+          "CI/CD"
+        ],
+
+        github:
+          "https://github.com/MAHAFIZS/robot-eval-platform",
+
+        video:
+          ""
+      },
+
+      {
+        title:
+          "M.Sc. Thesis – Gesture-Based Franka Control",
+
+        year:
+          "2024–2025",
+
+        desc:
+          "Gesture-based Cartesian and rotational robot control using EMG and IMU signals, validated in MuJoCo and transferred to a real Franka robot.",
+
+        tags: [
+          "EMG",
+          "IMU",
+          "MuJoCo",
+          "Franka",
+          "Sim-to-Real"
+        ],
+
+        github:
+          "https://github.com/MAHAFIZS/mujoco-franka-simulation",
+
+        video:
+          "https://www.youtube.com/watch?v=Q26zdV5uKMU"
+      }
+    ];
+
+    const featuredCard =
+      document.getElementById("featuredCard");
+
+    const titleEl =
+      document.getElementById("fpTitle");
+
+    const yearEl =
+      document.getElementById("fpYear");
+
+    const descEl =
+      document.getElementById("fpDesc");
+
+    const tagsEl =
+      document.getElementById("fpTags");
+
+    const githubEl =
+      document.getElementById("fpGithub");
+
+    const videoEl =
+      document.getElementById("fpVideo");
+
+    const dotsEl =
+      document.getElementById("fpDots");
+
+    let currentProjectIndex = 0;
+    let projectInterval;
+
+    function renderProject() {
+      const project =
+        projects[currentProjectIndex];
+
+      titleEl.textContent =
+        project.title;
+
+      yearEl.textContent =
+        project.year;
+
+      descEl.textContent =
+        project.desc;
+
+      tagsEl.innerHTML = project.tags
+        .map(
+          tag =>
+            `<span class="fp-tag">${tag}</span>`
+        )
+        .join("");
+
+      if (project.github) {
+        githubEl.href =
+          project.github;
+
+        githubEl.style.display =
+          "inline-block";
+      } else {
+        githubEl.style.display =
+          "none";
+      }
+
+      if (project.video) {
+        videoEl.href =
+          project.video;
+
+        videoEl.style.display =
+          "inline-block";
+      } else {
+        videoEl.style.display =
+          "none";
+      }
+
+      dotsEl.innerHTML = projects
+        .map(
+          (_, index) =>
+            `<span
+              class="fp-dot ${
+                index === currentProjectIndex
+                  ? "active"
+                  : ""
+              }"
+              onclick="setProject(${index})"
+              role="button"
+              tabindex="0"
+              aria-label="Show project ${index + 1}"
+            ></span>`
+        )
+        .join("");
+    }
+
+    function setProject(index) {
+      currentProjectIndex =
+        index;
+
+      renderProject();
+      restartAutomaticRotation();
+    }
+
+    function showNextProject() {
+      featuredCard.classList.add(
+        "fade-out"
+      );
+
+      setTimeout(() => {
+        currentProjectIndex =
+          (currentProjectIndex + 1)
+          % projects.length;
+
+        renderProject();
+
+        featuredCard.classList.remove(
+          "fade-out"
+        );
+      }, 250);
+    }
+
+    function restartAutomaticRotation() {
+      clearInterval(projectInterval);
+
+      projectInterval = setInterval(
+        showNextProject,
+        5000
+      );
+    }
+
+    renderProject();
+    restartAutomaticRotation();
+  </script>
 
 </body>
 </html>
