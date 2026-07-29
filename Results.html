@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M A HAFIZ - Results & Impact</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Measured robotics results from M A Hafiz, including robot evaluation, regression gating, Franka sim-to-real control, and natural-language manipulation in NVIDIA Isaac Sim."
+  >
+
+  <title>M A HAFIZ - Results &amp; Impact</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,31 +32,85 @@
       color: #222;
     }
 
+    /* ================= HEADER ================= */
+
     header {
       background: #1f1f1f;
       color: #fff;
-      padding: 22px 15px;
+      padding: 24px 15px;
       text-align: center;
     }
-    header h1 { margin: 0 0 6px; letter-spacing: 1px; }
-    header p { margin: 4px 0; opacity: .95; }
 
-    nav ul { list-style: none; padding: 0; margin: 14px 0 0; }
-    nav ul li { display: inline; margin: 0 12px; }
-    nav ul li a { color: #fff; text-decoration: none; font-size: 15px; }
-    nav ul li a:hover { text-decoration: underline; }
+    header h1 {
+      margin: 0 0 7px;
+      letter-spacing: 1px;
+      font-size: 34px;
+    }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    header p {
+      margin: 4px 0;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 6px 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      color: #58c7ed;
+      text-decoration: underline;
+    }
+
+    /* ================= PAGE STRUCTURE ================= */
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 42px 20px;
+    }
 
     .hero {
       background: #fff;
       border-radius: 12px;
-      padding: 22px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
-    .hero h2 { margin: 0 0 8px; }
 
-    .sub { color: #444; line-height: 1.6; margin: 0; }
+    .hero h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .sub {
+      color: #444;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .section {
+      margin-top: 32px;
+    }
+
+    .section > h3 {
+      margin: 0 0 14px;
+      font-size: 23px;
+    }
+
+    /* ================= CARDS ================= */
 
     .grid {
       display: grid;
@@ -47,33 +119,75 @@
       margin-top: 18px;
     }
 
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .row > .card {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .card {
       background: #fff;
       border-radius: 12px;
       padding: 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
+
+    .card h4 {
+      line-height: 1.4;
+    }
+
+    /* ================= KPI ================= */
 
     .kpi {
       font-size: 28px;
       font-weight: 700;
-      color: #008CBA;
+      color: #008cba;
       margin: 0 0 6px;
     }
 
-    .kpi-label { margin: 0; color: #333; }
-    .kpi-note { margin: 8px 0 0; color: #666; font-size: 13px; line-height: 1.5; }
+    .kpi-label {
+      margin: 0;
+      color: #333;
+      line-height: 1.45;
+    }
 
-    .section { margin-top: 22px; }
-    .section h3 { margin: 0 0 10px; }
+    .kpi-note {
+      margin: 8px 0 0;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.55;
+    }
 
-    .bullets { margin: 0; padding-left: 18px; line-height: 1.7; }
+    /* ================= LISTS & TAGS ================= */
 
-    .row { display: flex; flex-wrap: wrap; gap: 16px; }
-    .row > .card { flex: 1; min-width: 280px; }
+    .bullets {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.75;
+    }
 
-    .tagwrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .tag { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: #eef3ff; border: 1px solid #d6e0ff; }
+    .tagwrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef3ff;
+      border: 1px solid #d6e0ff;
+      color: #1b3a74;
+    }
+
+    /* ================= CALLOUT ================= */
 
     .callout {
       margin-top: 18px;
@@ -82,35 +196,57 @@
       color: #103a57;
       padding: 14px 16px;
       border-radius: 12px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .btnbar { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+    /* ================= BUTTONS ================= */
+
+    .btnbar {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .btn {
       display: inline-block;
       padding: 10px 14px;
       border-radius: 8px;
       text-decoration: none;
-      border: 1px solid #008CBA;
-      color: #008CBA;
+      border: 1px solid #008cba;
+      color: #008cba;
       background: #fff;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
     }
-    .btn.primary { background: #008CBA; color: #fff; }
-    .btn:hover { opacity: .95; transform: translateY(-1px); }
 
-    /* Evidence gallery */
+    .btn.primary {
+      background: #008cba;
+      color: #fff;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* ================= EVIDENCE GALLERY ================= */
+
     .media-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
       margin-top: 12px;
     }
+
     .media-item {
       background: #fff;
       border-radius: 12px;
       padding: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     }
+
     .media-item img {
       width: 100%;
       height: auto;
@@ -118,389 +254,999 @@
       display: block;
       border: 1px solid #e5e7eb;
     }
+
     .caption {
       margin-top: 8px;
       font-size: 13px;
       color: #555;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-    .video-wrap video {
+    /* ================= VIDEO ================= */
+
+    .video-wrap video,
+    .project-video {
       width: 100%;
       border-radius: 10px;
       border: 1px solid #e5e7eb;
       background: #000;
+      display: block;
     }
 
-    footer { text-align: center; color: #666; padding: 24px 10px; }
+    /* ================= TABLE ================= */
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 11px;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    th {
+      background: #eef3ff;
+      color: #1b3a74;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f8f9fb;
+    }
+
+    /* ================= PIPELINE ================= */
+
+    .pipeline {
+      background: #f6f8fa;
+      padding: 14px;
+      border-radius: 10px;
+      overflow-x: auto;
+      line-height: 1.65;
+      border: 1px solid #e5e7eb;
+      font-size: 13px;
+      white-space: pre-wrap;
+      margin-top: 16px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 26px 10px;
+    }
+
+    /* ================= RESPONSIVE ================= */
 
     @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      nav ul li { display: inline-block; margin: 6px 10px; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 29px;
+      }
+
+      .container {
+        padding: 30px 15px;
+      }
+
+      .hero {
+        padding: 19px;
+      }
+
+      .hero h2 {
+        font-size: 24px;
+      }
+
+      .section > h3 {
+        font-size: 21px;
+      }
+
+      .btnbar {
+        flex-direction: column;
+      }
+
+      .btnbar .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- ================= HEADER ================= -->
+
   <header>
     <h1>M A HAFIZ</h1>
-    <p><strong>Results & Impact</strong></p>
-    <p>Erlangen, Germany • Robotics Simulation & Control • Sim2Real</p>
 
-    <nav>
+    <p>
+      <strong>
+        Robotics Results, Evaluation &amp; Sim-to-Real Validation
+      </strong>
+    </p>
+
+    <p>
+      Erlangen, Germany • Robot Manipulation • Simulation • Control
+    </p>
+
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">About</a></li>
-        <li><a href="education.html">Education & Internship</a></li>
+
+        <li>
+          <a href="education.html">
+            Education &amp; Internship
+          </a>
+        </li>
+
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="Results.html">Results</a></li>
-        <li><a href="Architecture.html">Architecture</a></li>
-        <li><a href="professional.html">Professional Experience</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+
+        <li>
+          <a href="professional.html">
+            Professional Experience
+          </a>
+        </li>
+
         <li><a href="skills.html">Skills</a></li>
-        <li><a href="Certificates and CV.html">Certificates and CV</a></li>
+
+        <li>
+          <a href="Certificates and CV.html">
+            Certificates and CV
+          </a>
+        </li>
+
         <li><a href="publications.html">Publications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="container">
+  <main class="container">
 
-    <div class="hero">
-      <h2>Proof that my systems work (not just “cool demos”)</h2>
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+      <h2>Measured Robotics Results &amp; Engineering Impact</h2>
+
       <p class="sub">
-        This page highlights measurable outcomes across my robotics work: simulation fidelity,
-        stable control, task success, and repeatable evaluation — backed by artifacts (metrics, reports, and videos).
+        This page presents measurable outcomes from my robotics work,
+        including simulation-to-real control, robot-policy evaluation,
+        manipulation accuracy, contact behavior, regression detection,
+        scene-aware planning, and deployment decisions.
       </p>
 
       <div class="callout">
-        <strong>Summary:</strong> A candidate controller can look “fine” (even 100% success),
-        yet still be unsafe to ship. My platform detects such regressions automatically and outputs a clear <strong>SHIP / BLOCK</strong> decision.
+        <strong>Summary:</strong>
+        My work combines measurable robot-control performance,
+        simulation-to-real validation, and deployment-oriented
+        evaluation. The results below include positioning accuracy,
+        contact behavior, policy regression detection, state-aware
+        manipulation, and automated SHIP / BLOCK decisions.
       </div>
 
       <div class="btnbar">
-        <a class="btn primary" href="projects.html">See Projects</a>
-        <a class="btn" href="Architecture.html">See Architecture</a>
-        <a class="btn" href="Certificates and CV.html">Download CV</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </div>
-    </div>
+        <a class="btn primary" href="projects.html">
+          See Projects
+        </a>
 
-    <!-- KPI Grid (REAL numbers from your screenshots) -->
-    <div class="grid">
+        <a class="btn" href="architecture.html">
+          See Architecture
+        </a>
+
+        <a class="btn" href="Certificates and CV.html">
+          Download CV
+        </a>
+
+        <a class="btn" href="contact.html">
+          Contact
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= TOP KPI GRID ================= -->
+
+    <section class="grid" aria-label="Top robotics results">
+
       <div class="card">
         <p class="kpi">100%</p>
-        <p class="kpi-label"><strong>Task Success Rate</strong> (Demo run)</p>
-        <p class="kpi-note">Measured over <strong>5 episodes</strong> in the Robot Eval Platform demo.</p>
+
+        <p class="kpi-label">
+          <strong>Task Success Rate</strong>
+          in the evaluation demo
+        </p>
+
+        <p class="kpi-note">
+          Measured over five episodes in the Robot Eval Platform
+          demonstration.
+        </p>
       </div>
 
       <div class="card">
         <p class="kpi">20.8 ms</p>
-        <p class="kpi-label"><strong>Mean Control Latency</strong> (Candidate)</p>
-        <p class="kpi-note">Regression detected: <strong>+3.6 ms (+21%)</strong> vs baseline <strong>17.2 ms</strong>.</p>
+
+        <p class="kpi-label">
+          <strong>Mean Candidate Control Latency</strong>
+        </p>
+
+        <p class="kpi-note">
+          A regression of <strong>3.6 ms, or 21%</strong>,
+          compared with the 17.2 ms baseline.
+        </p>
       </div>
 
       <div class="card">
         <p class="kpi">BLOCK</p>
-        <p class="kpi-label"><strong>Release Gate Decision</strong> (Do not ship)</p>
-        <p class="kpi-note">Candidate automatically blocked due to violating the latency regression rule.</p>
-      </div>
-    </div>
 
-    <!-- Robot Eval Platform -->
-    <div class="section">
-      <h3>Robot Eval Platform — Regression Gating Outcomes</h3>
+        <p class="kpi-label">
+          <strong>Automatic Release-Gate Decision</strong>
+        </p>
+
+        <p class="kpi-note">
+          The candidate was blocked because it violated the latency
+          regression rule despite completing the task successfully.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ROBOT EVAL PLATFORM                                        -->
+    <!-- ========================================================= -->
+
+    <section class="section">
+      <h3>Robot Eval Platform — Regression-Gating Outcomes</h3>
 
       <div class="row">
+
         <div class="card">
           <ul class="bullets">
-            <li>Automated rollouts into <strong>metrics + videos + reports</strong> for every run.</li>
-            <li>Baseline vs candidate comparison with a clear <strong>SHIP / BLOCK</strong> decision.</li>
-            <li>Rules show exactly <strong>why</strong> a candidate is blocked (traceable + auditable).</li>
+            <li>
+              Converted automated rollouts into
+              <strong>metrics, videos, and reports</strong>
+              for each run.
+            </li>
+
+            <li>
+              Compared locked baselines with candidate controllers
+              and produced an explicit
+              <strong>SHIP / BLOCK</strong> decision.
+            </li>
+
+            <li>
+              Reported the exact rule responsible for blocking a
+              candidate, supporting traceability and auditability.
+            </li>
+
+            <li>
+              Integrated release gating with CI workflows so a
+              performance regression can fail deployment checks.
+            </li>
           </ul>
+
           <div class="tagwrap">
-            <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span>
-            <span class="tag">MinIO/S3</span><span class="tag">CI-style gating</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MinIO / S3</span>
+            <span class="tag">CI Gating</span>
           </div>
 
-          <div class="callout" style="margin-top:14px;">
-            <strong>Example:</strong> Candidate achieved <strong>100% success</strong> but was <strong>BLOCKED</strong>
-            because control latency regressed by <strong>+21%</strong> vs baseline.
+          <div class="callout">
+            <strong>Example:</strong>
+            The candidate achieved <strong>100% task success</strong>
+            but was still <strong>BLOCKED</strong> because mean
+            control latency regressed by <strong>21%</strong>
+            relative to the baseline.
           </div>
         </div>
 
         <div class="card">
-          <h4 style="margin:0 0 10px;">Gate rules used in the demo</h4>
+          <h4 style="margin:0 0 10px;">
+            Gate rules used in the demonstration
+          </h4>
+
           <ul class="bullets">
-            <li>Success rate ≥ baseline</li>
-            <li>Mean control latency ≤ baseline</li>
-            <li>Safety violations = 0</li>
+            <li>Success rate must be at least equal to baseline</li>
+            <li>Mean control latency must not exceed baseline</li>
+            <li>Safety violations must remain zero</li>
           </ul>
-          <p class="kpi-note" style="margin-top:10px;">
-            This is the “decision layer” that prevents silent regressions from reaching real robots.
+
+          <p class="kpi-note" style="margin-top:12px;">
+            This decision layer prevents silent regressions from
+            progressing toward real-robot deployment.
           </p>
+
+          <div class="btnbar">
+            <a
+              class="btn primary"
+              href="https://github.com/MAHAFIZS/robot-eval-platform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Repository
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/MAHAFIZS/robot-eval-platform/releases/tag/v1.0-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Demo Release
+            </a>
+          </div>
         </div>
+
       </div>
 
-      <!-- Evidence: video + screenshots -->
+      <!-- ================= EVIDENCE ================= -->
+
       <div class="section">
-        <h3>Evidence (Screenshots + Demo Video)</h3>
+        <h3>Evidence — Screenshots and Demo Video</h3>
 
         <div class="row">
+
           <div class="card video-wrap">
-            <h4 style="margin:0 0 10px;">Demo video (rollout + artifacts)</h4>
+            <h4 style="margin:0 0 10px;">
+              Evaluation and regression-gating demonstration
+            </h4>
+
             <video controls preload="metadata">
-              <source src="images/robot-eval-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              <source
+                src="images/robot-eval-demo.mp4"
+                type="video/mp4"
+              >
+
+              Your browser does not support the video element.
             </video>
+
             <p class="caption">
-              This demo shows: run execution → rollout video → metrics artifacts → gating decision (SHIP/BLOCK).
+              Run execution → rollout video → evaluation metrics →
+              artifacts → SHIP / BLOCK decision.
             </p>
           </div>
 
           <div class="card">
-            <h4 style="margin:0 0 10px;">Key screenshots</h4>
+            <h4 style="margin:0 0 10px;">
+              Key screenshots
+            </h4>
 
             <div class="media-grid">
+
               <div class="media-item">
-                <img src="images/01_overview_block.png" alt="Overview: BLOCK decision" />
-                <div class="caption"><strong>Overview:</strong> Candidate blocked despite 100% success due to latency regression.</div>
+                <img
+                  src="images/01_overview_block.png"
+                  alt="Robot evaluation overview showing a BLOCK decision"
+                >
+
+                <div class="caption">
+                  <strong>Overview:</strong>
+                  Candidate blocked despite 100% success because of
+                  a latency regression.
+                </div>
               </div>
 
               <div class="media-item">
-                <img src="images/02_compare_runs.png" alt="Compare runs: baseline vs candidate" />
-                <div class="caption"><strong>Compare:</strong> Baseline 17.2 ms vs candidate 20.8 ms (+3.6 ms).</div>
+                <img
+                  src="images/02_compare_runs.png"
+                  alt="Baseline and candidate run comparison"
+                >
+
+                <div class="caption">
+                  <strong>Comparison:</strong>
+                  Baseline 17.2 ms versus candidate 20.8 ms.
+                </div>
               </div>
 
               <div class="media-item">
-                <img src="images/03_runs_list.png" alt="Runs list with SHIP/BLOCK history" />
-                <div class="caption"><strong>Runs:</strong> History view showing SHIP/BLOCK decisions across runs.</div>
+                <img
+                  src="images/03_runs_list.png"
+                  alt="Evaluation runs with SHIP and BLOCK history"
+                >
+
+                <div class="caption">
+                  <strong>Run history:</strong>
+                  Stored SHIP / BLOCK decisions across multiple runs.
+                </div>
               </div>
 
               <div class="media-item">
-                <img src="images/04_gate_details.png" alt="Gate details with rule violation" />
-                <div class="caption"><strong>Gate details:</strong> Rule-level traceability (exact failure reason shown).</div>
+                <img
+                  src="images/04_gate_details.png"
+                  alt="Detailed robot evaluation gate rule"
+                >
+
+                <div class="caption">
+                  <strong>Gate details:</strong>
+                  Exact rule-level failure reason.
+                </div>
               </div>
 
               <div class="media-item">
-                <img src="images/05_run_video.png" alt="Run details with embedded rollout video" />
-                <div class="caption"><strong>Run details:</strong> Rollout preview stored as an artifact for auditability.</div>
+                <img
+                  src="images/05_run_video.png"
+                  alt="Robot rollout video stored as an evaluation artifact"
+                >
+
+                <div class="caption">
+                  <strong>Run artifact:</strong>
+                  Stored rollout preview for traceability.
+                </div>
               </div>
 
               <div class="media-item">
-                <img src="images/06_settings.png" alt="Settings showing evaluation defaults" />
-                <div class="caption"><strong>Settings:</strong> Visible evaluation policy (metrics enforced + strategy).</div>
+                <img
+                  src="images/06_settings.png"
+                  alt="Robot evaluation policy settings"
+                >
+
+                <div class="caption">
+                  <strong>Settings:</strong>
+                  Visible evaluation policy and metric requirements.
+                </div>
               </div>
+
             </div>
-
-            <p class="kpi-note" style="margin-top:10px;">
-              
-            </p>
           </div>
+
         </div>
       </div>
+    </section>
 
-    </div>
-
-    <!-- Franka Panda section (kept as-is, but you can later add real numbers too) -->
     <!-- ========================================================= -->
-    <!-- 3) FRANKA PANDA — SIM2REAL + GESTURE UX                    -->
+    <!-- ISAAC SIM LANGUAGE AGENT                                   -->
     <!-- ========================================================= -->
-    <div class="section">
-      <h3>Franka FR3 — Gesture-Driven UX + Sim2Real Validation (Free-space + Contact-rich)</h3>
 
-      <!-- Franka KPIs (from your thesis excerpt) -->
+    <section class="section">
+      <h3>
+        Natural-Language Franka Agent — State-Aware Manipulation
+      </h3>
+
       <div class="grid">
+
         <div class="card">
-          <p class="kpi">3.06 mm</p>
-          <p class="kpi-label"><strong>Best Final Reach Error</strong> (Task 1)</p>
-          <p class="kpi-note">Participant P02, Trial 5 (Reach task) achieved <strong>3.06 mm</strong> final positioning error.</p>
+          <p class="kpi">3.8 mm</p>
+
+          <p class="kpi-label">
+            <strong>Held-Object Placement Error</strong>
+          </p>
+
+          <p class="kpi-note">
+            A held blue cube was placed on the purple cube with
+            approximately 3.8 mm XY placement error.
+          </p>
         </div>
 
         <div class="card">
-          <p class="kpi">≈99%</p>
-          <p class="kpi-label"><strong>Learning Improvement</strong> (Reach task)</p>
-          <p class="kpi-note">Large initial error reduced to single-digit mm (e.g., P02: <strong>248 mm → 3 mm</strong> in 5 trials).</p>
+          <p class="kpi">8</p>
+
+          <p class="kpi-label">
+            <strong>Persistent Scene Objects</strong>
+          </p>
+
+          <p class="kpi-note">
+            Eight colored cubes remain available across consecutive
+            natural-language commands.
+          </p>
         </div>
 
         <div class="card">
-          <p class="kpi">Up to 38.9 N</p>
-          <p class="kpi-label"><strong>Contact Force Peak</strong> (Task 2)</p>
-          <p class="kpi-note">Threaded insertion/screwing produced controlled forces (P01 peak <strong>38.9 N</strong>, then stabilizing).</p>
+          <p class="kpi">PASS</p>
+
+          <p class="kpi-label">
+            <strong>Blocker-Aware Pick Execution</strong>
+          </p>
+
+          <p class="kpi-note">
+            When a requested cube was blocked from above, the planner
+            removed the blocker before picking the target cube.
+          </p>
         </div>
+
       </div>
 
-      <div class="row">
+      <div class="row" style="margin-top:16px;">
+
         <div class="card">
           <ul class="bullets">
-            <li><strong>Hand-gesture-driven UX</strong> (EMG/IMU) for axis selection + action execution via lock/unlock state machine.</li>
-            <li><strong>Cartesian motion + orientation control</strong> executed through Jacobian/IK-based control.</li>
-            <li>Validated on <strong>real FR3</strong> across both:
-              <strong>Task 1</strong> (free-space reach) and <strong>Task 2</strong> (contact-rich screw depth).
+            <li>
+              Persistent natural-language command execution in
+              NVIDIA Isaac Sim
             </li>
-            <li>Objective metrics recorded from the FR3: end-effector pose error, force/torque behavior, and rotation alignment.</li>
+
+            <li>
+              Pick, hold, release, place, and cube-on-cube stacking
+            </li>
+
+            <li>
+              Scene-graph-based detection of cubes above a target
+              object
+            </li>
+
+            <li>
+              Source-stack and occupied-destination handling
+            </li>
+
+            <li>
+              Temporary buffer movements for rearrangement conflicts
+            </li>
+
+            <li>
+              Procedural generation of letters and digits from font
+              geometry
+            </li>
+
+            <li>
+              Per-step verification of XY and Z placement errors
+            </li>
           </ul>
 
           <div class="tagwrap">
-            <span class="tag">FR3</span><span class="tag">Gesture UX</span><span class="tag">EMG/IMU</span>
-            <span class="tag">Cartesian Control</span><span class="tag">Impedance</span><span class="tag">Contact-rich</span>
+            <span class="tag">NVIDIA Isaac Sim</span>
+            <span class="tag">Franka</span>
+            <span class="tag">Python</span>
+            <span class="tag">Qwen3</span>
+            <span class="tag">Ollama</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Scene Graph</span>
           </div>
 
-          <div class="callout" style="margin-top:14px;">
-            <strong>Key point:</strong> This is not “gesture → direct joint motion”.
-            It is a complete HRI control stack with a UX state machine and measurable performance outcomes.
-          </div>
+          <pre class="pipeline">Natural-language instruction
+  ↓
+Intent or character extraction
+  ↓
+Procedural / state-aware plan
+  ↓
+Current-scene analysis
+  ↓
+Source-blocker and destination-occupancy handling
+  ↓
+Isaac Sim manipulation execution
+  ↓
+Per-step placement verification</pre>
 
-          <pre class="pipeline">EMG / IMU
-  ↓
-Feature Extraction + Classification
-  ↓
-UX State Machine (scroll / lock / unlock)
-  ↓
-Cartesian Command (axis + direction)
-  ↓
-Jacobian/IK Controller (+ safety limits)
-  ↓
-MuJoCo Simulation  →  Real FR3 Deployment</pre>
+          <div class="btnbar">
+            <a
+              class="btn primary"
+              href="https://github.com/MAHAFIZS/failure-aware-language-robot-agent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Repository
+            </a>
+
+            <a
+              class="btn"
+              href="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Demo Video
+            </a>
+
+            <a class="btn" href="projects.html">
+              Read Project Details
+            </a>
+          </div>
+        </div>
+
+        <div class="card video-wrap">
+          <h4 style="margin:0 0 10px;">
+            Persistent manipulation-agent demonstration
+          </h4>
+
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            class="project-video"
+          >
+            <source
+              src="https://raw.githubusercontent.com/MAHAFIZS/failure-aware-language-robot-agent/main/Linkedin-ezgif.com-video-speed.webm"
+              type="video/webm"
+            >
+
+            Your browser does not support the video element.
+          </video>
+
+          <p class="caption">
+            Natural-language commands are converted into validated
+            plans and executed by a persistent Franka robot scene.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- FRANKA THESIS RESULTS                                      -->
+    <!-- ========================================================= -->
+
+    <section class="section">
+      <h3>
+        Franka FR3 — Gesture-Driven Control and Sim-to-Real Validation
+      </h3>
+
+      <div class="grid">
+
+        <div class="card">
+          <p class="kpi">3.06 mm</p>
+
+          <p class="kpi-label">
+            <strong>Best Final Reach Error</strong>
+          </p>
+
+          <p class="kpi-note">
+            Participant P02 achieved 3.06 mm final positioning error
+            during Task 1, Trial 5.
+          </p>
         </div>
 
         <div class="card">
-          <h4 style="margin:0 0 10px;">Objective results snapshot (from user study)</h4>
+          <p class="kpi">98.8%</p>
 
-          <!-- You can adjust wording, but the numbers are from your excerpt -->
-          <table>
-            <thead>
-              <tr>
-                <th>Participant</th>
-                <th>Task 1 Reach Error (Trial 1 → Trial 5)</th>
-                <th>Improvement</th>
-                <th>Task 2 Force Range (N)</th>
-                <th>Task 2 Rotation Error</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>P01</strong></td>
-                <td>322.27 mm → 7.05 mm</td>
-                <td>~97.8%</td>
-                <td>4.46 – 38.94 N</td>
-                <td>≤ 0.32° (then near 0°)</td>
-              </tr>
-              <tr>
-                <td><strong>P02</strong></td>
-                <td>248.40 mm → 3.06 mm</td>
-                <td>~98.8%</td>
-                <td>1.61 – 26.64 N</td>
-                <td>0 – 0.15°</td>
-              </tr>
-              <tr>
-                <td><strong>P03</strong></td>
-                <td>34.16 mm → 4.91 mm</td>
-                <td>~85.6%</td>
-                <td>15.11 – 20.86 N</td>
-                <td>0 – 0.07°</td>
-              </tr>
-            </tbody>
-          </table>
+          <p class="kpi-label">
+            <strong>Reach-Error Reduction</strong>
+          </p>
 
-          <p class="kpi-note" style="margin-top:10px;">
-            For Task 2 (screwing), <strong>force/torque + alignment</strong> are the more informative indicators than positional error alone.
+          <p class="kpi-note">
+            P02 reduced positioning error from
+            <strong>248.40 mm to 3.06 mm</strong>
+            across five trials.
           </p>
         </div>
+
+        <div class="card">
+          <p class="kpi">38.94 N</p>
+
+          <p class="kpi-label">
+            <strong>Maximum Recorded Contact Force</strong>
+          </p>
+
+          <p class="kpi-note">
+            P01 reached a peak of 38.94 N during the threaded
+            insertion and screwing task.
+          </p>
+        </div>
+
       </div>
 
-      <!-- Franka evidence: UX + sim + real videos + plots/screenshots -->
+      <div class="row" style="margin-top:16px;">
+
+        <div class="card">
+          <ul class="bullets">
+            <li>
+              Gesture-based interface using
+              <strong>EMG and IMU signals</strong>
+            </li>
+
+            <li>
+              Axis selection and command execution using a
+              lock-and-unlock interaction state machine
+            </li>
+
+            <li>
+              Cartesian translation and orientation commands through
+              Jacobian and inverse-kinematics-based control
+            </li>
+
+            <li>
+              Validation in both MuJoCo and a
+              <strong>real Franka FR3 robot</strong>
+            </li>
+
+            <li>
+              Free-space reach testing and contact-rich screw
+              insertion
+            </li>
+
+            <li>
+              Measurement of end-effector error, force, torque, and
+              rotational alignment
+            </li>
+          </ul>
+
+          <div class="tagwrap">
+            <span class="tag">Franka FR3</span>
+            <span class="tag">EMG</span>
+            <span class="tag">IMU</span>
+            <span class="tag">Cartesian Control</span>
+            <span class="tag">MuJoCo</span>
+            <span class="tag">Sim-to-Real</span>
+            <span class="tag">Contact-Rich Manipulation</span>
+          </div>
+
+          <div class="callout">
+            <strong>Key point:</strong>
+            This is not direct gesture-to-joint motion. It is a
+            complete human–robot interaction workflow with signal
+            processing, gesture classification, command-state
+            management, Cartesian control, safety constraints, and
+            measurable task outcomes.
+          </div>
+
+          <pre class="pipeline">EMG / IMU signals
+  ↓
+Filtering, features and classification
+  ↓
+Interaction state machine
+  ↓
+Axis and direction command
+  ↓
+Cartesian / rotational controller
+  ↓
+MuJoCo validation
+  ↓
+Real Franka FR3 deployment</pre>
+        </div>
+
+        <div class="card">
+          <h4 style="margin:0 0 10px;">
+            Objective thesis-results snapshot
+          </h4>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Participant</th>
+                  <th>
+                    Task 1 Reach Error<br>
+                    Trial 1 → Trial 5
+                  </th>
+                  <th>Error Reduction</th>
+                  <th>Task 2 Force Range</th>
+                  <th>Task 2 Rotation Error</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><strong>P01</strong></td>
+                  <td>322.27 mm → 7.05 mm</td>
+                  <td>Approximately 97.8%</td>
+                  <td>4.46–38.94 N</td>
+                  <td>≤ 0.32°, then near 0°</td>
+                </tr>
+
+                <tr>
+                  <td><strong>P02</strong></td>
+                  <td>248.40 mm → 3.06 mm</td>
+                  <td>Approximately 98.8%</td>
+                  <td>1.61–26.64 N</td>
+                  <td>0–0.15°</td>
+                </tr>
+
+                <tr>
+                  <td><strong>P03</strong></td>
+                  <td>34.16 mm → 4.91 mm</td>
+                  <td>Approximately 85.6%</td>
+                  <td>15.11–20.86 N</td>
+                  <td>0–0.07°</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="kpi-note" style="margin-top:12px;">
+            For the contact-rich screwing task, force, torque, and
+            rotational alignment provide more useful evidence than
+            positional error alone.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ================= THESIS EVIDENCE ================= -->
+
       <div class="section">
-        <h3>Evidence (Gesture UX + MuJoCo Simulation + Real FR3)</h3>
+        <h3>
+          Evidence — Gesture Interface, MuJoCo and Real FR3
+        </h3>
 
         <div class="row">
+
           <div class="card video-wrap">
-            <h4 style="margin:0 0 10px;">MuJoCo simulation demo</h4>
-            <!-- Replace with your actual video path -->
+            <h4 style="margin:0 0 10px;">
+              MuJoCo simulation demonstration
+            </h4>
+
             <video controls preload="metadata">
-              <source src="images/franka_mujoco_demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              <source
+                src="images/franka_mujoco_demo.mp4"
+                type="video/mp4"
+              >
+
+              Your browser does not support the video element.
             </video>
+
             <p class="caption">
-              Demonstrates gesture-driven UX → Cartesian command execution in simulation.
+              Gesture-driven interface and Cartesian command
+              execution in simulation.
             </p>
           </div>
 
           <div class="card video-wrap">
-            <h4 style="margin:0 0 10px;">Real FR3 deployment demo</h4>
-            <!-- Replace with your actual video path -->
+            <h4 style="margin:0 0 10px;">
+              Real Franka FR3 deployment
+            </h4>
+
             <video controls preload="metadata">
-              <source src="images/franka_real_demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              <source
+                src="images/franka_real_demo.mp4"
+                type="video/mp4"
+              >
+
+              Your browser does not support the video element.
             </video>
+
             <p class="caption">
-              Demonstrates the same UX/control workflow deployed on real hardware (FR3).
+              The gesture-driven control workflow transferred from
+              simulation to the real Franka FR3.
             </p>
           </div>
+
         </div>
 
         <div class="card" style="margin-top:16px;">
-          <h4 style="margin:0 0 10px;">Screenshots (UX + plots)</h4>
+          <h4 style="margin:0 0 10px;">
+            Interface, experiment and result evidence
+          </h4>
 
-          <!-- Replace with your actual images: menu, plots, robot photo, etc. -->
           <div class="media-grid">
+
             <div class="media-item">
-              <img src="images/franka_gesture_menu.png" alt="Gesture-driven UX menu" />
-              <div class="caption"><strong>Gesture UX:</strong> Menu / axis selection with lock–unlock control.</div>
+              <img
+                src="images/franka_gesture_menu.png"
+                alt="Gesture-based robot control menu"
+              >
+
+              <div class="caption">
+                <strong>Gesture interface:</strong>
+                Axis selection with lock-and-unlock control.
+              </div>
             </div>
 
             <div class="media-item">
-              <img src="images/franka_real_setup.png" alt="Real FR3 setup photo" />
-              <div class="caption"><strong>Real setup:</strong> FR3 experiment setup used for the user study.</div>
+              <img
+                src="images/franka_real_setup.png"
+                alt="Real Franka FR3 experiment setup"
+              >
+
+              <div class="caption">
+                <strong>Real setup:</strong>
+                Franka FR3 experiment configuration used for the
+                study.
+              </div>
             </div>
 
             <div class="media-item">
-              <img src="images/task1_error_plot.png" alt="Task 1 error plot" />
-              <div class="caption"><strong>Task 1:</strong> Reach error decreases across rounds (learning effect).</div>
+              <img
+                src="images/task1_error_plot.png"
+                alt="Task 1 reach error across trials"
+              >
+
+              <div class="caption">
+                <strong>Task 1:</strong>
+                Reach error decreased across repeated trials.
+              </div>
             </div>
 
             <div class="media-item">
-              <img src="images/task2_force_torque_plot.png" alt="Task 2 force and torque plot" />
-              <div class="caption"><strong>Task 2:</strong> Force/torque behavior during threaded contact (screw depth).</div>
+              <img
+                src="images/task2_force_torque_plot.png"
+                alt="Force and torque during the screw insertion task"
+              >
+
+              <div class="caption">
+                <strong>Task 2:</strong>
+                Force and torque behavior during threaded contact.
+              </div>
             </div>
+
           </div>
 
-          <p class="kpi-note" style="margin-top:10px;">
-            
-          </p>
+          <div class="btnbar">
+            <a
+              class="btn primary"
+              href="https://www.youtube.com/watch?v=Q26zdV5uKMU"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch Thesis Demo
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/MAHAFIZS/mujoco-franka-simulation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Simulation Repository
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- ========================================================= -->
-    <!-- 4) WHAT YOU OPTIMIZE FOR                                   -->
+    <!-- ENGINEERING PRIORITIES                                     -->
     <!-- ========================================================= -->
-    <div class="section">
-      <h3>What I optimize for</h3>
+
+    <section class="section">
+      <h3>What I Optimize For</h3>
+
       <div class="card">
         <ul class="bullets">
-          <li><strong>Measurable progress</strong> (metrics-first, reproducible experiments)</li>
-          <li><strong>Stability & safety</strong> (limits, smooth control, robust behavior)</li>
-          <li><strong>Deployment readiness</strong> (CI-style checks and clear failure modes)</li>
-          <li><strong>Fast iteration</strong> (tight loop: simulate → evaluate → improve)</li>
+          <li>
+            <strong>Measurable progress:</strong>
+            repeatable experiments and clearly defined metrics
+          </li>
+
+          <li>
+            <strong>Stability and safety:</strong>
+            limits, smooth control, and predictable behavior
+          </li>
+
+          <li>
+            <strong>Failure visibility:</strong>
+            traceable failure causes rather than only success labels
+          </li>
+
+          <li>
+            <strong>Deployment readiness:</strong>
+            explicit validation checks before real-world execution
+          </li>
+
+          <li>
+            <strong>Efficient iteration:</strong>
+            simulate → evaluate → diagnose → improve
+          </li>
         </ul>
       </div>
-    </div>
+    </section>
 
-  </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
 
   <footer>
-    © <span id="y"></span> M A Hafiz • Results & Impact
+    © <span id="year"></span>
+    M A Hafiz • Robotics Results &amp; Impact
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
-
-
-
-
-
