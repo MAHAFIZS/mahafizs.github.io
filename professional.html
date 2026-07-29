@@ -1,6 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Professional experience of M A Hafiz in robotics research supervision, human-robot interaction, university teaching, and industrial engineering operations."
+  >
+
+  <title>Professional Experience - M A HAFIZ</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #222;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 24px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 4px 0;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 6px 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      color: #58c7ed;
+      text-decoration: underline;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .content {
+      padding: 42px 20px;
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .page-title {
+      text-align: center;
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    .page-sub {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 30px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* ================= EXPERIENCE CARDS ================= */
+
+    .experience-section {
+      text-align: left;
+      max-width: 1000px;
+      margin: 16px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: #222;
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+
+    .company {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 10px;
+      line-height: 1.6;
+    }
+
+    .pillwrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 0;
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef3ff;
+      border: 1px solid #d6e0ff;
+      color: #1b3a74;
+    }
+
+    .details {
+      font-size: 15px;
+      margin-top: 14px;
+      display: none;
+      line-height: 1.75;
+      color: #222;
+    }
+
+    .details p {
+      margin: 10px 0;
+    }
+
+    .details ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      line-height: 1.75;
+    }
+
+    .toggle-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 14px;
+      background: #008cba;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .details img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 12px;
+      border-radius: 10px;
+      border: 1px solid #e6e6ee;
+    }
+
+    .status-note {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #eef6ff;
+      border: 1px solid #cfe9ff;
+      color: #103a57;
+      line-height: 1.6;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      margin-top: 30px;
+      background: #1f1f1f;
+      color: #fff;
+      padding: 17px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+      nav ul li {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+
+      .content {
+        padding: 32px 16px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      header h1 {
+        font-size: 29px;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
+      .experience-section {
+        padding: 17px;
+      }
+
+      .job-title {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <h1>M A HAFIZ</h1>
+
+    <p>
+      <strong>
+        Robotics Simulation, Manipulation &amp; Research Engineer
+      </strong>
+    </p>
+
+    <p>
+      M.Sc. Medical Engineering •
+      B.Sc. Electrical &amp; Electronic Engineering
+    </p>
+
+    <p>
+      Erlangen, Germany • Open to Robotics and Simulation Roles
+    </p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">About</a></li>
+
+        <li>
+          <a href="education.html">
+            Education &amp; Internship
+          </a>
+        </li>
+
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+
+        <li>
+          <a href="professional.html">
+            Professional Experience
+          </a>
+        </li>
+
+        <li><a href="skills.html">Skills</a></li>
+
+        <li>
+          <a href="Certificates and CV.html">
+            Certificates and CV
+          </a>
+        </li>
+
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+
+  <main class="content">
+
+    <h2 class="page-title">
+      Professional Experience
+    </h2>
+
+    <p class="page-sub">
+      Experience across robotics research supervision,
+      human–robot interaction software, university teaching,
+      and industrial engineering operations.
+      Click “View Details” to expand each role.
+    </p>
+
+    <!-- ================= RESEARCHBUDDY ================= -->
+
+    <section class="experience-section">
+      <p class="job-title">
+        Research Supervisor — Medical Robotics &amp; Simulation
+      </p>
+
+      <p class="company">
+        Medical Robotics &amp; Simulation Lab,
+        ResearchBuddy AI Tech • 03/2026 – Present
+      </p>
+
+      <div class="pillwrap">
+        <span class="pill">Research Supervision</span>
+        <span class="pill">Medical Robotics</span>
+        <span class="pill">Franka Robotics</span>
+        <span class="pill">Dual-Arm Manipulation</span>
+        <span class="pill">Cable Manipulation</span>
+        <span class="pill">Robot Simulation</span>
+        <span class="pill">Python</span>
+        <span class="pill">ROS 2</span>
+      </div>
+
+      <button
+        class="toggle-btn"
+        onclick="toggleDetails('researchbuddy-supervisor', this)"
+        aria-expanded="false"
+        aria-controls="researchbuddy-supervisor"
+      >
+        View Details
+      </button>
+
+      <div
+        class="details"
+        id="researchbuddy-supervisor"
+      >
+        <p>
+          <strong>Lab:</strong>
+          Medical Robotics &amp; Simulation Lab
+        </p>
+
+        <p>
+          Supervise applied robotics research projects involving
+          robotic manipulation, simulation, control, and
+          intelligent robotic systems.
+        </p>
+
+        <p><strong>Responsibilities:</strong></p>
+
+        <ul>
+          <li>
+            Supervise student research from problem formulation and
+            literature review through implementation, experimentation,
+            evaluation, and technical reporting.
+          </li>
+
+          <li>
+            Provide technical guidance on robot simulation,
+            manipulation planning, control logic, debugging,
+            and experiment design.
+          </li>
+
+          <li>
+            Supervised a Franka robotic-arm project involving
+            manipulation-task development, simulation workflow,
+            system integration, and performance evaluation.
+          </li>
+
+          <li>
+            Currently supervise a
+            <strong>dual-arm Franka cable-manipulation project</strong>
+            focused on coordinated bimanual manipulation of flexible
+            objects.
+          </li>
+
+          <li>
+            Guide the development of cable grasping, coordinated
+            arm motion, object-state tracking, and manipulation
+            strategies for deformable linear objects.
+          </li>
+
+          <li>
+            Support students in designing measurable experiments,
+            identifying task failures, analyzing results, and
+            improving robot behavior.
+          </li>
+
+          <li>
+            Review software implementations, simulation design,
+            research methodology, experimental results, and
+            publication-oriented technical writing.
+          </li>
+        </ul>
+
+        <p>
+          <strong>Research areas:</strong>
+          Medical robotics, robot manipulation, dual-arm systems,
+          flexible-object manipulation, simulation, robot control,
+          and failure-aware evaluation.
+        </p>
+
+        <div class="status-note">
+          <strong>Current supervision:</strong>
+          Coordinated dual-arm Franka manipulation for cable
+          handling and flexible-object task execution.
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORKING STUDENT ================= -->
+
+    <section class="experience-section">
+      <p class="job-title">
+        Working Student — Human–Robot Interaction
+      </p>
+
+      <p class="company">
+        FAU Erlangen-Nürnberg, Erlangen, Germany
+        • 05/2024 – 03/2025
+      </p>
+
+      <div class="pillwrap">
+        <span class="pill">Social Robotics</span>
+        <span class="pill">Flask</span>
+        <span class="pill">Python</span>
+        <span class="pill">Pandas</span>
+        <span class="pill">UI/UX</span>
+        <span class="pill">HRI</span>
+      </div>
+
+      <button
+        class="toggle-btn"
+        onclick="toggleDetails('working-student', this)"
+        aria-expanded="false"
+        aria-controls="working-student"
+      >
+        View Details
+      </button>
+
+      <div
+        class="details"
+        id="working-student"
+      >
+        <p>
+          <strong>Project:</strong>
+          Acceptance Model Generator for Human–Robot Interaction
+        </p>
+
+        <p>
+          <em>
+            Funded by the Bavarian Research Foundation
+            (Bayerische Forschungsstiftung)
+          </em>
+        </p>
+
+        <p><strong>Responsibilities:</strong></p>
+
+        <ul>
+          <li>
+            Conducted literature research in social robotics,
+            focusing on acceptance factors in human–robot
+            interaction.
+          </li>
+
+          <li>
+            Reviewed and synthesized insights from approximately
+            <strong>200 papers and taxonomies</strong>
+            covering trust, usability, autonomy, safety,
+            and robot acceptance.
+          </li>
+
+          <li>
+            Built a web-based acceptance-model generator based on
+            the Onnasch et al. taxonomy.
+          </li>
+
+          <li>
+            Implemented backend logic using
+            <strong>Flask and Python</strong>
+            with a structured multi-page interface in HTML and CSS.
+          </li>
+
+          <li>
+            Mapped user inputs such as robot type, autonomy level,
+            task context, and team structure to relevant
+            psychological constructs.
+          </li>
+
+          <li>
+            Used Pandas and Excel-based backend data integration
+            for structured model generation.
+          </li>
+
+          <li>
+            Added bilingual English and German interfaces and
+            styling aligned with the research project identity.
+          </li>
+
+          <li>
+            Collaborated with researchers to validate the model
+            and prepare it for behavioral experiments.
+          </li>
+        </ul>
+
+        <img
+          src="images/SocialRobotics.png"
+          alt="FORSocialRobots interim review"
+        >
+      </div>
+    </section>
+
+    <!-- ================= LECTURER ================= -->
+
+    <section class="experience-section">
+      <p class="job-title">
+        Lecturer — Electrical &amp; Electronic Engineering
+      </p>
+
+      <p class="company">
+        Premier University, Chattogram, Bangladesh
+        • 04/2021 – 04/2022
+      </p>
+
+      <div class="pillwrap">
+        <span class="pill">Teaching</span>
+        <span class="pill">Signals &amp; Systems</span>
+        <span class="pill">Digital Logic</span>
+        <span class="pill">MATLAB</span>
+        <span class="pill">Microcontrollers</span>
+        <span class="pill">Student Supervision</span>
+      </div>
+
+      <button
+        class="toggle-btn"
+        onclick="toggleDetails('lecturer', this)"
+        aria-expanded="false"
+        aria-controls="lecturer"
+      >
+        View Details
+      </button>
+
+      <div
+        class="details"
+        id="lecturer"
+      >
+        <p><strong>Responsibilities:</strong></p>
+
+        <ul>
+          <li>
+            Delivered undergraduate lectures in
+            <strong>
+              Signals and Systems, Electronics,
+              and Digital Logic Design
+            </strong>.
+          </li>
+
+          <li>
+            Prepared and evaluated assignments, quizzes, and final
+            examinations and maintained academic records.
+          </li>
+
+          <li>
+            Supervised laboratory sessions covering MATLAB,
+            Python fundamentals, digital circuit design,
+            and microprocessor and microcontroller programming.
+          </li>
+
+          <li>
+            Guided students in 8085 and 8051 programming,
+            hardware interfacing, and embedded-system development.
+          </li>
+
+          <li>
+            Mentored students on final-year embedded-system projects
+            and implementation planning.
+          </li>
+
+          <li>
+            Supported curriculum updates and laboratory-manual
+            improvements aligned with practical engineering skills.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= POWER PLANT ENGINEER ================= -->
+
+    <section class="experience-section">
+      <p class="job-title">
+        Engineer — Power Plant Operations
+      </p>
+
+      <p class="company">
+        Abul Khair Steel &amp; Power Ltd,
+        Chattogram, Bangladesh • 04/2019 – 03/2021
+      </p>
+
+      <div class="pillwrap">
+        <span class="pill">Power Systems</span>
+        <span class="pill">Operations</span>
+        <span class="pill">Maintenance</span>
+        <span class="pill">Diagnostics</span>
+        <span class="pill">Instrumentation</span>
+        <span class="pill">230 kV Systems</span>
+      </div>
+
+      <button
+        class="toggle-btn"
+        onclick="toggleDetails('engineer', this)"
+        aria-expanded="false"
+        aria-controls="engineer"
+      >
+        View Details
+      </button>
+
+      <div
+        class="details"
+        id="engineer"
+      >
+        <p>
+          <strong>Department:</strong>
+          Power Plant Operations and Maintenance
+        </p>
+
+        <p><strong>Responsibilities:</strong></p>
+
+        <ul>
+          <li>
+            Supported continuous operation of a large gas-based
+            industrial power-generation facility.
+          </li>
+
+          <li>
+            Monitored and maintained
+            <strong>Rolls-Royce Bergen gas engines</strong>
+            and associated electrical and mechanical systems.
+          </li>
+
+          <li>
+            Supported operation and monitoring of high-voltage
+            power-distribution and grid-synchronization systems.
+          </li>
+
+          <li>
+            Designed and installed sensing solutions for abnormal
+            condition detection, including temperature, vibration,
+            and leakage monitoring.
+          </li>
+
+          <li>
+            Performed scheduled maintenance on engines,
+            alternators, compressors, cooling systems,
+            control panels, and auxiliary equipment.
+          </li>
+
+          <li>
+            Managed grid intake and synchronization with
+            in-house generation under varying industrial loads.
+          </li>
+
+          <li>
+            Executed troubleshooting and fault diagnosis to reduce
+            downtime and operational risk.
+          </li>
+
+          <li>
+            Prepared daily operational, maintenance, and energy
+            output reports for senior management.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    <p>
+      © <span id="year"></span> M A HAFIZ
+    </p>
+  </footer>
+
+  <script>
+    function toggleDetails(id, button) {
+      const details = document.getElementById(id);
+      const isOpen = details.style.display === "block";
+
+      details.style.display = isOpen ? "none" : "block";
+      button.textContent = isOpen ? "View Details" : "Hide Details";
+      button.setAttribute(
+        "aria-expanded",
+        isOpen ? "false" : "true"
+      );
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Experience - M A HAFIZ</title>
