@@ -242,6 +242,143 @@
         </p>
       </div>
     </div>
+    <!-- Real2Isaac -->
+<div class="project-section">
+  <p class="project-title">
+    Real2Isaac – Real-World Gaussian Splatting Scenes for NVIDIA Isaac Sim
+  </p>
+
+  <p class="project-meta">
+    <strong>Year:</strong> 2026 •
+    <strong>Type:</strong> Robotics Simulation / Gaussian Splatting / Digital Twin Infrastructure
+  </p>
+
+  <div class="pillwrap">
+    <span class="pill">NVIDIA Isaac Sim</span>
+    <span class="pill">Gaussian Splatting</span>
+    <span class="pill">COLMAP</span>
+    <span class="pill">3DGRUT / NuRec</span>
+    <span class="pill">Python</span>
+    <span class="pill">FastAPI</span>
+    <span class="pill">Streamlit</span>
+    <span class="pill">Redis</span>
+    <span class="pill">Celery</span>
+    <span class="pill">USD / USDZ</span>
+  </div>
+
+  <button
+    class="toggle-btn"
+    onclick="toggleDetails('project-real2isaac')"
+  >
+    View Details
+  </button>
+
+  <div class="details" id="project-real2isaac">
+
+    <p>
+      Developed an end-to-end pipeline that converts real-world image
+      collections into photorealistic
+      <strong>Gaussian Splatting environments</strong> and imports them into
+      <strong>NVIDIA Isaac Sim</strong> for robotics simulation and
+      digital-twin development.
+    </p>
+
+    <p>
+      For the Gerrard Hall demonstration, the system processed
+      <strong>100 real-world images</strong>, reconstructed camera poses and
+      sparse geometry using COLMAP, trained a Gaussian Splatting model, and
+      exported the result as a PLY and NuRec-compatible USDZ scene.
+    </p>
+
+    <p><strong>Pipeline:</strong></p>
+
+    <pre style="
+      background:#f6f8fa;
+      padding:12px;
+      border-radius:8px;
+      overflow:auto;
+    "><code>Real-world images
+→ COLMAP feature extraction and reconstruction
+→ Gaussian Splatting training
+→ PLY export
+→ 3DGRUT / NuRec USDZ conversion
+→ NVIDIA Isaac Sim
+→ physics colliders and robot integration</code></pre>
+
+    <p><strong>Current results:</strong></p>
+
+    <ul>
+      <li>Processed and registered 100 Gerrard Hall images</li>
+      <li>Generated approximately 482,000 Gaussian primitives</li>
+      <li>Exported a 114 MB Gaussian Splatting PLY file</li>
+      <li>Converted the reconstruction into a NuRec-compatible USDZ scene</li>
+      <li>Loaded and rendered the reconstructed environment in Isaac Sim</li>
+      <li>Added a separate physical ground collider</li>
+      <li>Validated rigid-body interaction using a falling cube</li>
+      <li>Integrated a Carter mobile robot into the reconstructed scene</li>
+      <li>Built a web upload workflow using Streamlit and FastAPI</li>
+      <li>Added Redis and Celery for queued reconstruction jobs</li>
+    </ul>
+
+    <p><strong>Hybrid simulation architecture:</strong></p>
+
+    <pre style="
+      background:#f6f8fa;
+      padding:12px;
+      border-radius:8px;
+      overflow:auto;
+    "><code>Gaussian reconstruction → photorealistic visual layer
+Proxy colliders         → physical interaction layer
+Robot USD               → articulation and control layer
+FastAPI + Celery        → reconstruction job-processing layer</code></pre>
+
+    <p>
+      The Gaussian scene provides high-quality visual reconstruction, while
+      separate collision geometry provides physical interaction for robots
+      and rigid objects. This hybrid approach allows realistic real-world
+      environments to be used for robotics simulation without requiring a
+      manually modelled visual scene.
+    </p>
+
+    <p><strong>Gerrard Hall simulation demo:</strong></p>
+
+    <video
+      controls
+      preload="metadata"
+      playsinline
+      style="
+        width:100%;
+        max-width:900px;
+        border-radius:10px;
+        border:1px solid #ddd;
+        margin:12px 0;
+        background:#000;
+      "
+    >
+      <source
+        src="images/gaussian(1).webm"
+        type="video/webm"
+      >
+      Your browser does not support the video element.
+    </video>
+
+    <p>
+      <strong>Applications:</strong>
+      robotics testing, digital twins, autonomous navigation,
+      sim-to-real development, robot-policy evaluation, and scalable
+      generation of simulation environments.
+    </p>
+
+    <p>
+      <em>
+        Status: Active development. Current work focuses on automatic
+        physics-proxy generation, containerized GPU workers, Docker
+        deployment, and Kubernetes-based reconstruction jobs.
+      </em>
+    </p>
+
+  </div>
+</div>
 <div class="project-section">
   <p class="project-title">
     ContactTrace AI – Robot Failure Analysis & Targeted Data Generation Platform
