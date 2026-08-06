@@ -411,6 +411,248 @@ FastAPI + Celery        → reconstruction job-processing layer</code></pre>
   </div>
 
 </div>
+    <!-- Real2Isaac -->
+<div class="project-section">
+
+  <p class="project-title">
+    Real2Isaac – Mobile Video to NVIDIA Isaac Sim with Gaussian Splatting
+  </p>
+
+  <p class="project-meta">
+    <strong>Year:</strong> 2026 •
+    <strong>Type:</strong>
+    Robotics Simulation / Gaussian Splatting / Digital Twin Infrastructure
+  </p>
+
+  <div class="pillwrap">
+    <span class="pill">NVIDIA Isaac Sim</span>
+    <span class="pill">Gaussian Splatting</span>
+    <span class="pill">COLMAP</span>
+    <span class="pill">Nerfstudio</span>
+    <span class="pill">3DGRUT / NuRec</span>
+    <span class="pill">FastAPI</span>
+    <span class="pill">Redis</span>
+    <span class="pill">Celery</span>
+    <span class="pill">Docker</span>
+    <span class="pill">Kubernetes</span>
+    <span class="pill">Expo Go</span>
+    <span class="pill">Streamlit</span>
+    <span class="pill">USD / USDZ</span>
+  </div>
+
+  <button
+    class="toggle-btn"
+    onclick="toggleDetails('project-real2isaac')"
+  >
+    View Details
+  </button>
+
+  <div
+    class="details"
+    id="project-real2isaac"
+  >
+
+    <p>
+      Developed an end-to-end <strong>mobile-to-simulation platform</strong>
+      that converts real-world videos into photorealistic
+      <strong>Gaussian Splatting environments</strong> for
+      <strong>NVIDIA Isaac Sim</strong>.
+    </p>
+
+    <p>
+      A user can record or select a video directly from an iPhone using either
+      a mobile web interface or an Expo Go application. The video is uploaded
+      to a queued GPU reconstruction backend, processed through COLMAP and
+      Nerfstudio, converted to PLY and NuRec-compatible USDZ, and made
+      available for download from the phone.
+    </p>
+
+    <p>
+      <strong>Complete workflow:</strong>
+    </p>
+
+    <pre
+      style="
+        background:#f6f8fa;
+        padding:12px;
+        border-radius:8px;
+        overflow:auto;
+      "
+    ><code>iPhone video capture or upload
+→ Streamlit mobile interface / Expo Go app
+→ FastAPI upload and job creation
+→ Redis queue
+→ Celery GPU worker
+→ video frame extraction
+→ COLMAP reconstruction and quality validation
+→ Nerfstudio Gaussian Splatting training
+→ Gaussian PLY export
+→ 3DGRUT / NuRec USDZ conversion
+→ mobile artifact download
+→ NVIDIA Isaac Sim</code></pre>
+
+    <p>
+      <strong>Mobile capabilities:</strong>
+    </p>
+
+    <ul>
+      <li>Record or select a video directly from an iPhone</li>
+      <li>Upload scenes through a mobile web interface or Expo Go app</li>
+      <li>Monitor reconstruction progress and COLMAP quality metrics</li>
+      <li>Review registration ratio, sparse points, and quality grade</li>
+      <li>Approve short preview and full Gaussian training stages</li>
+      <li>Recover the active job after Safari refresh or reconnection</li>
+      <li>Download final PLY and Isaac Sim-compatible USDZ files</li>
+    </ul>
+
+    <p>
+      <strong>Deployment architecture:</strong>
+    </p>
+
+    <pre
+      style="
+        background:#f6f8fa;
+        padding:12px;
+        border-radius:8px;
+        overflow:auto;
+      "
+    ><code>Mobile client
+→ Streamlit / Expo Go
+→ FastAPI service
+→ Redis broker and job store
+→ Celery GPU worker
+→ COLMAP + Nerfstudio + 3DGRUT
+→ shared reconstruction outputs</code></pre>
+
+    <p>
+      <strong>Docker deployment:</strong>
+    </p>
+
+    <ul>
+      <li>Containerized FastAPI backend</li>
+      <li>Containerized Redis queue and job store</li>
+      <li>Containerized Streamlit frontend</li>
+      <li>Containerized NVIDIA GPU Celery worker</li>
+      <li>One-command startup using Docker Compose</li>
+      <li>Verified complete PLY and USDZ generation inside Docker</li>
+    </ul>
+
+    <p>
+      <strong>Kubernetes deployment:</strong>
+    </p>
+
+    <ul>
+      <li>Deployed API, Redis, frontend, and worker as Kubernetes workloads</li>
+      <li>Configured NVIDIA GPU scheduling with <code>nvidia.com/gpu</code></li>
+      <li>Validated RTX 5060 Ti access inside a Kubernetes pod</li>
+      <li>Used health checks, init containers, services, and persistent Redis storage</li>
+      <li>Added pod-local COLMAP scratch storage for reliable SQLite locking</li>
+      <li>Completed an iPhone-submitted reconstruction through Kubernetes</li>
+      <li>Downloaded the generated USDZ directly from the mobile interface</li>
+    </ul>
+
+    <p>
+      <strong>Validated end-to-end result:</strong>
+    </p>
+
+    <pre
+      style="
+        background:#f6f8fa;
+        padding:12px;
+        border-radius:8px;
+        overflow:auto;
+      "
+    ><code>iPhone
+→ Kubernetes frontend
+→ FastAPI
+→ Redis / Celery
+→ NVIDIA GPU worker
+→ COLMAP
+→ Gaussian Splatting
+→ PLY
+→ NuRec USDZ
+→ mobile download
+→ Isaac Sim</code></pre>
+
+    <p>
+      <strong>Simulation integration:</strong>
+    </p>
+
+    <ul>
+      <li>Loaded reconstructed Gaussian environments in Isaac Sim</li>
+      <li>Added separate ground and obstacle collision geometry</li>
+      <li>Validated rigid-body interaction using a falling cube</li>
+      <li>Integrated a Carter mobile robot into the reconstructed scene</li>
+    </ul>
+
+    <p>
+      <strong>Hybrid simulation architecture:</strong>
+    </p>
+
+    <pre
+      style="
+        background:#f6f8fa;
+        padding:12px;
+        border-radius:8px;
+        overflow:auto;
+      "
+    ><code>Gaussian reconstruction → photorealistic visual layer
+Proxy colliders         → physical interaction layer
+Robot USD               → articulation and control layer
+FastAPI + Redis + Celery → reconstruction job-processing layer
+Docker / Kubernetes     → deployment and GPU orchestration layer</code></pre>
+
+    <p>
+      The Gaussian scene provides the photorealistic visual environment, while
+      separate proxy collision geometry provides physical interaction for
+      robots and rigid objects. This approach reduces the need for manually
+      modelling complete real-world environments before robotics simulation.
+    </p>
+
+    <p>
+      <strong>Demo video:</strong>
+    </p>
+
+    <video
+      controls
+      preload="metadata"
+      playsinline
+      style="
+        width:100%;
+        max-width:900px;
+        border-radius:10px;
+        border:1px solid #ddd;
+        margin:12px 0;
+        background:#000;
+      "
+    >
+      <source
+        src="images/phonetoissac.mp4"
+        type="video/mp4"
+      >
+      Your browser does not support the video element.
+    </video>
+
+    <p>
+      <strong>Applications:</strong>
+      robotics testing, digital twins, autonomous navigation, sim-to-real
+      development, robot-policy evaluation, warehouse reconstruction, and
+      scalable generation of simulation environments.
+    </p>
+
+    <p>
+      <em>
+        Status: Working end-to-end prototype. Docker and GPU-enabled Kubernetes
+        deployments have been completed and tested from iPhone capture through
+        final USDZ generation and download. Current development focuses on
+        automatic collision generation, semantic scene understanding, robot
+        navigation, and task validation.
+      </em>
+    </p>
+
+  </div>
+
+</div>
 <div class="project-section">
   <p class="project-title">
     ContactTrace AI – Robot Failure Analysis & Targeted Data Generation Platform
